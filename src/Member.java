@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +20,8 @@ public class Member extends javax.swing.JFrame {
     public Member() {
         initComponents();
         jPanel2.setFocusable(true);
+        ImageIcon img=new ImageIcon("C:\\Users\\anike\\Desktop\\Sample\\Library-Management-System2\\src/logo_title.png");
+        this.setIconImage(img.getImage());
     }
 
     /**

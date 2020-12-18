@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.util.regex.*;
+import javax.swing.ImageIcon;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +19,8 @@ public class AddBook extends javax.swing.JFrame {
     public AddBook() {
         initComponents();
         jPanel3.setFocusable(true);
+        ImageIcon img=new ImageIcon("C:\\Users\\anike\\Desktop\\Sample\\Library-Management-System2\\src/logo_title.png");
+        this.setIconImage(img.getImage());
     }
 
     /**
