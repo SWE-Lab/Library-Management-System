@@ -79,10 +79,11 @@ public class UserViewDatabase extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Monospaced", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"s asdasd", "asd"},
-                {"adadsda", "asd"},
-                {"asd", "asd"},
-                {"asd", null}
+                {"Maths IIIA", "Das Pal"},
+                {"Thermoynamics", "Peter Atkins"},
+                {"OS Concepts", "Peter Baer Galvin"},
+                {"Organiser", "Pearl"},
+                {"Compiler Design", "Alfred V Aho"}
             },
             new String [] {
                 "List of Book", "Author Name"
@@ -317,13 +318,15 @@ public class UserViewDatabase extends javax.swing.JFrame {
         DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
         if(jTable1.getSelectedRow() >= 0){
             tbModel.removeRow(jTable1.getSelectedRow());
+            JOptionPane.showMessageDialog(this,"Returned Successfully");
         }
+        
         else{
             if(jTable1.getRowCount() == 0){
-                JOptionPane.showMessageDialog(this,"Table is Empty");
+                JOptionPane.showMessageDialog(this,"Bucket is Empty");
             }
             else{
-                JOptionPane.showMessageDialog(this,"Please Select Row for delete");
+                JOptionPane.showMessageDialog(this,"Please Select Book to return");
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed

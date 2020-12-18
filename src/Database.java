@@ -95,11 +95,11 @@ public class Database extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"aasda", "asd",  new Integer(5221)},
-                {"asd", "asd",  new Integer(55)},
-                {"asd", "asd",  new Integer(77)},
-                {"asd", "asdasd",  new Integer(669)},
-                {"asd", "asd",  new Integer(55)}
+                {"Thermodynamics", "Peter Atkins",  new Integer(225)},
+                {"Compiler Design", "Alfred V Aho",  new Integer(55)},
+                {"Organiser", "Pearl",  new Integer(771)},
+                {"OS Concepts", "Peter Baer Galvin",  new Integer(669)},
+                {"Computer Networks", "Jim Kurose",  new Integer(55)}
             },
             new String [] {
                 "List of Books", "Author Name", "Ouantity"
@@ -237,9 +237,9 @@ public class Database extends javax.swing.JFrame {
             tbModel.removeRow(jTable1.getSelectedRow());
         } else {
             if (jTable1.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "Table is Empty");
+                JOptionPane.showMessageDialog(this, "No Books Available");
             } else {
-                JOptionPane.showMessageDialog(this, "Please Select Row for delete");
+                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
