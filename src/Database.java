@@ -269,11 +269,6 @@ public class Database extends javax.swing.JFrame {
         // TODO add your handling code here:
         int Data = 0;
         int[] row = jTable1.getSelectedRows();
-        if (jTable1.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "Table is Empty");
-        } else {
-            JOptionPane.showMessageDialog(this, "Please Select Row for increasing value");
-        }
         for (int i = 0; i < row.length; i++) {
             Data = (int) jTable1.getValueAt(row[i], 2);
             Data++;
@@ -285,11 +280,6 @@ public class Database extends javax.swing.JFrame {
         // TODO add your handling code here:
         int Data = 0;
         int[] row = jTable1.getSelectedRows();
-        if (jTable1.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "Table is Empty");
-        } else {
-            JOptionPane.showMessageDialog(this, "Please Select Row for decreaseing value");
-        }
         for (int i = 0; i < row.length; i++) {
             Data = (int) jTable1.getValueAt(row[i], 2);
             if (Data > 0) {
