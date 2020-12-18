@@ -95,11 +95,11 @@ public class Database extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"aasda", "asd",  new Integer(5221)},
-                {"asd", "asd",  new Integer(55)},
-                {"asd", "asd",  new Integer(77)},
-                {"asd", "asdasd",  new Integer(669)},
-                {"asd", "asd",  new Integer(55)}
+                {"Thermodynamics", "Peter Atkins",  new Integer(225)},
+                {"Compiler Design", "Alfred V Aho",  new Integer(55)},
+                {"Organiser", "Pearl",  new Integer(771)},
+                {"OS Concepts", "Peter Baer Galvin",  new Integer(669)},
+                {"Computer Networks", "Jim Kurose",  new Integer(55)}
             },
             new String [] {
                 "List of Books", "Author Name", "Ouantity"
@@ -237,9 +237,9 @@ public class Database extends javax.swing.JFrame {
             tbModel.removeRow(jTable1.getSelectedRow());
         } else {
             if (jTable1.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "Table is Empty");
+                JOptionPane.showMessageDialog(this, "No Books Available");
             } else {
-                JOptionPane.showMessageDialog(this, "Please Select Row for delete");
+                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -268,10 +268,13 @@ public class Database extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         int Data = 0;
-        int[] row = jTable1.getSelectedRows();
+        int[] row = {0};
+        row = jTable1.getSelectedRows();
+        
         if (jTable1.getRowCount() == 0) {
             JOptionPane.showMessageDialog(this, "Table is Empty");
-        } else {
+        }  
+         if(row==null){   
             JOptionPane.showMessageDialog(this, "Please Select Row for increasing value");
         }
         for (int i = 0; i < row.length; i++) {
@@ -285,11 +288,7 @@ public class Database extends javax.swing.JFrame {
         // TODO add your handling code here:
         int Data = 0;
         int[] row = jTable1.getSelectedRows();
-        if (jTable1.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "Table is Empty");
-        } else {
-            JOptionPane.showMessageDialog(this, "Please Select Row for decreaseing value");
-        }
+        
         for (int i = 0; i < row.length; i++) {
             Data = (int) jTable1.getValueAt(row[i], 2);
             if (Data > 0) {
