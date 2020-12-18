@@ -8,6 +8,7 @@
  *
  * @author angshuman
  */
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class UserViewDatabase extends javax.swing.JFrame {
@@ -17,6 +18,7 @@ public class UserViewDatabase extends javax.swing.JFrame {
      */
     public UserViewDatabase() {
         initComponents();
+        jPanel2.setFocusable(true);
     }
 
     /**
@@ -136,6 +138,14 @@ public class UserViewDatabase extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(192, 192, 192));
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Enter Book Name or Author Name");
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextField1FocusLost(evt);
+            }
+        });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -165,13 +175,13 @@ public class UserViewDatabase extends javax.swing.JFrame {
                         .addGap(93, 93, 93)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 7, Short.MAX_VALUE)
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(99, 99, 99)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                                 .addComponent(jButton4)
-                                .addGap(87, 87, 87)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -314,6 +324,22 @@ public class UserViewDatabase extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+        if (jTextField1.getText().trim().toLowerCase().equals("enter book name or author name")) {
+            jTextField1.setText("");
+            jTextField1.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter book name or author name")) {
+            jTextField1.setText("Enter Book Name or Author Name");
+            jTextField1.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField1FocusLost
 
     /**
      * @param args the command line arguments
