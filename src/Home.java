@@ -1,8 +1,13 @@
 
 import java.awt.Color;
+import java.io.File;
 import java.util.regex.*;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -23,6 +28,9 @@ public class Home extends javax.swing.JFrame {
         initComponents();
         jPanel3.setFocusable(true);
         jPanel1.setFocusable(true);
+        jPanel15.setFocusable(true);
+        ImageIcon img=new ImageIcon("C:\\Users\\anike\\Desktop\\Sample\\Library-Management-System2\\src/logo_title.png");
+        this.setIconImage(img.getImage());
     }
 
     /**
@@ -52,7 +60,6 @@ public class Home extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jButton17 = new javax.swing.JButton();
         jTextField4 = new javax.swing.JTextField();
-        jButton18 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -67,7 +74,6 @@ public class Home extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -114,11 +120,12 @@ public class Home extends javax.swing.JFrame {
         jPanel17 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome Screen");
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(21, 25, 28));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 153));
         jButton1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
@@ -216,14 +223,16 @@ public class Home extends javax.swing.JFrame {
 
         jLayeredPane1.setLayout(new java.awt.CardLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel4.setBackground(new java.awt.Color(31, 36, 42));
         jPanel4.setLayout(new java.awt.CardLayout());
 
-        jPanel10.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel10.setBackground(new java.awt.Color(31, 36, 42));
 
-        jPanel16.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel16.setBackground(new java.awt.Color(31, 36, 42));
 
-        jLabel18.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel18.setBackground(new java.awt.Color(169, 224, 49));
+        jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(169, 224, 49));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("BOOK AVAILABILITY");
 
@@ -240,23 +249,23 @@ public class Home extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        jPanel15.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel15.setBackground(new java.awt.Color(31, 36, 42));
 
         jTable3.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                { new Integer(1), "  Principles of Compiler Design", "  28/01/2019  ", " 28/03/2019"},
-                { new Integer(2), "  Basic Principles Of Physics", "  28/01/2019", " 28/03/2019"},
-                { new Integer(3), "  Principles Of Compiler Design", "  28/01/2019  ", " 28/03/2019"},
-                { new Integer(4), "  Object Oriented Programming With Java", "  28/01/2019", " 28/03/2019"},
-                {null, null, null, ""}
+                { new Integer(1552), "  Principles of Compiler Design"},
+                { new Integer(26978), "  Basic Principles Of Physics"},
+                { new Integer(322), "  Principles Of Compiler Design"},
+                { new Integer(455), "  Object Oriented Programming With Java"},
+                {null, null}
             },
             new String [] {
-                "SI No.", "Book Title", "Date of Issue", "Date of Return"
+                "Book Code", "Book Title"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -265,11 +274,13 @@ public class Home extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setMinWidth(60);
-            jTable3.getColumnModel().getColumn(0).setMaxWidth(60);
+            jTable3.getColumnModel().getColumn(0).setMinWidth(70);
+            jTable3.getColumnModel().getColumn(0).setMaxWidth(70);
         }
 
-        jButton17.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jButton17.setBackground(new java.awt.Color(169, 224, 49));
+        jButton17.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(51, 51, 51));
         jButton17.setText("ADD TO CART");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -277,10 +288,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.setBackground(new java.awt.Color(31, 36, 42));
         jTextField4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jTextField4.setForeground(new java.awt.Color(192, 192, 192));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField4.setText("Enter Book Name");
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.setText("Just Enter the Book Name for Searching");
+        jTextField4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 3, true));
         jTextField4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField4FocusGained(evt);
@@ -294,12 +307,9 @@ public class Home extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-
-        jButton18.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jButton18.setText("Search");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
             }
         });
 
@@ -310,10 +320,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap(139, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(139, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
@@ -325,14 +332,12 @@ public class Home extends javax.swing.JFrame {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(35, 35, 35)
+                .addComponent(jButton17)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
@@ -353,7 +358,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -378,25 +383,30 @@ public class Home extends javax.swing.JFrame {
 
         jLayeredPane1.add(jPanel4, "card3");
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(31, 36, 42));
         jPanel2.setLayout(new java.awt.CardLayout());
 
-        jPanel11.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel11.setBackground(new java.awt.Color(31, 36, 42));
 
-        jPanel12.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel12.setBackground(new java.awt.Color(31, 36, 42));
 
-        jLabel6.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(169, 224, 49));
         jLabel6.setText("EMAIL - aniket.das.188@gmail.com");
 
-        jLabel22.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(169, 224, 49));
         jLabel22.setText("PHONE NO - 9456895412");
 
-        jLabel4.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(169, 224, 49));
         jLabel4.setText("ENROL NO - 555628522222");
 
-        jLabel3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(169, 224, 49));
         jLabel3.setText("NAME - Aniket Das");
 
+        jLabel23.setForeground(new java.awt.Color(169, 224, 49));
         jLabel23.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
@@ -414,15 +424,15 @@ public class Home extends javax.swing.JFrame {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(135, Short.MAX_VALUE)
+                .addContainerGap(99, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 143, Short.MAX_VALUE)
+                .addGap(18, 107, Short.MAX_VALUE)
                 .addComponent(jLabel23)
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,26 +449,26 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel13.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel13.setBackground(new java.awt.Color(31, 36, 42));
 
-        jTable1.setFont(new java.awt.Font("Monospaced", 0, 11)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Maths IIIA", "Das Pal"},
-                {"Thermoynamics", "Peter Atkins"},
-                {"OS Concepts", "Peter Baer Galvin"},
-                {"Organiser", "Pearl"},
-                {"Compiler Design", "Alfred V Aho"}
+                {"565", "Maths IIIA", "Das Pal"},
+                {"855", "Thermoynamics", "Peter Atkins"},
+                {"5448", "OS Concepts", "Peter Baer Galvin"},
+                {"548", "Organiser", "Pearl"},
+                {"222", "Compiler Design", "Alfred V Aho"}
             },
             new String [] {
-                "List of Book", "Author Name"
+                "Book Code", "List of Book", "Author Name"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                true, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -470,8 +480,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(80);
+        }
 
-        jButton11.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton11.setBackground(new java.awt.Color(169, 224, 49));
+        jButton11.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(51, 51, 51));
         jButton11.setText("ADD BOOKS");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -479,7 +495,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton12.setBackground(new java.awt.Color(169, 224, 49));
+        jButton12.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(51, 51, 51));
         jButton12.setText("LOGOUT");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -487,7 +505,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton13.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton13.setBackground(new java.awt.Color(169, 224, 49));
+        jButton13.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(51, 51, 51));
         jButton13.setText("RETURN");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -495,18 +515,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setFont(new java.awt.Font("Monospaced", 1, 11)); // NOI18N
-        jButton14.setText("Search");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jTextField1.setFont(new java.awt.Font("Monospaced", 1, 11)); // NOI18N
+        jTextField1.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(192, 192, 192));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField1.setText("Enter Book Name or Author Name");
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("Enter Book Code for Searching");
+        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 3, true));
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
@@ -520,14 +534,19 @@ public class Home extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
 
-        jLabel24.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jLabel24.setForeground(java.awt.Color.red);
+        jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 255, 0));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel24.setText("MEMBERSHIP EXPIRES ON 2021-01-15");
 
-        jLabel25.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jLabel25.setForeground(java.awt.Color.red);
+        jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 0));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel25.setText(" FINE DUE : INR");
 
@@ -538,11 +557,8 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1)
                     .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jTextField1)
-                        .addGap(93, 93, 93)
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -552,8 +568,11 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jButton13)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
@@ -563,9 +582,7 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -576,14 +593,16 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel14.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel14.setBackground(new java.awt.Color(31, 36, 42));
 
         jLabel26.setBackground(new java.awt.Color(153, 255, 153));
-        jLabel26.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(169, 224, 49));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("MY PROFILE");
 
         jLabel28.setBackground(new java.awt.Color(153, 255, 153));
+        jLabel28.setForeground(new java.awt.Color(169, 224, 49));
         jLabel28.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
@@ -624,12 +643,12 @@ public class Home extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -646,31 +665,31 @@ public class Home extends javax.swing.JFrame {
 
         jLayeredPane1.add(jPanel2, "card4");
 
-        jPanel5.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel5.setBackground(new java.awt.Color(31, 36, 42));
         jPanel5.setLayout(new java.awt.CardLayout());
 
-        jPanel7.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel7.setBackground(new java.awt.Color(31, 36, 42));
 
-        jPanel8.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel8.setBackground(new java.awt.Color(31, 36, 42));
 
         jTable2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Thermodynamics", "Peter Atkins",  new Integer(225)},
-                {"Compiler Design", "Alfred V Aho",  new Integer(55)},
-                {"Organiser", "Pearl",  new Integer(771)},
-                {"OS Concepts", "Peter Baer Galvin",  new Integer(669)},
-                {"Computer Networks", "Jim Kurose",  new Integer(55)}
+                {"5441", "Thermodynamics", "Peter Atkins",  new Integer(225)},
+                {"6985", "Compiler Design", "Alfred V Aho",  new Integer(55)},
+                {"575", "Organiser", "Pearl",  new Integer(771)},
+                {"112", "OS Concepts", "Peter Baer Galvin",  new Integer(669)},
+                {"6588", "Computer Networks", "Jim Kurose",  new Integer(55)}
             },
             new String [] {
-                "List of Books", "Author Name", "Ouantity"
+                "Book Code", "List of Books", "Author Name", "Ouantity"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                true, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -682,8 +701,14 @@ public class Home extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setMinWidth(60);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(60);
+        }
 
+        jButton7.setBackground(new java.awt.Color(169, 224, 49));
         jButton7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(31, 36, 42));
         jButton7.setText("Delete Book");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -691,10 +716,19 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setBackground(new java.awt.Color(169, 224, 49));
         jButton8.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(31, 36, 42));
         jButton8.setText("Add Book");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
+        jButton9.setBackground(new java.awt.Color(169, 224, 49));
         jButton9.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(31, 36, 42));
         jButton9.setText("BOOK +");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -702,7 +736,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jButton10.setBackground(new java.awt.Color(169, 224, 49));
         jButton10.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(31, 36, 42));
         jButton10.setText("CONFIRM");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -710,7 +746,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jButton15.setBackground(new java.awt.Color(169, 224, 49));
         jButton15.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton15.setForeground(new java.awt.Color(31, 36, 42));
         jButton15.setText("BOOK -");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -758,12 +796,15 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel9.setBackground(new java.awt.Color(31, 36, 42));
 
-        jTextField3.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jTextField3.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(192, 192, 192));
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("Enter Book Name");
+        jTextField3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 3, true));
+        jTextField3.setCaretColor(new java.awt.Color(169, 224, 49));
         jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField3FocusGained(evt);
@@ -777,8 +818,15 @@ public class Home extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField3KeyReleased(evt);
+            }
+        });
 
+        jButton16.setBackground(new java.awt.Color(169, 224, 49));
         jButton16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton16.setForeground(new java.awt.Color(31, 36, 42));
         jButton16.setText("Search");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -786,7 +834,8 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(169, 224, 49));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("LIBRARY DATABASE");
 
@@ -860,23 +909,29 @@ public class Home extends javax.swing.JFrame {
 
         jLayeredPane1.add(jPanel5, "card5");
 
-        jPanel3.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(31, 36, 42));
         jPanel3.setLayout(new java.awt.CardLayout());
 
-        jPanel6.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel6.setBackground(new java.awt.Color(31, 36, 42));
         jPanel6.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
-        jLabel1.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(169, 224, 49));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Genre :");
 
-        jLabel2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(169, 224, 49));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("ISBN :");
 
-        jTextField2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextField2.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(192, 192, 192));
         jTextField2.setText("ISBN");
+        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField2FocusGained(evt);
@@ -891,14 +946,18 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(169, 224, 49));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Price of Book :");
 
-        jTextField5.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextField5.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(192, 192, 192));
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setText("INR");
+        jTextField5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTextField5.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField5FocusGained(evt);
@@ -913,13 +972,22 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(169, 224, 49));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Add Cover Image :");
 
-        jButton5.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(169, 224, 49));
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(31, 36, 42));
         jButton5.setText("Upload");
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -946,9 +1014,11 @@ public class Home extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("JPEG/JPG is accepted");
 
-        jTextField7.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextField7.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jTextField7.setForeground(new java.awt.Color(192, 192, 192));
         jTextField7.setText("Name");
+        jTextField7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTextField7.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField7FocusGained(evt);
@@ -963,13 +1033,17 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel12.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(169, 224, 49));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Name of Book :");
 
-        jTextField8.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextField8.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField8.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jTextField8.setForeground(new java.awt.Color(192, 192, 192));
         jTextField8.setText("Publisher");
+        jTextField8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTextField8.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField8FocusGained(evt);
@@ -984,7 +1058,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel13.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(169, 224, 49));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Name of Publisher :");
 
@@ -993,13 +1069,22 @@ public class Home extends javax.swing.JFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel14.setText("No special char/no.");
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton6.setBackground(new java.awt.Color(169, 224, 49));
+        jButton6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(31, 36, 42));
         jButton6.setText("Submit");
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
-        jTextField9.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jTextField9.setBackground(new java.awt.Color(31, 36, 42));
+        jTextField9.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jTextField9.setForeground(new java.awt.Color(192, 192, 192));
         jTextField9.setText("Authors");
+        jTextField9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTextField9.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField9FocusGained(evt);
@@ -1014,11 +1099,15 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel15.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(169, 224, 49));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Name of Authors :");
 
-        down.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        down.setBackground(new java.awt.Color(31, 36, 42));
+        down.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        down.setForeground(new java.awt.Color(192, 192, 192));
         down.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AUTOMATA", "PHYSICS", "CHEMISTRY", "MATHS", "ENGLISH", "BIOLOGY", "HISTORY", "SOCIAL SCIENCE", "DATA STRUCTURE & ALGORITHM", "COMPILER DESIGNING", "COMPUTER ORGANIZATION", "CONSTITUTION OF INDIA", "DBMS", "OOPS", "OS", "NETWORKING", "BASIC ELECTRICAL", "EVS" }));
         down.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         down.addActionListener(new java.awt.event.ActionListener() {
@@ -1027,10 +1116,11 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jPanel17.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel17.setBackground(new java.awt.Color(31, 36, 42));
 
-        jLabel16.setBackground(new java.awt.Color(192, 192, 192));
-        jLabel16.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        jLabel16.setBackground(new java.awt.Color(31, 36, 42));
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(169, 224, 49));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("ADD NEW BOOK");
 
@@ -1069,6 +1159,10 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel29.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(169, 224, 49));
+        jLabel29.setText("jLabel29");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1097,7 +1191,8 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jTextField8)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 144, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
                             .addComponent(down, 0, 1, Short.MAX_VALUE)
                             .addComponent(jTextField9)
                             .addComponent(jTextField7)
@@ -1112,7 +1207,7 @@ public class Home extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
@@ -1147,12 +1242,13 @@ public class Home extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGap(40, 40, 40)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         jPanel3.add(jPanel6, "card2");
@@ -1169,7 +1265,7 @@ public class Home extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 695, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
         );
 
         pack();
@@ -1217,7 +1313,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField2.getText().trim().toLowerCase().equals("isbn")) {
             jTextField2.setText("");
-            jTextField2.setForeground(Color.BLACK);
+            jTextField2.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField2FocusGained
 
@@ -1243,7 +1339,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField5.getText().trim().toLowerCase().equals("inr")) {
             jTextField5.setText("");
-            jTextField5.setForeground(Color.BLACK);
+            jTextField5.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField5FocusGained
 
@@ -1258,7 +1354,7 @@ public class Home extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
         String s = jTextField5.getText().trim();
-        if (Pattern.matches("[0-9]+[0-9]*", s)) {
+        if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
             this.jLabel10.setVisible(false);
         } else
         this.jLabel10.setVisible(true);
@@ -1266,13 +1362,20 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
+        j.showSaveDialog(null); 
+        File f = j.getSelectedFile();
+        String fn = f.getAbsolutePath();
+        jLabel29.setText(fn);
+        jLabel29.setVisible(true);
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
         // TODO add your handling code here:
         if (jTextField7.getText().trim().toLowerCase().equals("name")) {
             jTextField7.setText("");
-            jTextField7.setForeground(Color.BLACK);
+            jTextField7.setForeground(new Color(169,224,49));
 
         }
     }//GEN-LAST:event_jTextField7FocusGained
@@ -1292,7 +1395,7 @@ public class Home extends javax.swing.JFrame {
     private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
         if (jTextField8.getText().trim().toLowerCase().equals("publisher")) {
             jTextField8.setText("");
-            jTextField8.setForeground(Color.BLACK);
+            jTextField8.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField8FocusGained
 
@@ -1316,7 +1419,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField9.getText().trim().toLowerCase().equals("authors")) {
             jTextField9.setText("");
-            jTextField9.setForeground(Color.BLACK);
+            jTextField9.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField9FocusGained
 
@@ -1342,6 +1445,11 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        this.setTitle("Book Availability");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel4);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -1365,22 +1473,18 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
-
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
-        if (jTextField1.getText().trim().toLowerCase().equals("enter book name or author name")) {
+        if (jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
             jTextField1.setText("");
-            jTextField1.setForeground(Color.BLACK);
+            jTextField1.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
         // TODO add your handling code here:
-        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter book name or author name")) {
-            jTextField1.setText("Enter Book Name or Author Name");
+        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
+            jTextField1.setText("Enter Book Code for Searching");
             jTextField1.setForeground(new Color(192, 192, 192));
         }
     }//GEN-LAST:event_jTextField1FocusLost
@@ -1438,7 +1542,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField3.getText().trim().toLowerCase().equals("enter book name")) {
             jTextField3.setText("");
-            jTextField3.setForeground(Color.BLACK);
+            jTextField3.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField3FocusGained
 
@@ -1446,7 +1550,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jTextField3.getText().trim().equals("") || jTextField3.getText().trim().toLowerCase().equals("enter book name")) {
             jTextField3.setText("Enter Book Name");
-            jTextField3.setForeground(new Color(192, 192, 192));
+            jTextField3.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField3FocusLost
 
@@ -1460,20 +1564,21 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Book successfully added");
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
         // TODO add your handling code here:
-        if (jTextField4.getText().trim().toLowerCase().equals("enter book name")) {
+        if (jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
             jTextField4.setText("");
-            jTextField4.setForeground(Color.BLACK);
+            jTextField4.setForeground(new Color(169,224,49));
         }
     }//GEN-LAST:event_jTextField4FocusGained
 
     private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
         // TODO add your handling code here:
-        if (jTextField4.getText().trim().equals("") || jTextField4.getText().trim().toLowerCase().equals("inr")) {
-            jTextField4.setText("Enter Book Name");
+        if (jTextField4.getText().trim().equals("") || jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
+            jTextField4.setText("Just Enter the Book Name for Searching");
             jTextField4.setForeground(new Color(192, 192, 192));
         }
     }//GEN-LAST:event_jTextField4FocusLost
@@ -1483,9 +1588,50 @@ public class Home extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+        if(!jTextField4.getText().trim().equals("") || jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")){
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel> ((DefaultTableModel) jTable3.getModel());
+        jTable3.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField4.getText().trim().toLowerCase()));
+        }
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel> ((DefaultTableModel) jTable1.getModel());
+        jTable1.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField1.getText().trim().toLowerCase()));
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+        // TODO add your handling code here:
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel> ((DefaultTableModel) jTable2.getModel());
+        jTable2.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField3.getText().trim().toLowerCase()));
+    }//GEN-LAST:event_jTextField3KeyReleased
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        this.setTitle("Add New Book");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel3);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if(!jTextField8.getText().trim().toLowerCase().equals("publisher") || jTextField8.getText().trim().toLowerCase().equals("name") || jTextField8.getText().trim().toLowerCase().equals("authors") || jTextField8.getText().trim().toLowerCase().equals("isbn") || jTextField8.getText().trim().toLowerCase().equals("inr")){
+        JOptionPane.showMessageDialog(this, "Operation successfully done");
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Fill the details");
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1522,7 +1668,9 @@ public class Home extends javax.swing.JFrame {
                 display.jLabel9.setVisible(false);
                 display.jLabel14.setVisible(false);
                 display.jLabel8.setVisible(false);
+                display.jLabel11.setVisible(false);
                 display.jLabel10.setVisible(false);
+                display.jLabel29.setVisible(false);
                 display.setVisible(true);
             }
         });
@@ -1535,11 +1683,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1569,6 +1715,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
