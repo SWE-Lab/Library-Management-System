@@ -9,6 +9,7 @@
  * @author angshuman
  */
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class UserViewDatabase extends javax.swing.JFrame {
@@ -19,6 +20,8 @@ public class UserViewDatabase extends javax.swing.JFrame {
     public UserViewDatabase() {
         initComponents();
         jPanel2.setFocusable(true);
+        ImageIcon img=new ImageIcon("C:\\Users\\anike\\Desktop\\Sample\\Library-Management-System2\\src/logo_title.png");
+        this.setIconImage(img.getImage());
     }
 
     /**
