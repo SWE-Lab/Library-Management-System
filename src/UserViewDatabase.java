@@ -136,7 +136,7 @@ public class UserViewDatabase extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Monospaced", 1, 11)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(192, 192, 192));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText("Enter Book Name or Author Name");
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
