@@ -1,3 +1,3 @@
-# Library-Management-System2
+# Library-Management-System
 
 Library Management System using java
