@@ -35,6 +35,7 @@ public class SplashScreen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(21, 25, 28));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
@@ -50,30 +51,30 @@ public class SplashScreen extends javax.swing.JFrame {
             }
         }.getIcon());
         jLabel_SoftZyd.setToolTipText("");
-        jPanel1.add(jLabel_SoftZyd);
+        jPanel1.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 200, -1));
 
         loadingprogress.setForeground(new java.awt.Color(169, 224, 49));
         loadingprogress.setBorderPainted(false);
         loadingprogress.setFocusable(false);
         loadingprogress.setRequestFocusEnabled(false);
         loadingprogress.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(loadingprogress);
+        jPanel1.add(loadingprogress, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 470, 820, 40));
 
         loadingnumber.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         loadingnumber.setForeground(new java.awt.Color(169, 224, 49));
         loadingnumber.setText("99%");
-        jPanel1.add(loadingnumber);
+        jPanel1.add(loadingnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
         jLabel_inven1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel_inven1.setForeground(new java.awt.Color(169, 224, 49));
         jLabel_inven1.setText("Software Engineering Project Team");
-        jPanel1.add(jLabel_inven1);
+        jPanel1.add(jLabel_inven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 610, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
