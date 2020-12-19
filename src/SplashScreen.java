@@ -58,7 +58,7 @@ public class SplashScreen extends javax.swing.JFrame {
         loadingprogress.setFocusable(false);
         loadingprogress.setRequestFocusEnabled(false);
         loadingprogress.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(loadingprogress, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 470, 820, 40));
+        jPanel1.add(loadingprogress, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 880, 40));
 
         loadingnumber.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         loadingnumber.setForeground(new java.awt.Color(169, 224, 49));
