@@ -33,9 +33,11 @@ public class SplashScreen extends javax.swing.JFrame {
         jLabel_inven1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1229, 695));
 
         jPanel1.setBackground(new java.awt.Color(21, 25, 28));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1229, 695));
 
         jLabel_SoftZyd.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel_SoftZyd.setForeground(new java.awt.Color(169, 224, 49));
@@ -51,24 +53,52 @@ public class SplashScreen extends javax.swing.JFrame {
             }
         }.getIcon());
         jLabel_SoftZyd.setToolTipText("");
-        jPanel1.add(jLabel_SoftZyd, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 200, -1));
 
         loadingprogress.setForeground(new java.awt.Color(169, 224, 49));
         loadingprogress.setBorderPainted(false);
         loadingprogress.setFocusable(false);
+        loadingprogress.setPreferredSize(new java.awt.Dimension(1229, 695));
         loadingprogress.setRequestFocusEnabled(false);
         loadingprogress.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(loadingprogress, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 880, 40));
 
         loadingnumber.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         loadingnumber.setForeground(new java.awt.Color(169, 224, 49));
         loadingnumber.setText("99%");
-        jPanel1.add(loadingnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
         jLabel_inven1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel_inven1.setForeground(new java.awt.Color(169, 224, 49));
         jLabel_inven1.setText("Software Engineering Project Team");
-        jPanel1.add(jLabel_inven1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 610, 50));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loadingprogress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loadingnumber)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel_SoftZyd)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel_inven1, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(jLabel_SoftZyd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jLabel_inven1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(loadingnumber)
+                .addGap(119, 119, 119)
+                .addComponent(loadingprogress, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
