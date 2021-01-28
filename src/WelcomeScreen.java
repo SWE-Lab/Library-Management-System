@@ -1,14 +1,4 @@
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
