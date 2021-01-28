@@ -128,7 +128,8 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Profile");
-        setPreferredSize(new java.awt.Dimension(1229, 695));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanel1.setBackground(new java.awt.Color(21, 25, 28));
 
@@ -212,7 +213,7 @@ public class Home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                 .addGap(40, 40, 40)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -269,15 +270,15 @@ public class Home extends javax.swing.JFrame {
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 127, Short.MAX_VALUE)
+                .addGap(18, 182, Short.MAX_VALUE)
                 .addComponent(jLabel23)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,7 +407,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 873, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 872, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -480,10 +481,10 @@ public class Home extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -491,12 +492,12 @@ public class Home extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -504,9 +505,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel11, "card2");
@@ -623,13 +624,13 @@ public class Home extends javax.swing.JFrame {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(169, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -660,7 +661,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -952,7 +953,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -976,7 +977,7 @@ public class Home extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField5)
                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(196, Short.MAX_VALUE))
+                        .addContainerGap(176, Short.MAX_VALUE))
                     .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1133,7 +1134,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 947, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1163,7 +1164,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(31, 36, 42));
@@ -1219,7 +1220,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jTextField3)
                 .addContainerGap())
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(jLabel20))
@@ -1228,11 +1229,11 @@ public class Home extends javax.swing.JFrame {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap(25, Short.MAX_VALUE)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 19, Short.MAX_VALUE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -1264,270 +1265,37 @@ public class Home extends javax.swing.JFrame {
 
         jSplitPane1.setRightComponent(jLayeredPane1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 695, Short.MAX_VALUE)
-        );
+        getContentPane().add(jSplitPane1, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
-//        cl.show(jPanel2,"BookAvailabilityCard");
-        this.setTitle("Book Availability");
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel4);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton2ActionPerformed
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
+        jTable2.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField3.getText().trim().toLowerCase()));
+    }//GEN-LAST:event_jTextField3KeyReleased
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
-        this.setTitle("Add New Book");
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel3);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
         // TODO add your handling code here:
-        this.setTitle("Database");
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel5);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-//        cl.show(jPanel2,"ProfileCard");
-        this.setTitle("Profile");
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel2);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-        // TODO add your handling code here:
-        if (jTextField2.getText().trim().toLowerCase().equals("isbn")) {
-            jTextField2.setText("");
-            jTextField2.setForeground(new Color(169, 224, 49));
+        if (jTextField3.getText().trim().equals("") || jTextField3.getText().trim().toLowerCase().equals("enter book name to search")) {
+            jTextField3.setText("Enter Book Name to Search");
+            jTextField3.setForeground(new Color(169, 224, 49));
         }
-    }//GEN-LAST:event_jTextField2FocusGained
+    }//GEN-LAST:event_jTextField3FocusLost
 
-    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
         // TODO add your handling code here:
-        if (jTextField2.getText().trim().equals("") || jTextField2.getText().trim().toLowerCase().equals("isbn")) {
-            jTextField2.setText("ISBN");
-            jTextField2.setForeground(new Color(192, 192, 192));
+        if (jTextField3.getText().trim().toLowerCase().equals("enter book name to search")) {
+            jTextField3.setText("");
+            jTextField3.setForeground(new Color(169, 224, 49));
         }
-    }//GEN-LAST:event_jTextField2FocusLost
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-        String ISBN13 = "^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
-        String s = jTextField2.getText().trim();
-        if (Pattern.matches(ISBN13, s)) {
-            this.jLabel8.setVisible(false);
-        } else
-            this.jLabel8.setVisible(true);
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
-        // TODO add your handling code here:
-        if (jTextField5.getText().trim().toLowerCase().equals("inr")) {
-            jTextField5.setText("");
-            jTextField5.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField5FocusGained
-
-    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
-        // TODO add your handling code here:
-        if (jTextField5.getText().trim().equals("") || jTextField5.getText().trim().toLowerCase().equals("inr")) {
-            jTextField5.setText("INR");
-            jTextField5.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField5FocusLost
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-        String s = jTextField5.getText().trim();
-        if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
-            this.jLabel10.setVisible(false);
-        } else
-            this.jLabel10.setVisible(true);
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
-        j.showSaveDialog(null);
-        File f = j.getSelectedFile();
-        String fn = f.getPath();
-        jLabel29.setText(fn);
-        jLabel29.setVisible(true);
-
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
-        // TODO add your handling code here:
-        if (jTextField7.getText().trim().toLowerCase().equals("name")) {
-            jTextField7.setText("");
-            jTextField7.setForeground(new Color(169, 224, 49));
-
-        }
-    }//GEN-LAST:event_jTextField7FocusGained
-
-    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
-        // TODO add your handling code here:
-        if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
-            jTextField7.setText("Name");
-            jTextField7.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField7FocusLost
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
-        if (jTextField8.getText().trim().toLowerCase().equals("publisher")) {
-            jTextField8.setText("");
-            jTextField8.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField8FocusGained
-
-    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
-        // TODO add your handling code here:
-        if (jTextField8.getText().trim().equals("") || jTextField8.getText().trim().toLowerCase().equals("publisher")) {
-            jTextField8.setText("Publisher");
-            jTextField8.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField8FocusLost
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        String s = jTextField8.getText().trim();
-        if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.jLabel9.setVisible(false);
-        } else
-            this.jLabel9.setVisible(true);
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
-        // TODO add your handling code here:
-        if (jTextField9.getText().trim().toLowerCase().equals("authors")) {
-            jTextField9.setText("");
-            jTextField9.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField9FocusGained
-
-    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
-        // TODO add your handling code here:
-        if (jTextField9.getText().trim().equals("") || jTextField9.getText().trim().toLowerCase().equals("authors")) {
-            jTextField9.setText("Authors");
-            jTextField9.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField9FocusLost
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        String s = jTextField9.getText().trim();
-        if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.jLabel14.setVisible(false);
-        } else
-            this.jLabel14.setVisible(true);
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_downActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-        this.setTitle("Book Availability");
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(jPanel4);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            tbModel.removeRow(jTable1.getSelectedRow());
-            JOptionPane.showMessageDialog(this, "Returned Successfully");
-        } else {
-            if (jTable1.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "Bucket is Empty");
-            } else {
-                JOptionPane.showMessageDialog(this, "Please Select Book to return");
-            }
-        }
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        // TODO add your handling code here:
-        if (jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
-            jTextField1.setText("");
-            jTextField1.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField1FocusGained
-
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-        // TODO add your handling code here:
-        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
-            jTextField1.setText("Enter Book Code for Searching");
-            jTextField1.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField1FocusLost
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
-        if (jTable2.getSelectedRow() >= 0) {
-            tbModel.removeRow(jTable2.getSelectedRow());
-        } else {
-            if (jTable2.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "No Books Available");
-            } else {
-                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
-            }
-        }
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        int Data = 0;
-        int[] row = jTable2.getSelectedRows();
-        for (int i = 0; i < row.length; i++) {
-            Data = (int) jTable2.getValueAt(row[i], 3);
-            Data++;
-            jTable2.setValueAt(Data, row[i], 3);
-        }
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Operation successfully done");
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_jTextField3FocusGained
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
@@ -1544,76 +1312,21 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        if (jTextField3.getText().trim().toLowerCase().equals("enter book name to search")) {
-            jTextField3.setText("");
-            jTextField3.setForeground(new Color(169, 224, 49));
+        JOptionPane.showMessageDialog(this, "Operation successfully done");
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        int Data = 0;
+        int[] row = jTable2.getSelectedRows();
+        for (int i = 0; i < row.length; i++) {
+            Data = (int) jTable2.getValueAt(row[i], 3);
+            Data++;
+            jTable2.setValueAt(Data, row[i], 3);
         }
-    }//GEN-LAST:event_jTextField3FocusGained
-
-    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
-        // TODO add your handling code here:
-        if (jTextField3.getText().trim().equals("") || jTextField3.getText().trim().toLowerCase().equals("enter book name to search")) {
-            jTextField3.setText("Enter Book Name to Search");
-            jTextField3.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField3FocusLost
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Book successfully added");
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
-        // TODO add your handling code here:
-        if (jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
-            jTextField4.setText("");
-            jTextField4.setForeground(new Color(169, 224, 49));
-        }
-    }//GEN-LAST:event_jTextField4FocusGained
-
-    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
-        // TODO add your handling code here:
-        if (jTextField4.getText().trim().equals("") || jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
-            jTextField4.setText("Just Enter the Book Name for Searching");
-            jTextField4.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_jTextField4FocusLost
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
-        // TODO add your handling code here:
-            TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable3.getModel());
-            jTable3.setRowSorter(tr);
-            tr.setRowFilter(RowFilter.regexFilter(jTextField4.getText().trim().toLowerCase()));
-    }//GEN-LAST:event_jTextField4KeyReleased
-
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
-        // TODO add your handling code here:
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable1.getModel());
-        jTable1.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(jTextField1.getText().trim().toLowerCase()));
-    }//GEN-LAST:event_jTextField1KeyReleased
-
-    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
-        // TODO add your handling code here:
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
-        jTable2.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(jTextField3.getText().trim().toLowerCase()));
-    }//GEN-LAST:event_jTextField3KeyReleased
-
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -1624,6 +1337,48 @@ public class Home extends javax.swing.JFrame {
         jLayeredPane1.revalidate();
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
+        if (jTable2.getSelectedRow() >= 0) {
+            tbModel.removeRow(jTable2.getSelectedRow());
+        } else {
+            if (jTable2.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(this, "No Books Available");
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
+            }
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_downActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        String s = jTextField9.getText().trim();
+        if (Pattern.matches("[A-Za-z\\s]+", s)) {
+            this.jLabel14.setVisible(false);
+        } else
+        this.jLabel14.setVisible(true);
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
+        // TODO add your handling code here:
+        if (jTextField9.getText().trim().equals("") || jTextField9.getText().trim().toLowerCase().equals("authors")) {
+            jTextField9.setText("Authors");
+            jTextField9.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField9FocusLost
+
+    private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
+        // TODO add your handling code here:
+        if (jTextField9.getText().trim().toLowerCase().equals("authors")) {
+            jTextField9.setText("");
+            jTextField9.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField9FocusGained
+
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
@@ -1632,13 +1387,248 @@ public class Home extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
             }
             else if(!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible())
-                JOptionPane.showMessageDialog(this, "Fill details correctly");
+            JOptionPane.showMessageDialog(this, "Fill details correctly");
             else
-                JOptionPane.showMessageDialog(this, "Operation Done successfully");
+            JOptionPane.showMessageDialog(this, "Operation Done successfully");
         }
         else
-            JOptionPane.showMessageDialog(this, "Fill the details");
+        JOptionPane.showMessageDialog(this, "Fill the details");
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        String s = jTextField8.getText().trim();
+        if (Pattern.matches("[A-Za-z\\s]+", s)) {
+            this.jLabel9.setVisible(false);
+        } else
+        this.jLabel9.setVisible(true);
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
+        // TODO add your handling code here:
+        if (jTextField8.getText().trim().equals("") || jTextField8.getText().trim().toLowerCase().equals("publisher")) {
+            jTextField8.setText("Publisher");
+            jTextField8.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField8FocusLost
+
+    private void jTextField8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusGained
+        if (jTextField8.getText().trim().toLowerCase().equals("publisher")) {
+            jTextField8.setText("");
+            jTextField8.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField8FocusGained
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
+        // TODO add your handling code here:
+        if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
+            jTextField7.setText("Name");
+            jTextField7.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField7FocusLost
+
+    private void jTextField7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusGained
+        // TODO add your handling code here:
+        if (jTextField7.getText().trim().toLowerCase().equals("name")) {
+            jTextField7.setText("");
+            jTextField7.setForeground(new Color(169, 224, 49));
+
+        }
+    }//GEN-LAST:event_jTextField7FocusGained
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
+            j.showSaveDialog(null);
+            File f = j.getSelectedFile();
+            String fn = f.getPath();
+            jLabel29.setText(fn);
+            jLabel29.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+        String s = jTextField5.getText().trim();
+        if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
+            this.jLabel10.setVisible(false);
+        } else
+        this.jLabel10.setVisible(true);
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
+        // TODO add your handling code here:
+        if (jTextField5.getText().trim().equals("") || jTextField5.getText().trim().toLowerCase().equals("inr")) {
+            jTextField5.setText("INR");
+            jTextField5.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField5FocusLost
+
+    private void jTextField5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusGained
+        // TODO add your handling code here:
+        if (jTextField5.getText().trim().toLowerCase().equals("inr")) {
+            jTextField5.setText("");
+            jTextField5.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField5FocusGained
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+        String ISBN13 = "^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
+        String s = jTextField2.getText().trim();
+        if (Pattern.matches(ISBN13, s)) {
+            this.jLabel8.setVisible(false);
+        } else
+        this.jLabel8.setVisible(true);
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
+        // TODO add your handling code here:
+        if (jTextField2.getText().trim().equals("") || jTextField2.getText().trim().toLowerCase().equals("isbn")) {
+            jTextField2.setText("ISBN");
+            jTextField2.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        // TODO add your handling code here:
+        if (jTextField2.getText().trim().toLowerCase().equals("isbn")) {
+            jTextField2.setText("");
+            jTextField2.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        // TODO add your handling code here:
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable3.getModel());
+        jTable3.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField4.getText().trim().toLowerCase()));
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusLost
+        // TODO add your handling code here:
+        if (jTextField4.getText().trim().equals("") || jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
+            jTextField4.setText("Just Enter the Book Name for Searching");
+            jTextField4.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField4FocusLost
+
+    private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
+        // TODO add your handling code here:
+        if (jTextField4.getText().trim().toLowerCase().equals("just enter the book name for searching")) {
+            jTextField4.setText("");
+            jTextField4.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField4FocusGained
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Book successfully added");
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        // TODO add your handling code here:
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable1.getModel());
+        jTable1.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(jTextField1.getText().trim().toLowerCase()));
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        // TODO add your handling code here:
+        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
+            jTextField1.setText("Enter Book Code for Searching");
+            jTextField1.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        // TODO add your handling code here:
+        if (jTextField1.getText().trim().toLowerCase().equals("enter book code for searching")) {
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(169, 224, 49));
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
+        if (jTable1.getSelectedRow() >= 0) {
+            tbModel.removeRow(jTable1.getSelectedRow());
+            JOptionPane.showMessageDialog(this, "Returned Successfully");
+        } else {
+            if (jTable1.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(this, "Bucket is Empty");
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Select Book to return");
+            }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        this.setTitle("Book Availability");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel4);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.setTitle("Database");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel5);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.setTitle("Add New Book");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel3);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //        cl.show(jPanel2,"BookAvailabilityCard");
+        this.setTitle("Book Availability");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel4);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //        cl.show(jPanel2,"ProfileCard");
+        this.setTitle("Profile");
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(jPanel2);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
