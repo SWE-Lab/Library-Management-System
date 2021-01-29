@@ -1,8 +1,13 @@
 
 import java.awt.Color;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.Vector;
 import java.util.regex.*;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
@@ -1314,6 +1319,7 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    protected String string = "";
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
@@ -1397,18 +1403,23 @@ public class Home extends javax.swing.JFrame {
 
     private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
         // TODO add your handling code here:
+        Vector<String>v = new Vector<String>();
+        v.add((String) ((JComboBox) evt.getSource()).getSelectedItem());
+        this.string += v.lastElement()+',';
     }//GEN-LAST:event_downActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        String s = jTextField9.getText().trim();
-        if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.jLabel14.setVisible(false);
-        } else
-        this.jLabel14.setVisible(true);
+
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jTextField9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusLost
         // TODO add your handling code here:
+        String s = jTextField9.getText().trim();
+        if (Pattern.matches("[A-Za-z\\s]+", s)) {
+            this.string += s+',';
+            this.jLabel14.setVisible(false);
+        } else
+        this.jLabel14.setVisible(true);
         if (jTextField9.getText().trim().equals("") || jTextField9.getText().trim().toLowerCase().equals("authors")) {
             jTextField9.setText("Authors");
             jTextField9.setForeground(new Color(192, 192, 192));
@@ -1425,6 +1436,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        saveRecord(this.string,"dtb.csv");
         if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if(jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()){
@@ -1432,23 +1444,28 @@ public class Home extends javax.swing.JFrame {
             }
             else if(!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible())
             JOptionPane.showMessageDialog(this, "Fill details correctly");
-            else
-            JOptionPane.showMessageDialog(this, "Operation Done successfully");
+            else{
+                
+                
+                JOptionPane.showMessageDialog(this, "Operation Done successfully");
+            }
         }
         else
-        JOptionPane.showMessageDialog(this, "Fill the details");
+            JOptionPane.showMessageDialog(this, "Fill the details");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        String s = jTextField8.getText().trim();
-        if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.jLabel9.setVisible(false);
-        } else
-        this.jLabel9.setVisible(true);
+
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jTextField8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField8FocusLost
         // TODO add your handling code here:
+        String s = jTextField8.getText().trim();
+        if (Pattern.matches("[A-Za-z\\s]+", s)) {
+            this.string += s+',';
+            this.jLabel9.setVisible(false);
+        } else
+        this.jLabel9.setVisible(true);
         if (jTextField8.getText().trim().equals("") || jTextField8.getText().trim().toLowerCase().equals("publisher")) {
             jTextField8.setText("Publisher");
             jTextField8.setForeground(new Color(192, 192, 192));
@@ -1463,11 +1480,14 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8FocusGained
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jTextField7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField7FocusLost
         // TODO add your handling code here:
+        String s = jTextField7.getText().trim();
+        System.out.println(this.string);
+        this.string += s+',';
         if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
             jTextField7.setText("Name");
             jTextField7.setForeground(new Color(192, 192, 192));
@@ -1499,15 +1519,16 @@ public class Home extends javax.swing.JFrame {
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
-        String s = jTextField5.getText().trim();
-        if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
-            this.jLabel10.setVisible(false);
-        } else
-        this.jLabel10.setVisible(true);
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jTextField5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField5FocusLost
         // TODO add your handling code here:
+        String s = jTextField5.getText().trim();
+        if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
+            this.string += s;
+            this.jLabel10.setVisible(false);
+        } else
+        this.jLabel10.setVisible(true);
         if (jTextField5.getText().trim().equals("") || jTextField5.getText().trim().toLowerCase().equals("inr")) {
             jTextField5.setText("INR");
             jTextField5.setForeground(new Color(192, 192, 192));
@@ -1524,16 +1545,17 @@ public class Home extends javax.swing.JFrame {
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-        String ISBN13 = "^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
-        String s = jTextField2.getText().trim();
-        if (Pattern.matches(ISBN13, s)) {
-            this.jLabel8.setVisible(false);
-        } else
-        this.jLabel8.setVisible(true);
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         // TODO add your handling code here:
+        String ISBN13 = "^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
+        String s = jTextField2.getText().trim();
+        if (Pattern.matches(ISBN13, s)) {
+            this.string += s+',';
+            this.jLabel8.setVisible(false);
+        } else
+        this.jLabel8.setVisible(true);
         if (jTextField2.getText().trim().equals("") || jTextField2.getText().trim().toLowerCase().equals("isbn")) {
             jTextField2.setText("ISBN");
             jTextField2.setForeground(new Color(192, 192, 192));
@@ -1686,6 +1708,24 @@ public class Home extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public static void saveRecord(String string, String filepath){
+        try{
+            FileWriter fw = new FileWriter(filepath,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            pw.println(string);
+            pw.flush();
+            pw.close();
+            
+            JOptionPane.showMessageDialog(null,"Record Saved");
+        }
+        catch(Exception E){
+            JOptionPane.showMessageDialog(null,"Record Not Saved");
+        }
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
