@@ -1404,7 +1404,7 @@ public class Home extends javax.swing.JFrame {
     private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
         // TODO add your handling code here:
         Vector<String>v = new Vector<String>();
-        v.add((String) ((JComboBox) evt.getSource()).getSelectedItem());
+        v.add((String)((JComboBox) evt.getSource()).getSelectedItem());
         this.string += v.lastElement()+',';
     }//GEN-LAST:event_downActionPerformed
 
@@ -1509,6 +1509,7 @@ public class Home extends javax.swing.JFrame {
             j.showSaveDialog(null);
             File f = j.getSelectedFile();
             String fn = f.getPath();
+            this.string += fn;
             jLabel29.setText(fn);
             jLabel29.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -1525,7 +1526,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         String s = jTextField5.getText().trim();
         if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
-            this.string += s;
+            this.string += s+',';
             this.jLabel10.setVisible(false);
         } else
         this.jLabel10.setVisible(true);
