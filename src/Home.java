@@ -1,8 +1,12 @@
 
 import java.awt.Color;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Vector;
 import java.util.regex.*;
@@ -1066,33 +1070,41 @@ public class Home extends javax.swing.JFrame {
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"112 ", "Thermodynamics", "Peter Atkins",  new Integer(225)},
-                {"695", "Compiler Design", "Alfred V Aho",  new Integer(55)},
-                {"998", "Organiser", "Pearl",  new Integer(771)},
-                {"3475", "OS Concepts", "Peter Baer Galvin",  new Integer(669)},
-                {"6588", "Computer Networks", "Jim Kurose",  new Integer(55)}
-            },
-            new String [] {
-                "Book Code", "List of Books", "Author Name", "Ouantity"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true
-            };
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        DefaultTableModel csvData = new DefaultTableModel();
+        String filename = "/mnt/windowsd/@ALL/GithubRepos/Library-Management-System/read.csv";
+        File file = new File(filename);
+        FileReader reader = null;
+        try {
+          reader = new FileReader(file);
+        }catch (FileNotFoundException e) {
+          e.printStackTrace();
+          System.exit(1);
+        }
+        csvData.addColumn("Book Code");
+        csvData.addColumn("List of Book");
+        csvData.addColumn("Author Name");
+        csvData.addColumn("Quantity");
+        BufferedReader infile = new BufferedReader(reader);
+        String line = "";
+        try {
+          boolean done = false;
+          while (!done) {
+            line = infile.readLine();
+            if (line == null) {
+              done = true;
             }
+            else {
+              String[] tokens = line.trim().split(",");
+              csvData.addRow(tokens);
+            }
+          }
+        }catch (IOException e) {
+          e.printStackTrace();
+          System.exit(1);
+        }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        jTable2.setModel(csvData);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
@@ -1369,13 +1381,15 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        int Data = 0;
-        int[] row = jTable2.getSelectedRows();
-        for (int i = 0; i < row.length; i++) {
-            Data = (int) jTable2.getValueAt(row[i], 3);
-            Data++;
-            jTable2.setValueAt(Data, row[i], 3);
-        }
+//        int Data = 0;
+//        int[] row = jTable2.getSelectedRows();
+//        System.out.println(row[1]);
+//        for (int i = 0; i < row.length; i++) {
+//            Data = (int) jTable2.getValueAt(row[i], 3);
+//            Data++;
+//            jTable2.setValueAt(Data, row[i], 3);
+//        }
+        System.out.println(jTable2.getValueAt(jTable2.getSelectedRow(), 3));
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1445,8 +1459,8 @@ public class Home extends javax.swing.JFrame {
             else if(!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible())
             JOptionPane.showMessageDialog(this, "Fill details correctly");
             else{
-                
-                
+
+
                 JOptionPane.showMessageDialog(this, "Operation Done successfully");
             }
         }
@@ -1709,29 +1723,29 @@ public class Home extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
+
     public static void saveRecord(String string, String filepath){
         try{
             FileWriter fw = new FileWriter(filepath,true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-            
+
             pw.println(string);
             pw.flush();
             pw.close();
-            
+
             JOptionPane.showMessageDialog(null,"Record Saved");
         }
         catch(Exception E){
             JOptionPane.showMessageDialog(null,"Record Not Saved");
         }
     }
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

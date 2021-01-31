@@ -1,5 +1,10 @@
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -47,33 +52,40 @@ public class Database extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTable1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Thermodynamics", "Peter Atkins",  new Integer(225)},
-                {"Compiler Design", "Alfred V Aho",  new Integer(55)},
-                {"Organiser", "Pearl",  new Integer(771)},
-                {"OS Concepts", "Peter Baer Galvin",  new Integer(669)},
-                {"Computer Networks", "Jim Kurose",  new Integer(55)}
-            },
-            new String [] {
-                "List of Books", "Author Name", "Ouantity"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, true
-            };
+        DefaultTableModel csvData = new DefaultTableModel();
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+          String filename = "/mnt/windowsd/@ALL/GithubRepos/Library-Management-System/read.csv";
+          File file = new File(filename);
+          FileReader reader = null;
+          try {
+            reader = new FileReader(file);
+          }catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+          }
+          csvData.addColumn("Book Code");
+          csvData.addColumn("List of Book");
+          csvData.addColumn("Author Name");
+          BufferedReader infile = new BufferedReader(reader);
+          String line = "";
+          try {
+            boolean done = false;
+            while (!done) {
+              line = infile.readLine();
+              if (line == null) {
+                done = true;
+              }
+              else {
+                String[] tokens = line.trim().split(",");
+                csvData.addRow(tokens);
+              }
             }
+          }catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+          }
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        jTable1.setModel(csvData);
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
@@ -320,7 +332,7 @@ public class Database extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
