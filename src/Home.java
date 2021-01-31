@@ -1321,8 +1321,10 @@ public
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    protected String string = "";
-    protected String string1 = "";
+    protected
+            String string = "";
+    protected
+            String string1 = "";
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
@@ -1455,19 +1457,15 @@ public
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        saveRecord(this.string, "dtb.csv",false);
-        saveRecord(this.string1,"read.csv",true);
+
         if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if (jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()) {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
             }
-            else if (!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible()) {
-                JOptionPane.showMessageDialog(this, "Fill details correctly");
-            }
             else {
-
-                JOptionPane.showMessageDialog(this, "Operation Done successfully");
+                saveRecord(this.string, "dtb.csv", false);
+                saveRecord(this.string1, "read.csv", true);
             }
         }
         else
@@ -1510,7 +1508,7 @@ public
         String s = jTextField7.getText().trim();
         System.out.println(this.string);
         this.string += s + ',';
-        this.string1 += s +',';
+        this.string1 += s + ',';
         if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
             jTextField7.setText("Name");
             jTextField7.setForeground(new Color(192, 192, 192));
@@ -1580,7 +1578,7 @@ public
         if (Pattern.matches(ISBN13, s)) {
             this.string += s + ',';
             String temp = this.string1;
-            this.string1 = s.substring(0,3) +','+temp+','+'1';
+            this.string1 = s.substring(0, 3) + ',' + temp + ',' + '1';
             System.out.println(this.string1);
             this.jLabel8.setVisible(false);
         }
@@ -1740,12 +1738,12 @@ public
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
-         jTable2.setBackground(new java.awt.Color(31, 36, 42));
+        jTable2.setBackground(new java.awt.Color(31, 36, 42));
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
@@ -1754,10 +1752,11 @@ public
         File file = new File(filename);
         FileReader reader = null;
         try {
-          reader = new FileReader(file);
-        }catch (FileNotFoundException e) {
-          e.printStackTrace();
-          System.exit(1);
+            reader = new FileReader(file);
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
         }
         csvData.addColumn("Book Code");
         csvData.addColumn("List of Book");
@@ -1766,20 +1765,21 @@ public
         BufferedReader infile = new BufferedReader(reader);
         String line = "";
         try {
-          boolean done = false;
-          while (!done) {
-            line = infile.readLine();
-            if (line == null) {
-              done = true;
+            boolean done = false;
+            while (!done) {
+                line = infile.readLine();
+                if (line == null) {
+                    done = true;
+                }
+                else {
+                    String[] tokens = line.trim().split(",");
+                    csvData.addRow(tokens);
+                }
             }
-            else {
-              String[] tokens = line.trim().split(",");
-              csvData.addRow(tokens);
-            }
-          }
-        }catch (IOException e) {
-          e.printStackTrace();
-          System.exit(1);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
         }
 
         jTable2.setModel(csvData);
@@ -1803,7 +1803,9 @@ public
             pw.println(string);
             pw.flush();
             pw.close();
-            if(prntMes) JOptionPane.showMessageDialog(null, "Record Saved");
+            if (prntMes) {
+                JOptionPane.showMessageDialog(null, "Record Saved");
+            }
         }
         catch (Exception E) {
             JOptionPane.showMessageDialog(null, "Record Not Saved");
