@@ -131,6 +131,7 @@ public
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jTextField3 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
@@ -1071,7 +1072,7 @@ public
 
         jPanel8.setBackground(new java.awt.Color(31, 36, 42));
 
-        jTable2.setBackground(new java.awt.Color(31, 36, 42));
+         jTable2.setBackground(new java.awt.Color(31, 36, 42));
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
@@ -1118,7 +1119,7 @@ public
         jButton7.setBackground(new java.awt.Color(169, 224, 49));
         jButton7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(31, 36, 42));
-        jButton7.setText("Delete Book");
+        jButton7.setText("DELETE BOOK");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -1128,7 +1129,7 @@ public
         jButton8.setBackground(new java.awt.Color(169, 224, 49));
         jButton8.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton8.setForeground(new java.awt.Color(31, 36, 42));
-        jButton8.setText("Add Book");
+        jButton8.setText("ADD BOOK");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -1142,6 +1143,16 @@ public
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setBackground(new java.awt.Color(169, 224, 49));
+        jButton10.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(31, 36, 42));
+        jButton10.setText("RELOAD");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
             }
         });
 
@@ -1161,7 +1172,9 @@ public
                         .addComponent(jButton7))))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -1171,10 +1184,11 @@ public
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         jPanel9.setBackground(new java.awt.Color(31, 36, 42));
@@ -1247,7 +1261,7 @@ public
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1259,7 +1273,7 @@ public
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1729,6 +1743,53 @@ public
        
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+         jTable2.setBackground(new java.awt.Color(31, 36, 42));
+        jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+        jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(169, 224, 49));
+        DefaultTableModel csvData = new DefaultTableModel();
+        String filename = "read.csv";
+        File file = new File(filename);
+        FileReader reader = null;
+        try {
+          reader = new FileReader(file);
+        }catch (FileNotFoundException e) {
+          e.printStackTrace();
+          System.exit(1);
+        }
+        csvData.addColumn("Book Code");
+        csvData.addColumn("List of Book");
+        csvData.addColumn("Author Name");
+        csvData.addColumn("Quantity");
+        BufferedReader infile = new BufferedReader(reader);
+        String line = "";
+        try {
+          boolean done = false;
+          while (!done) {
+            line = infile.readLine();
+            if (line == null) {
+              done = true;
+            }
+            else {
+              String[] tokens = line.trim().split(",");
+              csvData.addRow(tokens);
+            }
+          }
+        }catch (IOException e) {
+          e.printStackTrace();
+          System.exit(1);
+        }
+
+        jTable2.setModel(csvData);
+        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setMinWidth(80);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+        }
+    }//GEN-LAST:event_jButton10MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1800,6 +1861,7 @@ public
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> down;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
