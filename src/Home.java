@@ -1308,8 +1308,8 @@ public
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    protected
-            String string = "";
+    protected String string = "";
+    protected String string1 = "";
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
@@ -1420,6 +1420,7 @@ public
         String s = jTextField9.getText().trim();
         if (Pattern.matches("[A-Za-z\\s]+", s)) {
             this.string += s + ',';
+            this.string1 += s;
             this.jLabel14.setVisible(false);
         }
         else {
@@ -1441,7 +1442,8 @@ public
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        saveRecord(this.string, "dtb.csv");
+        saveRecord(this.string, "dtb.csv",false);
+        saveRecord(this.string1,"read.csv",true);
         if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if (jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()) {
@@ -1495,6 +1497,7 @@ public
         String s = jTextField7.getText().trim();
         System.out.println(this.string);
         this.string += s + ',';
+        this.string1 += s +',';
         if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
             jTextField7.setText("Name");
             jTextField7.setForeground(new Color(192, 192, 192));
@@ -1563,6 +1566,9 @@ public
         String s = jTextField2.getText().trim();
         if (Pattern.matches(ISBN13, s)) {
             this.string += s + ',';
+            String temp = this.string1;
+            this.string1 = s.substring(0,3) +','+temp+','+'1';
+            System.out.println(this.string1);
             this.jLabel8.setVisible(false);
         }
         else {
@@ -1728,7 +1734,7 @@ public
      * @param args the command line arguments
      */
     public static
-            void saveRecord(String string, String filepath) {
+            void saveRecord(String string, String filepath, boolean prntMes) {
         try {
             FileWriter fw = new FileWriter(filepath, true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -1737,8 +1743,7 @@ public
             pw.println(string);
             pw.flush();
             pw.close();
-
-            JOptionPane.showMessageDialog(null, "Record Saved");
+            if(prntMes) JOptionPane.showMessageDialog(null, "Record Saved");
         }
         catch (Exception E) {
             JOptionPane.showMessageDialog(null, "Record Not Saved");
