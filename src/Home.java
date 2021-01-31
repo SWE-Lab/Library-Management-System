@@ -27,12 +27,14 @@ import javax.swing.table.TableRowSorter;
  *
  * @author angshuman
  */
-public class Home extends javax.swing.JFrame {
+public
+        class Home extends javax.swing.JFrame {
 
     /**
      * Creates new form Home
      */
-    public Home() {
+    public
+            Home() {
         initComponents();
         jPanel3.setFocusable(true);
         jPanel1.setFocusable(true);
@@ -352,6 +354,11 @@ public class Home extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
@@ -1070,9 +1077,8 @@ public class Home extends javax.swing.JFrame {
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-
         DefaultTableModel csvData = new DefaultTableModel();
-        String filename = "/mnt/windowsd/@ALL/GithubRepos/Library-Management-System/read.csv";
+        String filename = "read.csv";
         File file = new File(filename);
         FileReader reader = null;
         try {
@@ -1283,7 +1289,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1331,7 +1337,8 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    protected String string = "";
+    protected
+            String string = "";
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
@@ -1367,7 +1374,8 @@ public class Home extends javax.swing.JFrame {
             Data = (int) jTable2.getValueAt(row[i], 3);
             if (Data > 0) {
                 Data--;
-            } else {
+            }
+            else {
                 Data = 0;
             }
             jTable2.setValueAt(Data, row[i], 3);
@@ -1381,7 +1389,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-//        int Data = 0;
+        //int Data = 0;
 //        int[] row = jTable2.getSelectedRows();
 //        System.out.println(row[1]);
 //        for (int i = 0; i < row.length; i++) {
@@ -1389,7 +1397,36 @@ public class Home extends javax.swing.JFrame {
 //            Data++;
 //            jTable2.setValueAt(Data, row[i], 3);
 //        }
-        System.out.println(jTable2.getValueAt(jTable2.getSelectedRow(), 3));
+        //System.out.println((jTable2.getValueAt(jTable2.getSelectedRow(), 3)));
+//        System.out.println((jTable2.getValueAt(jTable2.getSelectedRow(), 3)).getReturnType());
+//  //      Data++;
+//        System.out.println(Data);
+//        jTable2.setValueAt(Data, jTable2.getSelectedRow(), 3);
+
+        String filePath = "read.csv";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for (int i = 0; i < jTable2.getRowCount(); i++) {//rows
+                for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
+                    if (j == (jTable2.getColumnCount() - 1)) {
+                        bw.write(jTable2.getValueAt(i, j).toString());
+                    }
+                    else {
+                        bw.write(jTable2.getValueAt(i, j).toString() + ",");
+                    }
+
+                }
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        }
+        catch (IOException ex) {
+//            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1406,10 +1443,12 @@ public class Home extends javax.swing.JFrame {
         DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
         if (jTable2.getSelectedRow() >= 0) {
             tbModel.removeRow(jTable2.getSelectedRow());
-        } else {
+        }
+        else {
             if (jTable2.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "No Books Available");
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, "Please Select Book for delete");
             }
         }
@@ -1417,9 +1456,9 @@ public class Home extends javax.swing.JFrame {
 
     private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
         // TODO add your handling code here:
-        Vector<String>v = new Vector<String>();
-        v.add((String)((JComboBox) evt.getSource()).getSelectedItem());
-        this.string += v.lastElement()+',';
+        Vector<String> v = new Vector<String>();
+        v.add((String) ((JComboBox) evt.getSource()).getSelectedItem());
+        this.string += v.lastElement() + ',';
     }//GEN-LAST:event_downActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -1430,10 +1469,12 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         String s = jTextField9.getText().trim();
         if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.string += s+',';
+            this.string += s + ',';
             this.jLabel14.setVisible(false);
-        } else
-        this.jLabel14.setVisible(true);
+        }
+        else {
+            this.jLabel14.setVisible(true);
+        }
         if (jTextField9.getText().trim().equals("") || jTextField9.getText().trim().toLowerCase().equals("authors")) {
             jTextField9.setText("Authors");
             jTextField9.setForeground(new Color(192, 192, 192));
@@ -1450,16 +1491,16 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        saveRecord(this.string,"dtb.csv");
+        saveRecord(this.string, "dtb.csv");
         if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
-            if(jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()){
+            if (jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()) {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
             }
-            else if(!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible())
-            JOptionPane.showMessageDialog(this, "Fill details correctly");
-            else{
-
+            else if (!jLabel9.isVisible() && !jLabel14.isVisible() && !jLabel8.isVisible() && !jLabel10.isVisible()) {
+                JOptionPane.showMessageDialog(this, "Fill details correctly");
+            }
+            else {
 
                 JOptionPane.showMessageDialog(this, "Operation Done successfully");
             }
@@ -1476,10 +1517,12 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         String s = jTextField8.getText().trim();
         if (Pattern.matches("[A-Za-z\\s]+", s)) {
-            this.string += s+',';
+            this.string += s + ',';
             this.jLabel9.setVisible(false);
-        } else
-        this.jLabel9.setVisible(true);
+        }
+        else {
+            this.jLabel9.setVisible(true);
+        }
         if (jTextField8.getText().trim().equals("") || jTextField8.getText().trim().toLowerCase().equals("publisher")) {
             jTextField8.setText("Publisher");
             jTextField8.setForeground(new Color(192, 192, 192));
@@ -1501,7 +1544,7 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         String s = jTextField7.getText().trim();
         System.out.println(this.string);
-        this.string += s+',';
+        this.string += s + ',';
         if (jTextField7.getText().trim().equals("") || jTextField7.getText().trim().toLowerCase().equals("name")) {
             jTextField7.setText("Name");
             jTextField7.setForeground(new Color(192, 192, 192));
@@ -1520,12 +1563,12 @@ public class Home extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
-            j.showSaveDialog(null);
-            File f = j.getSelectedFile();
-            String fn = f.getPath();
-            this.string += fn;
-            jLabel29.setText(fn);
-            jLabel29.setVisible(true);
+        j.showSaveDialog(null);
+        File f = j.getSelectedFile();
+        String fn = f.getPath();
+        this.string += fn;
+        jLabel29.setText(fn);
+        jLabel29.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
@@ -1540,10 +1583,12 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         String s = jTextField5.getText().trim();
         if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
-            this.string += s+',';
+            this.string += s + ',';
             this.jLabel10.setVisible(false);
-        } else
-        this.jLabel10.setVisible(true);
+        }
+        else {
+            this.jLabel10.setVisible(true);
+        }
         if (jTextField5.getText().trim().equals("") || jTextField5.getText().trim().toLowerCase().equals("inr")) {
             jTextField5.setText("INR");
             jTextField5.setForeground(new Color(192, 192, 192));
@@ -1567,10 +1612,12 @@ public class Home extends javax.swing.JFrame {
         String ISBN13 = "^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
         String s = jTextField2.getText().trim();
         if (Pattern.matches(ISBN13, s)) {
-            this.string += s+',';
+            this.string += s + ',';
             this.jLabel8.setVisible(false);
-        } else
-        this.jLabel8.setVisible(true);
+        }
+        else {
+            this.jLabel8.setVisible(true);
+        }
         if (jTextField2.getText().trim().equals("") || jTextField2.getText().trim().toLowerCase().equals("isbn")) {
             jTextField2.setText("ISBN");
             jTextField2.setForeground(new Color(192, 192, 192));
@@ -1650,10 +1697,12 @@ public class Home extends javax.swing.JFrame {
         if (jTable1.getSelectedRow() >= 0) {
             tbModel.removeRow(jTable1.getSelectedRow());
             JOptionPane.showMessageDialog(this, "Returned Successfully");
-        } else {
+        }
+        else {
             if (jTable1.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "Bucket is Empty");
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, "Please Select Book to return");
             }
         }
@@ -1720,13 +1769,18 @@ public class Home extends javax.swing.JFrame {
         jLayeredPane1.revalidate();
     }//GEN-LAST:event_jButton16ActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jTable1MouseClicked
+
     /**
      * @param args the command line arguments
      */
-
-    public static void saveRecord(String string, String filepath){
-        try{
-            FileWriter fw = new FileWriter(filepath,true);
+    public static
+            void saveRecord(String string, String filepath) {
+        try {
+            FileWriter fw = new FileWriter(filepath, true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
 
@@ -1734,14 +1788,15 @@ public class Home extends javax.swing.JFrame {
             pw.flush();
             pw.close();
 
-            JOptionPane.showMessageDialog(null,"Record Saved");
+            JOptionPane.showMessageDialog(null, "Record Saved");
         }
-        catch(Exception E){
-            JOptionPane.showMessageDialog(null,"Record Not Saved");
+        catch (Exception E) {
+            JOptionPane.showMessageDialog(null, "Record Not Saved");
         }
     }
 
-    public static void main(String args[]) {
+    public static
+            void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1752,22 +1807,35 @@ public class Home extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public
+                    void run() {
                 //new Home().setVisible(true);
                 Home display = new Home();
                 display.setVisible(true);

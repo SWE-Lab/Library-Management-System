@@ -495,6 +495,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1671,35 +1674,11 @@
                                   <Color blue="31" green="e0" red="a9" type="rgb"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="4" rowCount="5">
-                                    <Column editable="false" title="Book Code" type="java.lang.String">
-                                      <Data value="112 "/>
-                                      <Data value="695"/>
-                                      <Data value="998"/>
-                                      <Data value="3475"/>
-                                      <Data value="6588"/>
-                                    </Column>
-                                    <Column editable="false" title="List of Books" type="java.lang.String">
-                                      <Data value="Thermodynamics"/>
-                                      <Data value="Compiler Design"/>
-                                      <Data value="Organiser"/>
-                                      <Data value="OS Concepts"/>
-                                      <Data value="Computer Networks"/>
-                                    </Column>
-                                    <Column editable="false" title="Author Name" type="java.lang.String">
-                                      <Data value="Peter Atkins"/>
-                                      <Data value="Alfred V Aho"/>
-                                      <Data value="Pearl"/>
-                                      <Data value="Peter Baer Galvin"/>
-                                      <Data value="Jim Kurose"/>
-                                    </Column>
-                                    <Column editable="true" title="Ouantity" type="java.lang.Integer">
-                                      <Data value="225"/>
-                                      <Data value="55"/>
-                                      <Data value="771"/>
-                                      <Data value="669"/>
-                                      <Data value="55"/>
-                                    </Column>
+                                  <Table columnCount="4" rowCount="0">
+                                    <Column editable="false" title="Book Code" type="java.lang.String"/>
+                                    <Column editable="false" title="List of Books" type="java.lang.String"/>
+                                    <Column editable="false" title="Author Name" type="java.lang.String"/>
+                                    <Column editable="true" title="Ouantity" type="java.lang.Integer"/>
                                   </Table>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
