@@ -1458,7 +1458,7 @@ public
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
 
-        if ((!jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
+        if ((jLabel29.isVisible() && !jTextField8.getText().trim().toLowerCase().equals("publisher") && !jTextField8.getText().trim().toLowerCase().equals("name") && !jTextField8.getText().trim().toLowerCase().equals("authors") && !jTextField8.getText().trim().toLowerCase().equals("isbn") && !jTextField8.getText().trim().toLowerCase().equals("inr"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if (jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()) {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
