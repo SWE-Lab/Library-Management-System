@@ -138,6 +138,12 @@ public
         jLabel20 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jLabel31 = new javax.swing.JLabel();
+        jButton14 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Profile");
@@ -208,7 +214,7 @@ public
         jButton16.setBackground(new java.awt.Color(0, 51, 153));
         jButton16.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jButton16.setForeground(new java.awt.Color(255, 255, 255));
-        jButton16.setText("Fine Payment");
+        jButton16.setText("Payments");
         jButton16.setContentAreaFilled(false);
         jButton16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -575,40 +581,47 @@ public
 
         jTable3.setBackground(new java.awt.Color(31, 36, 42));
         jTable3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
-        jTable3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jTable3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable3.setForeground(new java.awt.Color(169, 224, 49));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"100", "Introduction to the Theory of Computation"},
-                {"115", "The Black Hole War"},
-                {"1556", "Grant"},
-                {"1568", "A Promised Land"},
-                {"1825", "Principles of Compiler Design"},
-                {"1902", "Basic Principles Of Physics"},
-                {"2000", "Principles Of Netoworking"},
-                {"2014", "Object Oriented Programming With Java "},
-                {"2400", "Grokking Algorithms"},
-                {"2545", "Computer Networks"}
-            },
-            new String [] {
-                "Book Code", "Book Title"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
+        DefaultTableModel csvDataAvailable = new DefaultTableModel(){
+
+            boolean[] canEdit = new boolean[]{
                 false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
-        });
+        };
+        String filename1 = "read.csv";
+        File file1 = new File(filename1);
+        FileReader reader1 = null;
+        try {
+            reader1 = new FileReader(file1);
+        }catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        csvDataAvailable.addColumn("Book Code");
+        csvDataAvailable.addColumn("List of Book");
+        BufferedReader infile1 = new BufferedReader(reader1);
+        String line1 = "";
+        try {
+            boolean done = false;
+            while (!done) {
+                line1 = infile1.readLine();
+                if (line1 == null) {
+                    done = true;
+                }
+                else {
+                    String[] tokens1 = line1.trim().split(",");
+                    csvDataAvailable.addRow(tokens1);
+                }
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        jTable3.setModel(csvDataAvailable);
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
             jTable3.getColumnModel().getColumn(0).setMinWidth(70);
@@ -1075,7 +1088,15 @@ public
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel csvData = new DefaultTableModel();
+        DefaultTableModel csvData = new DefaultTableModel(){
+
+            boolean[] canEdit = new boolean[]{
+                false, false, false, true
+            };
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
         String filename = "read.csv";
         File file = new File(filename);
         FileReader reader = null;
@@ -1108,6 +1129,7 @@ public
             System.exit(1);
         }
         jTable2.setModel(csvData);
+        jTable2.setEditingColumn(3);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
@@ -1271,7 +1293,7 @@ public
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1291,23 +1313,78 @@ public
 
         jLabel30.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel30.setText("FINE PAYMENT");
+        jLabel30.setText("PAYMENTS");
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"qqqq", "0"},
+                {"www", "50"},
+                {"e", "50"},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Books", "Fine & Damage "
+            }
+        ));
+        jScrollPane4.setViewportView(jTable4);
+
+        jLabel31.setText("Pay");
+
+        jButton14.setText("Renew");
+
+        jLabel32.setText("Membership Ends in %d ");
+
+        jButton15.setText("Rs");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(331, Short.MAX_VALUE)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(351, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(159, 159, 159)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton14))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(74, 74, 74))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addGap(90, 90, 90)))
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton15)))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(544, Short.MAX_VALUE))
+                .addComponent(jLabel30)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(142, 142, 142))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jButton15))
+                                .addGap(241, 241, 241))))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(jButton14)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jLayeredPane1.add(jPanel18, "card6");
@@ -1319,10 +1396,8 @@ public
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    protected
-            String string = "";
-    protected
-            String string1 = "";
+    protected String string = "";
+    protected String string1 = "";
     private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
         // TODO add your handling code here:
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>((DefaultTableModel) jTable2.getModel());
@@ -1865,6 +1940,8 @@ public
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
@@ -1899,6 +1976,8 @@ public
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1927,10 +2006,12 @@ public
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

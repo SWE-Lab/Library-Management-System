@@ -187,7 +187,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fine Payment"/>
+                <Property name="text" type="java.lang.String" value="Payments"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>
@@ -836,38 +836,13 @@
                                       </Border>
                                     </Property>
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Times New Roman" size="14" style="1"/>
+                                      <Font name="Trebuchet MS" size="14" style="1"/>
                                     </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel csvDataAvailable = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        String filename1 = &quot;read.csv&quot;;&#xa;        File file1 = new File(filename1);&#xa;        FileReader reader1 = null;&#xa;        try {&#xa;            reader1 = new FileReader(file1);&#xa;        }catch (FileNotFoundException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }&#xa;        csvDataAvailable.addColumn(&quot;Book Code&quot;);&#xa;        csvDataAvailable.addColumn(&quot;List of Book&quot;);&#xa;        BufferedReader infile1 = new BufferedReader(reader1);&#xa;        String line1 = &quot;&quot;;&#xa;        try {&#xa;            boolean done = false;&#xa;            while (!done) {&#xa;                line1 = infile1.readLine();&#xa;                if (line1 == null) {&#xa;                    done = true;&#xa;                }&#xa;                else {&#xa;                    String[] tokens1 = line1.trim().split(&quot;,&quot;);&#xa;                    csvDataAvailable.addRow(tokens1);&#xa;                }&#xa;            }&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }">
                                       <Color blue="31" green="e0" red="a9" type="rgb"/>
                                     </Property>
-                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="2" rowCount="10">
-                                        <Column editable="false" title="Book Code" type="java.lang.String">
-                                          <Data value="100"/>
-                                          <Data value="115"/>
-                                          <Data value="1556"/>
-                                          <Data value="1568"/>
-                                          <Data value="1825"/>
-                                          <Data value="1902"/>
-                                          <Data value="2000"/>
-                                          <Data value="2014"/>
-                                          <Data value="2400"/>
-                                          <Data value="2545"/>
-                                        </Column>
-                                        <Column editable="false" title="Book Title" type="java.lang.String">
-                                          <Data value="Introduction to the Theory of Computation"/>
-                                          <Data value="The Black Hole War"/>
-                                          <Data value="Grant"/>
-                                          <Data value="A Promised Land"/>
-                                          <Data value="Principles of Compiler Design"/>
-                                          <Data value="Basic Principles Of Physics"/>
-                                          <Data value="Principles Of Netoworking"/>
-                                          <Data value="Object Oriented Programming With Java "/>
-                                          <Data value="Grokking Algorithms"/>
-                                          <Data value="Computer Networks"/>
-                                        </Column>
-                                      </Table>
+                                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                      <Connection code="csvDataAvailable" type="code"/>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                       <TableColumnModel selectionModel="0">
@@ -1663,7 +1638,7 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Trebuchet MS" size="14" style="1"/>
                                 </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel csvData = new DefaultTableModel();&#xa;        String filename = &quot;read.csv&quot;;&#xa;        File file = new File(filename);&#xa;        FileReader reader = null;&#xa;        try {&#xa;            reader = new FileReader(file);&#xa;        }catch (FileNotFoundException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }&#xa;        csvData.addColumn(&quot;Book Code&quot;);&#xa;        csvData.addColumn(&quot;List of Book&quot;);&#xa;        csvData.addColumn(&quot;Author Name&quot;);&#xa;        csvData.addColumn(&quot;Quantity&quot;);&#xa;        BufferedReader infile = new BufferedReader(reader);&#xa;        String line = &quot;&quot;;&#xa;        try {&#xa;            boolean done = false;&#xa;            while (!done) {&#xa;                line = infile.readLine();&#xa;                if (line == null) {&#xa;                    done = true;&#xa;                }&#xa;                else {&#xa;                    String[] tokens = line.trim().split(&quot;,&quot;);&#xa;                    csvData.addRow(tokens);&#xa;                }&#xa;            }&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }">
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel csvData = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false, false, true&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        String filename = &quot;read.csv&quot;;&#xa;        File file = new File(filename);&#xa;        FileReader reader = null;&#xa;        try {&#xa;            reader = new FileReader(file);&#xa;        }catch (FileNotFoundException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }&#xa;        csvData.addColumn(&quot;Book Code&quot;);&#xa;        csvData.addColumn(&quot;List of Book&quot;);&#xa;        csvData.addColumn(&quot;Author Name&quot;);&#xa;        csvData.addColumn(&quot;Quantity&quot;);&#xa;        BufferedReader infile = new BufferedReader(reader);&#xa;        String line = &quot;&quot;;&#xa;        try {&#xa;            boolean done = false;&#xa;            while (!done) {&#xa;                line = infile.readLine();&#xa;                if (line == null) {&#xa;                    done = true;&#xa;                }&#xa;                else {&#xa;                    String[] tokens = line.trim().split(&quot;,&quot;);&#xa;                    csvData.addRow(tokens);&#xa;                }&#xa;            }&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }">
                                   <Color blue="31" green="e0" red="a9" type="rgb"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -1693,6 +1668,7 @@
                                     </Column>
                                   </TableColumnModel>
                                 </Property>
+                                <Property name="editingColumn" type="int" value="3"/>
                                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
@@ -1882,10 +1858,32 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="331" max="32767" attributes="0"/>
-                          <Component id="jLabel30" min="-2" pref="258" max="-2" attributes="0"/>
-                          <EmptySpace pref="351" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                                  <Component id="jLabel32" min="-2" pref="357" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jScrollPane4" min="-2" pref="432" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="217" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1893,8 +1891,32 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="jLabel30" min="-2" pref="122" max="-2" attributes="0"/>
-                          <EmptySpace pref="544" max="32767" attributes="0"/>
+                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="jLabel32" min="-2" pref="123" max="-2" attributes="0"/>
+                                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jScrollPane4" min="-2" pref="209" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1908,7 +1930,75 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="31" green="e0" red="a9" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="FINE PAYMENT"/>
+                    <Property name="text" type="java.lang.String" value="PAYMENTS"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="jTable4">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="2" rowCount="5">
+                            <Column editable="true" title="Books" type="java.lang.Object">
+                              <Data value="qqqq"/>
+                              <Data value="www"/>
+                              <Data value="e"/>
+                              <Data value="null"/>
+                              <Data value="null"/>
+                            </Column>
+                            <Column editable="true" title="Fine &amp; Damage " type="java.lang.Object">
+                              <Data value="0"/>
+                              <Data value="50"/>
+                              <Data value="50"/>
+                              <Data value="null"/>
+                              <Data value="null"/>
+                            </Column>
+                          </Table>
+                        </Property>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel31">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Pay"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton14">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Renew"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel32">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Membership Ends in %d "/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton15">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Rs"/>
                   </Properties>
                 </Component>
               </SubComponents>
