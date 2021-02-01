@@ -230,7 +230,6 @@ public
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel27)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -1081,10 +1080,10 @@ public
         File file = new File(filename);
         FileReader reader = null;
         try {
-          reader = new FileReader(file);
+            reader = new FileReader(file);
         }catch (FileNotFoundException e) {
-          e.printStackTrace();
-          System.exit(1);
+            e.printStackTrace();
+            System.exit(1);
         }
         csvData.addColumn("Book Code");
         csvData.addColumn("List of Book");
@@ -1093,22 +1092,21 @@ public
         BufferedReader infile = new BufferedReader(reader);
         String line = "";
         try {
-          boolean done = false;
-          while (!done) {
-            line = infile.readLine();
-            if (line == null) {
-              done = true;
+            boolean done = false;
+            while (!done) {
+                line = infile.readLine();
+                if (line == null) {
+                    done = true;
+                }
+                else {
+                    String[] tokens = line.trim().split(",");
+                    csvData.addRow(tokens);
+                }
             }
-            else {
-              String[] tokens = line.trim().split(",");
-              csvData.addRow(tokens);
-            }
-          }
         }catch (IOException e) {
-          e.printStackTrace();
-          System.exit(1);
+            e.printStackTrace();
+            System.exit(1);
         }
-
         jTable2.setModel(csvData);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {

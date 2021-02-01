@@ -17,12 +17,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author angshuman
  */
-public class Database extends javax.swing.JFrame {
+public
+        class Database extends javax.swing.JFrame {
 
     /**
      * Creates new form Member
      */
-    public Database() {
+    public
+            Database() {
         initComponents();
         jPanel1.setFocusable(true);
     }
@@ -53,38 +55,36 @@ public class Database extends javax.swing.JFrame {
 
         jTable1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         DefaultTableModel csvData = new DefaultTableModel();
-
-          String filename = "/mnt/windowsd/@ALL/GithubRepos/Library-Management-System/read.csv";
-          File file = new File(filename);
-          FileReader reader = null;
-          try {
+        String filename = "read.csv";
+        File file = new File(filename);
+        FileReader reader = null;
+        try {
             reader = new FileReader(file);
-          }catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
-          }
-          csvData.addColumn("Book Code");
-          csvData.addColumn("List of Book");
-          csvData.addColumn("Author Name");
-          BufferedReader infile = new BufferedReader(reader);
-          String line = "";
-          try {
+        }
+        csvData.addColumn("Book Code");
+        csvData.addColumn("List of Book");
+        csvData.addColumn("Author Name");
+        BufferedReader infile = new BufferedReader(reader);
+        String line = "";
+        try {
             boolean done = false;
             while (!done) {
-              line = infile.readLine();
-              if (line == null) {
-                done = true;
-              }
-              else {
-                String[] tokens = line.trim().split(",");
-                csvData.addRow(tokens);
-              }
+                line = infile.readLine();
+                if (line == null) {
+                    done = true;
+                }
+                else {
+                    String[] tokens = line.trim().split(",");
+                    csvData.addRow(tokens);
+                }
             }
-          }catch (IOException e) {
+        }catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
-          }
-
+        }
         jTable1.setModel(csvData);
         jScrollPane1.setViewportView(jTable1);
 
@@ -269,10 +269,12 @@ public class Database extends javax.swing.JFrame {
         DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
         if (jTable1.getSelectedRow() >= 0) {
             tbModel.removeRow(jTable1.getSelectedRow());
-        } else {
+        }
+        else {
             if (jTable1.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "No Books Available");
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(this, "Please Select Book for delete");
             }
         }
@@ -318,7 +320,8 @@ public class Database extends javax.swing.JFrame {
             Data = (int) jTable1.getValueAt(row[i], 2);
             if (Data > 0) {
                 Data--;
-            } else {
+            }
+            else {
                 Data = 0;
             }
             jTable1.setValueAt(Data, row[i], 2);
@@ -328,7 +331,8 @@ public class Database extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static
+            void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -341,24 +345,116 @@ public class Database extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        }
+        catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Member.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        }
+        catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Member.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        }
+        catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Member.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        }
+        catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Member.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        javax.swing.JTable jTable1 = new javax.swing.JTable();
+         javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
+        DefaultTableModel csvData = new DefaultTableModel();
+
+          String filename = "read.csv";
+          File file = new File(filename);
+          FileReader reader = null;
+          try {
+            reader = new FileReader(file);
+          }catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+          }
+          csvData.addColumn("Book Code");
+          csvData.addColumn("List of Book");
+          csvData.addColumn("Author Name");
+          BufferedReader infile = new BufferedReader(reader);
+          String line = "";
+          try {
+            boolean done = false;
+            while (!done) {
+              line = infile.readLine();
+              if (line == null) {
+                done = true;
+              }
+              else {
+                String[] tokens = line.trim().split(",");
+                csvData.addRow(tokens);
+              }
+            }
+          }catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+          }
+
+        jTable1.setModel(csvData);
+        jScrollPane1.setViewportView(jTable1);
+        
+        
+        
+ /*       javax.swing.JTable jTable2 = new javax.swing.JTable();
+        jTable2.setBackground(new java.awt.Color(31, 36, 42));
+        jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+        jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTable2.setForeground(new java.awt.Color(169, 224, 49));
+        DefaultTableModel csvData = new DefaultTableModel();
+        String filename = "read.csv";
+        File file = new File(filename);
+        FileReader reader = null;
+        try {
+            reader = new FileReader(file);
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        csvData.addColumn("Book Code");
+        csvData.addColumn("List of Book");
+        csvData.addColumn("Author Name");
+        csvData.addColumn("Quantity");
+        BufferedReader infile = new BufferedReader(reader);
+        String line = "";
+        try {
+            boolean done = false;
+            while (!done) {
+                line = infile.readLine();
+                if (line == null) {
+                    done = true;
+                }
+                else {
+                    String[] tokens = line.trim().split(",");
+                    csvData.addRow(tokens);
+                }
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+
+        jTable2.setModel(csvData);
+//        jScrollPane2.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setMinWidth(80);
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+        } */
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public
+                    void run() {
                 new Database().setVisible(true);
             }
         });
