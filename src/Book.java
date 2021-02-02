@@ -19,7 +19,7 @@ import java.io.PrintWriter;
 public class Book {
 
     private int code;
-    private int quantity;
+    private long quantity;
     private String publisher;
     private String name;
     private String author;
@@ -85,7 +85,7 @@ public class Book {
         return this.picPath;
     }
 
-    public Integer getQuantity() {
+    public long getQuantity() {
         return this.quantity;
     }
 
