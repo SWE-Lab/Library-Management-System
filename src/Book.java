@@ -2,12 +2,10 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,6 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class Book {
 
+    private int code;
+    private int quantity;
     private String publisher;
     private String name;
     private String author;
@@ -27,15 +27,32 @@ public class Book {
     private String isbn;
     private int price;
     private String picPath;
-    private String info[] = {"", "", "", "", "", "", ""};
+    private String info[] = {"", "", "", "", "", "", "", ""};
 
     public Book(String line) {
+        int count = 0;
+        for (int i = 0; i < line.length(); i++) {
+            if (line.charAt(i) == ',') {
+                count++;
+            }
+        }
         this.info = line.trim().split(",");
         this.publisher = this.info[0];
         this.name = this.info[1];
         this.author = this.info[2];
         this.subject = this.info[3];
         this.isbn = this.info[4];
+        this.code = Integer.parseInt(this.isbn.substring(0, 3));
+//        for(int i=0;i<this.info.length; i++){
+//        System.out.println(this.info[i]);
+//        }
+//        System.out.println(this.info.length);
+        if (count == 7) {
+            this.quantity = Integer.parseInt(this.info[7]);
+        } else {
+            this.quantity = 1;
+        }
+        //this.quantity = (this.info[7]!="") ? Integer.parseInt(this.info[7]) : 1;
         this.price = Integer.parseInt(this.info[5]);
         this.picPath = this.info[6];
     }
@@ -68,51 +85,43 @@ public class Book {
         return this.picPath;
     }
 
-    public void saveInfo(String filepath) {
-        try {
-            FileWriter fw = new FileWriter(filepath, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-
-            String toSave = "";
-            toSave = this.publisher + ',' + this.name + ',' + this.author + ',' + this.subject + ',' + this.isbn + ',' + this.price + ',' + this.picPath;
-            pw.println(toSave);
-            pw.flush();
-            pw.close();
-        } catch (Exception E) {
-            System.out.println("Error");
-        }
+    public Integer getQuantity() {
+        return this.quantity;
     }
 
-    // To read:
+    public Integer getCode() {
+        return this.code;
+    }
+
+// To read:
     // Book obj = new Book(string_to_read);
     // To write:
     // Book obj = new Book(string_to_insert);
     // obj.saveInfo(path_to_csv);
     public static void main(String a[]) {
-        // Unit test to check write to csv
-//        Book obj = new Book("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,213414,/home/angshuman/Pictures/Screenshot_20210104_110819.png");
-//        obj.saveInfo("dtb.csv");
 // Unit test to check read from csv
-//            try {
-//            String filename = "dtb.csv";
-//            File file = new File(filename);
-//            FileReader reader = new FileReader(file);
-//            BufferedReader infile = new BufferedReader(reader);
-//            String line = "";
-//            boolean done = false;
-//            while (!done) {
-//                line = infile.readLine();
-//                Book obj = new Book(line);
-//                if (line == null) {
-//                    done = true;
-//                } else {
-//                    System.out.println(obj.name);
-//                }
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.exit(1);
-//        }
+        Book obj = new Book("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,213414,/home/angshuman/Pictures/Screenshot_20210104_110819.png,52");
+        System.out.println(obj.quantity);
+        try {
+            String filename = "dtb.csv";
+            File file = new File(filename);
+            FileReader reader = new FileReader(file);
+            BufferedReader infile = new BufferedReader(reader);
+            String line = "";
+            boolean done = false;
+            while (!done) {
+                line = infile.readLine();
+                if (line == null) {
+                    done = true;
+
+                } else {
+                    //Book obj = new Book(line);
+                    //System.out.println(obj.quantity);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 }
