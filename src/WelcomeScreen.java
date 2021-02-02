@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.regex.*;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -630,7 +631,39 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_enrollmentActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        String Name=name.getText();
+        String Email=email.getText();
+        String Phone=password.getText();
+        String Enroll=enrollment.getText();
+        
+        try{
+            FileWriter Writer=new FileWriter("NewRegistration.csv",true);
+            if ((Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", name.getText())) && (Pattern.matches("^(.+)@(.+)$", email.getText())) 
+                    && (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", password.getText())) && (Pattern.matches("^\\d{14}$", enrollment.getText())) ){
+                Writer.write(Name+","+ Email+","+Phone+","+Enroll+","+(jLabel19.getText()));
+                
+               
+            }
+            
+            Writer.write(System.getProperty("line.separator"));
+            Writer.close();
+            if ((Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", name.getText())) && (Pattern.matches("^(.+)@(.+)$", email.getText())) 
+                    && (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", password.getText())) && (Pattern.matches("^\\d{14}$", enrollment.getText())) ){
+                JOptionPane.showMessageDialog(null, "Success");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+            
+            
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+        
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -702,7 +735,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
         // TODO add your handling code here:
         String s = email.getText().trim();
-        if (Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", s)) {
+        if (Pattern.matches("^(.+)@(.+)$", s)) {
             this.jLabel16.setVisible(false);
         } else {
             this.jLabel16.setVisible(true);
@@ -731,7 +764,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", s)) {
             this.jLabel17.setVisible(false);
         } else {
-            JOptionPane.showMessageDialog(null, "!@#$%^&*()_+={}:;\"|,<.>?/~`' ", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Length must be 8-32\nEnter combination of atleast one uppercase\natleast one lowercase letter\natleast one number\natleast any of these special charaters !@#$%^&*()_+={}:;\"|,<.>?/~`'", "Error", JOptionPane.ERROR_MESSAGE);
             this.jLabel17.setVisible(true);
         }
         if (password.getText().trim().equals("") || password.getText().trim().toLowerCase().equals("new password")) {
