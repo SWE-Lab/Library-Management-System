@@ -11,7 +11,7 @@
 public class BookTest {
 
     public static void main(String args[]) {
-        Book obj = new Book("dtb-array.json",7);
+        Book obj = new Book("dtb-array.json",8);
         System.out.println("Book Code: " + obj.getCode());
         System.out.println("Publisher: " + obj.getPublisher());
         System.out.println("Book Name: " + obj.getName());

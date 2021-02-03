@@ -6,8 +6,6 @@
 package ExperimentJSON;
 
 import java.io.FileReader;
-import java.util.Iterator;
-import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,12 +17,12 @@ import org.json.simple.parser.JSONParser;
 public class JSONReadDtb {
 
     public static void main(String[] args) throws Exception {
-        
+
         Object jo = new JSONParser().parse(new FileReader("dtb-array.json"));
         JSONArray ja = (JSONArray) jo;
         ja.remove(0);
-        
-        JSONObject joi = (JSONObject)ja.get(0);
+
+        JSONObject joi = (JSONObject) ja.get(0);
         System.out.println(joi);
         // typecasting obj to JSONObject 
 //		JSONObject jo = (JSONObject) obj; 
@@ -59,8 +57,7 @@ public class JSONReadDtb {
 //		} 
 ////         getting phoneNumbers 
 //		JSONArray ja = (JSONArray) jo.get("phoneNumbers"); 
-		
-		// iterating phoneNumbers 
+        // iterating phoneNumbers 
 //		Iterator itr2 = ja.iterator(); 
 //		
 //		while (itr2.hasNext()) 
