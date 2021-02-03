@@ -1,7 +1,5 @@
 
-import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
-import java.util.List;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -50,8 +48,7 @@ public class BookManager {
 
     public void deleteBook(int rowNumber) {
         try{
-        CSVReader reader2 = new CSVReader(new FileReader(this.csvPath));
-        System.out.println(reader2);
+
 //        List<String[]>allElements = reader2.readAll();
 //        allElements.remove(rowNumber);
 //        FileWriter sw = new FileWriter(this.csvPath);
