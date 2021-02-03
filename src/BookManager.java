@@ -2,13 +2,10 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,15 +17,10 @@ import javax.swing.table.DefaultTableModel;
  * @author angshuman
  */
 public class BookManager {
-
-    private javax.swing.JFrame jf = new javax.swing.JFrame();
-
     private String csvPath;
-//    jTable2 = new javax.swing.JTable();
-
+    
     public BookManager(String csvPath) {
         this.csvPath = csvPath;
-        this.jf.setVisible(false);
     }
 
     public int getTotalBooks() {
@@ -53,104 +45,40 @@ public class BookManager {
         return count;
     }
 
-    public void deleteBook(int rowNumber) {
+    public void deleteBook(int rownumber) {
+        String tempFile = "temp.csv";
+        File oldFile = new File(this.csvPath);
+        File newFile = new File(tempFile);
+        String publisher = "",name = "",author = "",subject = "",isbn = "",price = "",picPath = "";
         try {
-           
-//            javax.swing.JTable jTable2 = new javax.swing.JTable();
-//            jTable2.setBackground(new java.awt.Color(31, 36, 42));
-//            jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
-//            jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-//            jTable2.setForeground(new java.awt.Color(169, 224, 49));
-//            DefaultTableModel csvData = new DefaultTableModel() {
-//                boolean[] canEdit = new boolean[]{
-//                    false, false, false, true
-//                };
-//
-//                public boolean isCellEditable(int rowIndex, int columnIndex) {
-//                    return canEdit[columnIndex];
-//                }
-//            };
-//            String filename = "read.csv";
-//            File file = new File(filename);
-//            FileReader reader = null;
-//            try {
-//                reader = new FileReader(file);
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//                System.exit(1);
-//            }
-//            csvData.addColumn("Book Code");
-//            csvData.addColumn("List of Book");
-//            csvData.addColumn("Author Name");
-//            csvData.addColumn("Quantity");
-//            csvData.addColumn("1");
-//            csvData.addColumn("2");
-//            csvData.addColumn("3");
-//            BufferedReader infile = new BufferedReader(reader);
-//            String line = "";
-//            try {
-//                boolean done = false;
-//                while (!done) {
-//                    line = infile.readLine();
-//                    if (line == null) {
-//                        done = true;
-//                    } else {
-//                        String[] tokens = line.trim().split(",");
-//                        csvData.addRow(tokens);
-//                    }
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                System.exit(1);
-//            }
-//            jTable2.setModel(csvData);
-//            //jTable2.setEditingColumn(3);
-//            csvData.removeRow(rowNumber);
-//            this.jf.add(jTable2);
-//
-//            File file2 = new File(this.csvPath);
-//            try {
-//                FileWriter fw = new FileWriter(file2);
-//                BufferedWriter bw = new BufferedWriter(fw);
-//
-//                for (int i = 0; i < jTable2.getRowCount(); i++) {//rows
-//                    for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
-//                        if (j == (jTable2.getColumnCount() - 1)) {
-//                            bw.write(jTable2.getValueAt(i, j).toString());
-//                        } else {
-//                            bw.write(jTable2.getValueAt(i, j).toString() + ",");
-//                        }
-//
-//                    }
-//                    bw.newLine();
-//                }
-//                bw.close();
-//                fw.close();
-//            } catch (IOException ex) {
-////            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-
-//            File file = new File(this.csvPath);
-//            FileReader reader = new FileReader(file);
-//            BufferedReader infile = new BufferedReader(reader);
-//            String line = "";
-//            boolean done = false;
-//            while (!done) {
-//                line = infile.readLine();
-//                if (line == null) {
-//                    done = true;
-//
-//                } else {
-//                    Book obj = new Book(line);
-//                    System.out.println(obj.getAuthor());
-//                     line = line.replace(obj.getAuthor() , "");
-//                     
-//                }
-//            fr.close();
-//            fw.close();
+            FileWriter fw = new FileWriter(tempFile, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            Scanner x = new Scanner(new File(this.csvPath));
+            x.useDelimiter("[,\n]");
+            int i = 0;
+            while (x.hasNext()) {
+                publisher = x.next();
+                name = x.next();
+                author = x.next();
+                subject = x.next();
+                isbn = x.next();
+                price = x.next();
+                picPath = x.next();
+                if (i != rownumber)
+                    pw.println(publisher + "," + name + "," + author + "," + subject + "," + isbn + "," + price + "," + picPath);
+                i++;
+            }
+            x.close();
+            pw.flush();
+            pw.close();
+            oldFile.delete();
+            File dump = new File(this.csvPath);
+            newFile.renameTo(dump);
         } catch (Exception e) {
-            System.out.println("Error: " + e);
+            System.out.println("Error " + e);
         }
+
     }
 
     public void saveInfo(String inputString) {

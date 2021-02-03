@@ -14,6 +14,6 @@ public class BookManagerTest {
         BookManager obj = new BookManager("dtb.csv");
 //        obj.saveInfo("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,213414,/home/angshuman/Pictures/Screenshot_20210104_110819.png,5634243");
         System.out.println(obj.getTotalBooks());
-        obj.deleteBook(1);
+        obj.deleteBook(6);
     }
 }
