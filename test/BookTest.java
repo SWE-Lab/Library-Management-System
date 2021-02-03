@@ -21,7 +21,7 @@ public class BookTest {
 //        Book obj = new Book("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,213414,/home/angshuman/Pictures/Screenshot_20210104_110819.png,52");
 //        System.out.println(obj.getQuantity());
         try {
-            String filename = "dtb.csv";
+            String filename = "records.csv";
             File file = new File(filename);
             FileReader reader = new FileReader(file);
             BufferedReader infile = new BufferedReader(reader);
