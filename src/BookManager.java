@@ -17,13 +17,10 @@ import java.util.Scanner;
  * @author angshuman
  */
 public class BookManager {
-
     private String csvPath;
-
     public BookManager(String csvPath) {
         this.csvPath = csvPath;
     }
-
     public int getTotalBooks() {
         int count = 0;
         try {
@@ -45,7 +42,6 @@ public class BookManager {
         }
         return count;
     }
-
     public void deleteBook(int rownumber) {
         String tempFile = "temp.csv";
         File oldFile = new File(this.csvPath);
@@ -80,9 +76,7 @@ public class BookManager {
         } catch (Exception e) {
             System.out.println("Error " + e);
         }
-
     }
-
     public void updateBook(int row, String info) {
         String arr[] = info.split(",");
         String tempFile = "temp.csv";
@@ -120,9 +114,7 @@ public class BookManager {
         } catch (Exception e) {
             System.out.println("Error " + e);
         }
-
     }
-
     public boolean searchBook(String bookName) {
         File oldFile = new File(this.csvPath);
         String publisher = "", name = "", author = "", subject = "", isbn = "", price = "", picPath = "";
@@ -147,7 +139,6 @@ public class BookManager {
         }
         return false;
     }
-
     public void addBook(String inputString) {
         try {
             FileWriter fw = new FileWriter(this.csvPath, true);
@@ -163,18 +154,11 @@ public class BookManager {
             System.out.println("Error: " + E);
         }
     }
-
     public void viewBook(String bookName) {
         if (this.searchBook(bookName)) {
-//            String arr[] = info.split(",");
-//            String tempFile = "temp.csv";
             File oldFile = new File(this.csvPath);
-//            File newFile = new File(tempFile);
             String publisher = "", name = "", author = "", subject = "", isbn = "", price = "", picPath = "";
             try {
-//                FileWriter fw = new FileWriter(tempFile, true);
-//                BufferedWriter bw = new BufferedWriter(fw);
-//                PrintWriter pw = new PrintWriter(bw);
                 Scanner x = new Scanner(new File(this.csvPath));
                 x.useDelimiter("[,\n]");
                 while (x.hasNext()) {
@@ -196,5 +180,4 @@ public class BookManager {
             }
         }
     }
-
 }
