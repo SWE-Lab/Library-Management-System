@@ -45,22 +45,6 @@ public class BookArray {
     public int getBookArraySize() {
         return this.bookArray.size();
     }
-
-//    public Book addBook(String inputString) {
-//        String arr[] = inputString.split(",");
-//        JSONObject obj = new JSONObject();
-//        obj.put("Publisher", arr[0]);
-//        obj.put("Name", arr[1]);
-//        obj.put("Author", arr[2]);
-//        obj.put("Subject", arr[3]);
-//        obj.put("ISBN", arr[4]);
-//        obj.put("Price", new Long(arr[5]));
-//        obj.put("PicPath", arr[6]);
-//        obj.put("Quantity", new Long(arr[7]));
-//        this.jsonArray.add(obj);
-//        Book book = new Book(this.jsonArray, this.jsonArray.size() - 1);
-//        return book;
-//    }
     public Book getBook(int index) {
         return this.bookArray.get(index);
     }
@@ -91,10 +75,5 @@ public class BookArray {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }
-
-    public static void main(String a[]) {
-        BookArray ba = new BookArray("dtb-array.json");
-        System.out.println(ba.getBookArraySize());
     }
 }

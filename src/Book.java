@@ -121,7 +121,3 @@ public class Book {
         this.quantity = input;
     }
 
-//    public void setCode(String input) {
-//        this.code = input;
-//    }
-}
