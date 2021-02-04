@@ -1,3 +1,4 @@
+
 import java.io.FileReader;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -24,11 +25,21 @@ public class Book {
     private long price;
     private String picPath;
 
-    public Book(String jsonPath, int index) {
+    public Book() {
+        this.publisher = "";
+        this.name = "";
+        this.author = "";
+        this.subject = "";
+        this.isbn = "";
+        this.price = 0;
+        this.picPath = "";
+        this.quantity = 0;
+        this.code = "";
+    }
+
+    public Book(JSONArray jsonArray, int index) {
         try {
-            Object jo = new JSONParser().parse(new FileReader(jsonPath));
-            JSONArray ja = (JSONArray) jo;
-            JSONObject joi = (JSONObject) ja.get(index);
+            JSONObject joi = (JSONObject) jsonArray.get(index);
             this.publisher = (String) joi.get("Publisher");
             this.name = (String) joi.get("Name");
             this.author = (String) joi.get("Author");
@@ -77,5 +88,36 @@ public class Book {
 
     public String getCode() {
         return this.code;
+    }
+    public void setPublisher(String input) {
+        this.publisher = input;
+    }
+
+    public void setName(String input) {
+        this.name = input;
+    }
+
+    public void setAuthor(String input) {
+        this.author = input;
+    }
+
+    public void setSubject(String input) {
+        this.subject = input;
+    }
+
+    public void setISBN(String input) {
+        this.isbn = input;
+    }
+
+    public void setPrice(long input) {
+        this.price = input;
+    }
+
+    public void setPicPath(String input) {
+        this.picPath = input;
+    }
+
+    public void setQuantity(long input) {
+        this.quantity = input;
     }
 }
