@@ -33,7 +33,7 @@ public class BookManager {
     public int getTotalBooks() {
         return this.jsonArray.size();
     }
-    
+
     public void addBook(String inputString) {
         try {
             String arr[] = inputString.split(",");
@@ -58,42 +58,54 @@ public class BookManager {
     }
 
     public void deleteBook(int rownumber) {
-        try {
-            this.jsonArray.remove(rownumber);
-            File oldFile = new File(this.jsonPath);
-            FileWriter fw = new FileWriter(oldFile);
-            fw.write(this.jsonArray.toJSONString());
-            fw.flush();
-            fw.close();
-        } catch (Exception e) {
-            System.out.println("Error " + e);
+        if (rownumber < 0 || rownumber > this.getTotalBooks()) {
+            System.out.println("No such instance found\nDeletion Aborted");
+        } else {
+            try {
+                this.jsonArray.remove(rownumber);
+                File oldFile = new File(this.jsonPath);
+                FileWriter fw = new FileWriter(oldFile);
+                fw.write(this.jsonArray.toJSONString());
+                System.out.println("Deleted Successfully");
+                fw.flush();
+                fw.close();
+            } catch (Exception e) {
+                System.out.println("Deleted Failed");
+                System.out.println("Error " + e);
+            }
         }
     }
 
     public void updateBook(int index, String key, String value) {
-
-        try {
-            for (int i = 0; i < this.jsonArray.size(); i++) {
-                JSONObject joi = (JSONObject) this.jsonArray.get(i);
-                if (i == index) {
-                    joi.put(key, value);
+        if (index < 0 || index > this.getTotalBooks()) {
+            System.out.println("No such instance found\nUpdate Rejected");
+        } else {
+            try {
+                for (int i = 0; i < this.jsonArray.size(); i++) {
+                    JSONObject joi = (JSONObject) this.jsonArray.get(i);
+                    if (i == index) {
+                        joi.put(key, value);
+                    }
                 }
+                File oldFile = new File(this.jsonPath);
+                FileWriter fw = new FileWriter(oldFile);
+                fw.write(this.jsonArray.toJSONString());
+                fw.flush();
+                fw.close();
+            } catch (Exception E) {
+                System.out.println("Update Rejected");
+                System.out.println("Error: " + E);
             }
-            File oldFile = new File(this.jsonPath);
-            FileWriter fw = new FileWriter(oldFile);
-            fw.write(this.jsonArray.toJSONString());
-            fw.flush();
-            fw.close();
-        } catch (Exception E) {
-            System.out.println("Error: " + E);
         }
     }
-    
+
     public void searchBook(String bookName) {
         int i = 0;
-        while(i<this.getTotalBooks()){
+        while (i < this.getTotalBooks()) {
             Book obj = new Book(this.jsonPath, i);
-            if(obj.getName().equalsIgnoreCase(bookName)) break;
+            if (obj.getName().equalsIgnoreCase(bookName)) {
+                break;
+            }
             i++;
         }
         if (i >= this.getTotalBooks()) {

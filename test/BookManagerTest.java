@@ -23,12 +23,12 @@ public class BookManagerTest {
 //        obj.addBook("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,2134,/home/angshuman/Pictures/Screenshot_20210104_110819.png,563");
         
         // Delete Book
-//        obj.deleteBook(0);
+        obj.deleteBook(-1);
         
         // Update Book
 //        obj.updateBook(0, "Price", "3434");
         
         //Search Book
-//        obj.searchBook("47656");
+//        obj.searchBook("sher555");
     }
 }
