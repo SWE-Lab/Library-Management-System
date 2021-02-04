@@ -11,7 +11,7 @@
  */
 public class BookManager {
 
-    private BookArray bookArr;
+    protected BookArray bookArr;
 //    private String jsonPath;
 
     public BookManager(String jsonPath) {
@@ -84,7 +84,7 @@ public class BookManager {
         }
     }
 
-    public void searchDisplayBook(String bookName) {
+    public boolean searchDisplayBook(String bookName) {
         int i = 0;
         while (i < this.getTotalBooks()) {
             Book obj = this.bookArr.getBookArray().get(i);
@@ -95,6 +95,7 @@ public class BookManager {
         }
         if (i >= this.getTotalBooks()) {
             System.out.println("No instance found.");
+            return false;
         } else {
             Book obj = this.bookArr.getBookArray().get(i);
             System.out.println("Match Found: ");
@@ -107,6 +108,7 @@ public class BookManager {
             System.out.println("Price: " + obj.getPrice());
             System.out.println("Path of Picture: " + obj.getPicPath());
             System.out.println("Quantity: " + obj.getQuantity());
+            return true;
         }
     }
 }
