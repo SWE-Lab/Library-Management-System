@@ -20,15 +20,18 @@ public class BookManagerTest {
 //        System.out.println(obj.getTotalBooks());
 
         // Add new Book
-//        obj.addBook("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,2134,/home/angshuman/Pictures/Screenshot_20210104_110819.png,563");
+//        obj.addBook("Evening,morning,night,ENGLISH,978-1-56619-909-4,2134,/home/angshuman/Pictures/Screenshot_20210104_110819.png,563");
         
         // Delete Book
-        obj.deleteBook(-1);
+//        obj.deleteBook(0);
         
         // Update Book
-//        obj.updateBook(0, "Price", "3434");
+//        obj.updateBook(0, "Publisher", "3434");
         
         //Search Book
-//        obj.searchBook("sher555");
+        obj.searchBook("sher555");
+
+        // Write back to json file
+        obj.writeJSON();
     }
 }
