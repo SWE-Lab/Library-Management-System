@@ -1,8 +1,6 @@
 
-import java.io.FileReader;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -89,6 +87,7 @@ public class Book {
     public String getCode() {
         return this.code;
     }
+
     public void setPublisher(String input) {
         this.publisher = input;
     }
@@ -120,4 +119,4 @@ public class Book {
     public void setQuantity(long input) {
         this.quantity = input;
     }
-
+}

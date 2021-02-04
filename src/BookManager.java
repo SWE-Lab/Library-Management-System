@@ -1,10 +1,4 @@
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -55,19 +49,42 @@ public class BookManager {
             System.out.println("Deleted Successfully");
         }
     }
-//
+
     public void updateBook(int index, String key, String value) {
         if (index < 0 || index > this.getTotalBooks()) {
             System.out.println("No such instance found\nUpdate Rejected");
         } else {
             Book book = this.bookArr.getBookArray().get(index);
-            switch(key){
-                case "Publisher" : book.setPublisher(value); break;
+            switch (key) {
+                case "Publisher":
+                    book.setPublisher(value);
+                    break;
+                case "Name":
+                    book.setName(value);
+                    break;
+                case "Author":
+                    book.setAuthor(value);
+                    break;
+                case "Subject":
+                    book.setSubject(value);
+                    break;
+                case "ISBN":
+                    book.setISBN(value);
+                    break;
+                case "Price":
+                    book.setPrice(new Long(value));
+                    break;
+                case "Pic Path":
+                    book.setPicPath(value);
+                    break;
+                case "Quantity":
+                    book.setQuantity(new Long(value));
+                    break;
             }
         }
     }
-//
-    public void searchBook(String bookName) {
+
+    public void searchDisplayBook(String bookName) {
         int i = 0;
         while (i < this.getTotalBooks()) {
             Book obj = this.bookArr.getBookArray().get(i);
