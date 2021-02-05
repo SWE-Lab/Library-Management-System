@@ -93,7 +93,7 @@ public class BookManager {
         }
     }
 
-    public Book searchDisplayBook(String bookName) {
+    public Book searchBook(String bookName) {
         int i = 0;
         while (i < this.getTotalBooks()) {
             Book book = this.bookArr.get(i);
