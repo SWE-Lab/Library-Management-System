@@ -1,6 +1,11 @@
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Vector;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,6 +18,9 @@ import org.json.simple.JSONObject;
  */
 public class Book {
 
+    private String jsonPath;
+    private Vector<Book> bookArray = new Vector<Book>();
+    private JSONArray jsonArray;
     private String code;
     private long quantity;
     private String publisher;
@@ -35,8 +43,12 @@ public class Book {
         this.code = "";
     }
 
+    public Book(String jsonPath){
+        this.jsonPath = jsonPath;
+        this.createBookArray();
+    }
+    
     public Book(JSONArray jsonArray, int index) {
-        try {
             JSONObject joi = (JSONObject) jsonArray.get(index);
             this.publisher = (String) joi.get("Publisher");
             this.name = (String) joi.get("Name");
@@ -47,9 +59,6 @@ public class Book {
             this.picPath = (String) joi.get("PicPath");
             this.quantity = (long) joi.get("Quantity");
             this.code = this.isbn.substring(12, 15) + this.author.substring(0, 1).toUpperCase() + this.name.substring(0, 1).toUpperCase();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
     }
 
     public String getPublisher() {
@@ -118,5 +127,53 @@ public class Book {
 
     public void setQuantity(long input) {
         this.quantity = input;
+    }
+
+    // For Creating and accessing book array
+    private void createBookArray() {
+        try {
+            Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
+            this.jsonArray = (JSONArray) jo;
+            int i = 0;
+            while (i < this.jsonArray.size()) {
+                Book book = new Book(this.jsonArray, i);
+                this.bookArray.add(book);
+                i++;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public Vector<Book> getBookArray() {
+        return this.bookArray;
+    }
+
+    public void saveInfo() {
+        try {
+            int i = 0;
+            JSONArray jaNew = new JSONArray();
+            while (i < this.bookArray.size()) {
+                Book book = this.bookArray.get(i);
+                JSONObject obj = new JSONObject();
+                obj.put("Publisher", book.getPublisher());
+                obj.put("Name", book.getName());
+                obj.put("Author", book.getAuthor());
+                obj.put("Subject", book.getSubject());
+                obj.put("ISBN", book.getISBN());
+                obj.put("Price", book.getPrice());
+                obj.put("PicPath", book.getPicPath());
+                obj.put("Quantity", book.getQuantity());
+                jaNew.add(obj);
+                i++;
+            }
+            File file = new File(this.jsonPath);
+            FileWriter fw = new FileWriter(file);
+            fw.write(jaNew.toJSONString());
+            fw.flush();
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

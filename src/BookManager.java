@@ -1,4 +1,5 @@
 
+import java.util.Vector;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,20 +12,28 @@
  */
 public class BookManager {
 
-    protected BookArray bookArr;
-//    private String jsonPath;
+    private Vector<Book> bookArr;
+    private Book obj;
 
     public BookManager(String jsonPath) {
-        BookArray ba = new BookArray(jsonPath);
-        this.bookArr = ba;
+        this.obj = new Book(jsonPath);
+        this.bookArr = obj.getBookArray();
     }
 
     public void writeJSON() {
-        this.bookArr.saveInfo();
+        obj.saveInfo();
     }
 
     public int getTotalBooks() {
-        return this.bookArr.getBookArraySize();
+        return this.bookArr.size();
+    }
+
+    public Vector<Book> getBookArr() {
+        return this.bookArr;
+    }
+
+    public Book getBook(int index) {
+        return this.bookArr.get(index);
     }
 
     public void addBook(String inputString) {
@@ -38,14 +47,14 @@ public class BookManager {
         book.setPrice(new Long(arr[5]));
         book.setPicPath(arr[6]);
         book.setQuantity(new Long(arr[7]));
-        this.bookArr.getBookArray().add(book);
+        this.bookArr.add(book);
     }
 
     public void deleteBook(int rownumber) {
         if (rownumber < 0 || rownumber > this.getTotalBooks()) {
             System.out.println("No such instance found\nDeletion Aborted");
         } else {
-            this.bookArr.getBookArray().remove(rownumber);
+            this.bookArr.remove(rownumber);
             System.out.println("Deleted Successfully");
         }
     }
@@ -54,7 +63,7 @@ public class BookManager {
         if (index < 0 || index > this.getTotalBooks()) {
             System.out.println("No such instance found\nUpdate Rejected");
         } else {
-            Book book = this.bookArr.getBookArray().get(index);
+            Book book = this.bookArr.get(index);
             switch (key) {
                 case "Publisher":
                     book.setPublisher(value);
@@ -84,31 +93,31 @@ public class BookManager {
         }
     }
 
-    public boolean searchDisplayBook(String bookName) {
+    public Book searchDisplayBook(String bookName) {
         int i = 0;
         while (i < this.getTotalBooks()) {
-            Book obj = this.bookArr.getBookArray().get(i);
-            if (obj.getName().equalsIgnoreCase(bookName)) {
+            Book book = this.bookArr.get(i);
+            if (book.getName().equalsIgnoreCase(bookName)) {
                 break;
             }
             i++;
         }
         if (i >= this.getTotalBooks()) {
-            System.out.println("No instance found.");
-            return false;
+            Book retBook = new Book();
+            return retBook;
         } else {
-            Book obj = this.bookArr.getBookArray().get(i);
-            System.out.println("Match Found: ");
-            System.out.println("Book Code: " + obj.getCode());
-            System.out.println("Publisher: " + obj.getPublisher());
-            System.out.println("Book Name: " + obj.getName());
-            System.out.println("Author: " + obj.getAuthor());
-            System.out.println("Subject: " + obj.getSubject());
-            System.out.println("ISBN: " + obj.getISBN());
-            System.out.println("Price: " + obj.getPrice());
-            System.out.println("Path of Picture: " + obj.getPicPath());
-            System.out.println("Quantity: " + obj.getQuantity());
-            return true;
+            Book book = this.bookArr.get(i);
+//            System.out.println("Match Found: ");
+//            System.out.println("Book Code: " + book.getCode());
+//            System.out.println("Publisher: " + book.getPublisher());
+//            System.out.println("Book Name: " + book.getName());
+//            System.out.println("Author: " + book.getAuthor());
+//            System.out.println("Subject: " + book.getSubject());
+//            System.out.println("ISBN: " + book.getISBN());
+//            System.out.println("Price: " + book.getPrice());
+//            System.out.println("Path of Picture: " + book.getPicPath());
+//            System.out.println("Quantity: " + book.getQuantity());
+            return book;
         }
     }
 }
