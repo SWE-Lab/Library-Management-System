@@ -44,7 +44,7 @@ public class BookManagerTest {
         assert newName.equals("fsgf") : "Wrong Instance Updated";
 
         //Search Book
-        Book book = obj.searchDisplayBook("fsgf");
+        Book book = obj.searchBook("fsgf");
         assert book.getAuthor().equals("fsgs") : "Wrong Search Result";
         System.out.println("Book Code: " + book.getCode());
         System.out.println("Publisher: " + book.getPublisher());
