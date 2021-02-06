@@ -2,6 +2,7 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.Vector;
 import org.json.simple.JSONArray;
@@ -186,6 +187,7 @@ public class Member {
                 obj.put("Fine", member.getFine());
                 obj.put("EnrollDate", member.getDate());
                 obj.put("Role", member.getRole());
+                obj.put("MemBookArr", member.getMemBookArr());
                 jaNew.add(obj);
                 i++;
             }

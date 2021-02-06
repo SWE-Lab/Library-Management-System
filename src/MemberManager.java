@@ -59,7 +59,7 @@ public class MemberManager {
         member.setFine(0);
         member.setDate(LocalDate.now());
         member.setRole("Student");
-        member.setMemBookArr();
+//        member.setMemBookArr();
         this.memberArr.add(member);
     }
 

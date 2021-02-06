@@ -23,6 +23,8 @@ public class MemberManagerTest {
 ////        // Add new Member
         int oldNo = obj.getTotalMembers();
         obj.registerMember("Alpa,alpa@gm.com,6547892310,12345678,15963247854125,/home/angshuman/Pictures/Screenshot_20210104_110819.png,500");
+        // To add new book to the newly added member's book array
+//        obj.getMember(oldNo).addMemBook("angshuman");
         assert obj.getTotalMembers() == oldNo + 1 : "Member not Added";
         assert obj.getMember(oldNo).getName().equals("Alpa") : "Wrong Member added";
         System.out.println(obj.getMemberArr().get(oldNo).getName());
@@ -41,8 +43,8 @@ public class MemberManagerTest {
 //        assert newName.equals("AAAA") : "Wrong Instance Updated";
 
         //Search Member
-        Member member = obj.verifyMember("m@gmail.com", "Email");
-        assert member.getRole().equals("Student") : "Wrong Search Result";
+//        Member member = obj.verifyMember("m@gmail.com", "Email");
+//        assert member.getRole().equals("Student") : "Wrong Search Result";
 //        System.out.println("Date of registration : " + member.getDate());
 //        System.out.println("Name : " + member.getName());
 //        System.out.println("Email : " + member.getEmail());
