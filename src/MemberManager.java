@@ -15,7 +15,7 @@ public class MemberManager {
 
     private Vector<Member> memberArr;
     private Member obj;
-
+    
     public MemberManager(String jsonPath) {
         this.obj = new Member(jsonPath);
         this.memberArr = obj.getMemberArray();

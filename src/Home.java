@@ -30,6 +30,7 @@ import javax.swing.table.TableRowSorter;
 public class Home extends javax.swing.JFrame {
 
     private Member member;
+
     /**
      * Creates new form Home
      */
@@ -339,33 +340,30 @@ public class Home extends javax.swing.JFrame {
         jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable1.setForeground(new java.awt.Color(169, 224, 49));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"565", "Maths IIIA", "Das Pal"},
-                {"855", "Thermoynamics", "Peter Atkins"},
-                {"1034", "OS Concepts", "Peter Baer Galvin"},
-                {"1430", "Organiser", "Pearl"},
-                {"4565", "Compiler Design", "Alfred V Aho"}
-            },
-            new String [] {
-                "Book Code", "List of Book", "Author Name"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                true, false, false
-            };
+        DefaultTableModel jsonData = new DefaultTableModel(){
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
+            boolean[] canEdit = new boolean[]{
+                false, false, false
+            };
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
-        });
+        };
+        jsonData.addColumn("Book Code");
+        jsonData.addColumn("Name");
+        jsonData.addColumn("Author Name");
+        int i = 0;
+        while(i<this.member.getMemBookArr().size()){
+            BookManager bm = new BookManager("dtb-array.json");
+            Book TBook = bm.searchBook((String)this.member.getMemBookArr().get(i));
+            Vector<String> v = new Vector<String>();
+            v.add(TBook.getCode());
+            v.add(TBook.getName());
+            v.add(TBook.getAuthor());
+            jsonData.addRow(v);
+            i++;
+        }
+        jTable1.setModel(jsonData);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -435,7 +433,7 @@ public class Home extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 0));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel24.setText("MEMBERSHIP EXPIRES O " + this.member.getDate());
+        jLabel24.setText("MEMBERSHIP EXPIRES ON : " + this.member.getDate());
 
         jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 0));
