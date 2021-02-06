@@ -84,7 +84,7 @@ public class Member {
         return this.profilePicPath;
     }
 
-    public double getFine() {
+    public long getFine() {
         return this.fine;
     }
 

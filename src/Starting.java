@@ -38,7 +38,7 @@ public class Starting {
                 if (row == 100) {
 
                     screen.setVisible(false);
-                    //screen.dispose();
+//                    screen.dispose();
                     //new Home();
                     start.setVisible(true);
                 }

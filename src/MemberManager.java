@@ -46,7 +46,7 @@ public class MemberManager {
         member.setPassword(arr[3]);
         member.setEnrollNo(arr[4]);
         member.setProfilePicPath(arr[5]);
-        member.setFine(new Long(arr[6]));
+        member.setFine(0);
         member.setDate(LocalDate.now());
         this.memberArr.add(member);
     }
@@ -91,15 +91,20 @@ public class MemberManager {
         }
     }
     
-    public Member verifyMember(String memberName) {
+    public Member verifyMember(String input , String key) {
         int i = 0;
-        while (i < this.getTotalMembers()) {
-            Member member = this.memberArr.get(i);
-            if (member.getName().equalsIgnoreCase(memberName)) {
-                break;
-            }
-            i++;
-        }
+        switch(key){
+            case "Name" : while (i < this.getTotalMembers()) {
+                                    Member member = this.memberArr.get(i);
+                                    if (member.getName().equalsIgnoreCase(input)) break;
+                                    i++;
+                                    }break;
+            case "Email" : while (i < this.getTotalMembers()) {
+                                    Member member = this.memberArr.get(i);
+                                    if (member.getEmail().equals(input)) break;
+                                    i++;
+                                    }break;
+    }
         if (i >= this.getTotalMembers()) {
             Member retMember = new Member();
             return retMember;
