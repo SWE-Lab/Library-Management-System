@@ -22,8 +22,9 @@ public class MemberTest {
 //        
 //        long a= long(5594536546);
         Member member1 = memberArr.get(0);
-        assert (member1.getPhNo().equalsIgnoreCase("5594536546")) : "Wrong Phone Number";
-        System.out.println(member1.getPhNo());
+//        assert (member1.getPhNo().equalsIgnoreCase("5594536546")) : "Wrong Phone Number";
+//        System.out.println(member1.getPhNo());
+        assert (member1.getEnrollNo() .equalsIgnoreCase("12018002002165")) : "Wrong Phone Number";
 //        
         int i = 0;
         while (i < memberArr.size()) {

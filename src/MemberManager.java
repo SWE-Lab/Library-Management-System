@@ -44,7 +44,7 @@ public class MemberManager {
         member.setEmail(arr[1]);
         member.setPhNo(arr[2]);
         member.setPassword(arr[3]);
-        member.setEnrollNo(new Long(arr[4]));
+        member.setEnrollNo(arr[4]);
         member.setProfilePicPath(arr[5]);
         member.setFine(new Long(arr[6]));
         member.setDate(LocalDate.now());
@@ -79,7 +79,7 @@ public class MemberManager {
                     member.setPassword(value);
                     break;
                 case "EnrollNo":
-                    member.setEnrollNo(new Long(value));
+                    member.setEnrollNo(value);
                     break;
                 case "ProfilePicPath":
                     member.setProfilePicPath(value);

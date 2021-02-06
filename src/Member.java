@@ -26,7 +26,7 @@ public class Member {
     private String email;
     private String phNo;
     private String password;
-    private long enrollNo;
+    private String enrollNo;
     private String profilePicPath;
     private long fine;
     private LocalDate date;
@@ -36,7 +36,7 @@ public class Member {
         this.email = "";
         this.phNo = "";
         this.password = "";
-        this.enrollNo = 0;
+        this.enrollNo = "";
         this.profilePicPath = "";
         this.fine = 0;
         this.date = LocalDate.now();
@@ -53,7 +53,7 @@ public class Member {
         this.email = (String) joi.get("Email");
         this.phNo = (String) joi.get("PhNo");
         this.password = (String) joi.get("Password");
-        this.enrollNo = (long) joi.get("EnrollNo");
+        this.enrollNo = (String) joi.get("EnrollNo");
         this.profilePicPath = (String) joi.get("ProfilePicPath");
         this.fine = (long) joi.get("Fine");
         this.date = LocalDate.parse((String)joi.get("EnrollDate"));
@@ -76,7 +76,7 @@ public class Member {
         return this.password;
     }
 
-    public long getEnrollNo() {
+    public String getEnrollNo() {
         return this.enrollNo;
     }
 
@@ -108,7 +108,7 @@ public class Member {
         this.password = input;
     }
 
-    public void setEnrollNo(long input) {
+    public void setEnrollNo(String input) {
         this.enrollNo = input;
     }
 
