@@ -1,5 +1,6 @@
 
 import java.util.Vector;
+import org.json.simple.JSONArray;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -38,6 +39,15 @@ public class MemberTest {
             System.out.println("Fine : " + member.getFine());
             System.out.println("EnrollDate : " + member.getDate());
             System.out.println("Role : " + member.getRole());
+//            member.addMemBook("d");
+            member.remMemBook(1);
+            JSONArray ja = member.getMemBookArr();
+            int j = 0;
+            while(j<ja.size()){
+                System.out.println("MemBookArr : [" + j +  "] " + ja.get(j));
+                j++;
+            }
+//            System.out.println(member.getMemBookArr().size());
             i++;
         } 
     }

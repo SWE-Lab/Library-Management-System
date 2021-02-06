@@ -37,6 +37,16 @@ public class MemberManager {
         return this.memberArr.get(index);
     }
 
+    public Vector<String> getMemBookArray(){
+        Vector<String> v = new Vector<String>();
+        int i = 0;
+        while(i<obj.getMemBookArr().size()){
+            v.add((String) obj.getMemBookArr().get(i));
+            i++;
+        }
+        return v;
+    }
+    
     public void registerMember(String inputString) {
         String arr[] = inputString.split(",");
         Member member = new Member();
@@ -49,6 +59,7 @@ public class MemberManager {
         member.setFine(0);
         member.setDate(LocalDate.now());
         member.setRole("Student");
+        member.setMemBookArr();
         this.memberArr.add(member);
     }
 

@@ -31,6 +31,7 @@ public class Member {
     private long fine;
     private LocalDate date;
     private String role;
+    private JSONArray MemBookArr;
 
     public Member() {
         this.name = "";
@@ -42,6 +43,7 @@ public class Member {
         this.fine = 0;
         this.date = LocalDate.now();
         this.role = "";
+        this.MemBookArr = new JSONArray();
     }
 
     public Member(String jsonPath) {
@@ -58,8 +60,9 @@ public class Member {
         this.enrollNo = (String) joi.get("EnrollNo");
         this.profilePicPath = (String) joi.get("ProfilePicPath");
         this.fine = (long) joi.get("Fine");
-        this.date = LocalDate.parse((String)joi.get("EnrollDate"));
+        this.date = LocalDate.parse((String) joi.get("EnrollDate"));
         this.role = (String) joi.get("Role");
+        this.MemBookArr = (JSONArray) joi.get("MemBookArr");
     }
 
     public String getName() {
@@ -93,8 +96,20 @@ public class Member {
     public LocalDate getDate() {
         return this.date.plusYears(1);
     }
-    public String getRole(){
+
+    public String getRole() {
         return this.role;
+    }
+
+    public void addMemBook(String bookName) {
+        this.MemBookArr.add(bookName);
+    }
+
+    public void remMemBook(int index) {
+        this.MemBookArr.remove(index);
+    }
+    public JSONArray getMemBookArr() {
+        return this.MemBookArr;
     }
 
     public void setName(String input) {
@@ -124,14 +139,18 @@ public class Member {
     public void setFine(long input) {
         this.fine = input;
     }
-    
+
     public void setDate(LocalDate input) {
         this.date = input.plusYears(1);
     }
-    public void setRole(String input){
-        this.role=input;
+
+    public void setRole(String input) {
+        this.role = input;
     }
 
+    public void setMemBookArr(){
+        this.MemBookArr = new JSONArray();
+    }
     private void createMemberArray() {
         try {
             Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
@@ -150,7 +169,7 @@ public class Member {
     public Vector<Member> getMemberArray() {
         return this.memberArray;
     }
-    
+
     public void saveInfo() {
         try {
             int i = 0;
@@ -166,7 +185,7 @@ public class Member {
                 obj.put("ProfilePicPath", member.getPicPath());
                 obj.put("Fine", member.getFine());
                 obj.put("EnrollDate", member.getDate());
-                obj.put("Role",member.getRole());
+                obj.put("Role", member.getRole());
                 jaNew.add(obj);
                 i++;
             }

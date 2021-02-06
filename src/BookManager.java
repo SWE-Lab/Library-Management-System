@@ -19,10 +19,6 @@ public class BookManager {
         this.obj = new Book(jsonPath);
         this.bookArr = obj.getBookArray();
     }
-    public BookManager(String jsonPath, String EnrollNo){
-        this.obj = new Book(jsonPath, EnrollNo);
-        
-    }
 
     public void writeJSON() {
         obj.saveInfo();

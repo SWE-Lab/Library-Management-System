@@ -8,7 +8,8 @@
     "PhNo": "5594536546",
     "EnrollDate": "2021-05-23",
     "Fine": 100,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "Debanjan Dhar",
@@ -19,7 +20,8 @@
     "PhNo": "6554656546",
     "EnrollDate": "2021-01-23",
     "Fine": 0,
-    "Role": "Librarian"
+    "Role": "Librarian",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "m",
@@ -30,7 +32,8 @@
     "PhNo": "3245678978",
     "EnrollDate": "2021-07-23",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "Debanjan Dhar",
@@ -41,7 +44,8 @@
     "PhNo": "3475687923",
     "EnrollDate": "2021-12-23",
     "Fine": 0,
-    "Role": "Librarian"
+    "Role": "Librarian",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "fdgd",
@@ -52,7 +56,8 @@
     "PhNo": "5343365634",
     "EnrollDate": "2021-08-23",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "fgdg",
@@ -63,7 +68,8 @@
     "PhNo": "6857465465",
     "EnrollDate": "2021-05-30",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "fgbdf",
@@ -74,7 +80,8 @@
     "PhNo": "5646564546",
     "EnrollDate": "2021-05-14",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": [ "Java", "JavaFX", "Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "angshuman",
@@ -85,7 +92,8 @@
     "PhNo": "6546546767",
     "EnrollDate": "2021-05-25",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": [ "Java", "JavaFX", "Hbase", "Cassandra", "WebGL", "JOGL"]
   },
   {
     "Name": "asasd",
@@ -96,6 +104,7 @@
     "PhNo": "6546546768",
     "EnrollDate": "2021-05-26",
     "Fine": 0,
-    "Role": "Student"
+    "Role": "Student",
+    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
   }
 ]

@@ -21,11 +21,11 @@ public class MemberManagerTest {
 //        System.out.println("Total number of Member: " + obj.getTotalMembers());
 //
 ////        // Add new Member
-//        int oldNo = obj.getTotalMembers();
-//        obj.registerMember("Alpa,alpa@gm.com,6547892310,12345678,15963247854125,/home/angshuman/Pictures/Screenshot_20210104_110819.png,500");
-//        assert obj.getTotalMembers() == oldNo + 1 : "Member not Added";
-//        assert obj.getMember(oldNo).getName().equals("Alpa") : "Wrong Member added";
-//        System.out.println(obj.getMemberArr().get(oldNo).getName());
+        int oldNo = obj.getTotalMembers();
+        obj.registerMember("Alpa,alpa@gm.com,6547892310,12345678,15963247854125,/home/angshuman/Pictures/Screenshot_20210104_110819.png,500");
+        assert obj.getTotalMembers() == oldNo + 1 : "Member not Added";
+        assert obj.getMember(oldNo).getName().equals("Alpa") : "Wrong Member added";
+        System.out.println(obj.getMemberArr().get(oldNo).getName());
 //
 ////        // Delete Member
 //        String oldPub = obj.getMember(5).getName();
@@ -52,7 +52,7 @@ public class MemberManagerTest {
 //        System.out.println("Fine: " + member.getFine());
 
         // Write back to json file
-//        obj.writeJSON();
+        obj.writeJSON();
 //        System.out.println("Update Book details & Search book");
     }
 }
