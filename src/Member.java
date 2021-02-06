@@ -30,6 +30,7 @@ public class Member {
     private String profilePicPath;
     private long fine;
     private LocalDate date;
+    private String role;
 
     public Member() {
         this.name = "";
@@ -40,6 +41,7 @@ public class Member {
         this.profilePicPath = "";
         this.fine = 0;
         this.date = LocalDate.now();
+        this.role = "";
     }
 
     public Member(String jsonPath) {
@@ -57,7 +59,7 @@ public class Member {
         this.profilePicPath = (String) joi.get("ProfilePicPath");
         this.fine = (long) joi.get("Fine");
         this.date = LocalDate.parse((String)joi.get("EnrollDate"));
-//        this.date = LocalDate.now();
+        this.role = (String) joi.get("Role");
     }
 
     public String getName() {
@@ -91,6 +93,9 @@ public class Member {
     public LocalDate getDate() {
         return this.date;
     }
+    public String getRole(){
+        return this.role;
+    }
 
     public void setName(String input) {
         this.name = input;
@@ -122,6 +127,9 @@ public class Member {
     
     public void setDate(LocalDate input) {
         this.date = input.plusYears(1);
+    }
+    public void setRole(String input){
+        this.role=input;
     }
 
     private void createMemberArray() {
@@ -158,6 +166,7 @@ public class Member {
                 obj.put("ProfilePicPath", member.getPicPath());
                 obj.put("Fine", member.getFine());
                 obj.put("EnrollDate", member.getDate());
+                obj.put("Role",member.getRole());
                 jaNew.add(obj);
                 i++;
             }

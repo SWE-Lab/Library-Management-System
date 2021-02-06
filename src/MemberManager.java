@@ -48,6 +48,7 @@ public class MemberManager {
         member.setProfilePicPath(arr[5]);
         member.setFine(0);
         member.setDate(LocalDate.now());
+        member.setRole(arr[6]);
         this.memberArr.add(member);
     }
 
@@ -87,24 +88,35 @@ public class MemberManager {
                 case "Fine":
                     member.setFine(new Long(value));
                     break;
+                case "Role":
+                    member.setRole(value);
+                    break;
             }
         }
     }
-    
-    public Member verifyMember(String input , String key) {
+
+    public Member verifyMember(String input, String key) {
         int i = 0;
-        switch(key){
-            case "Name" : while (i < this.getTotalMembers()) {
-                                    Member member = this.memberArr.get(i);
-                                    if (member.getName().equalsIgnoreCase(input)) break;
-                                    i++;
-                                    }break;
-            case "Email" : while (i < this.getTotalMembers()) {
-                                    Member member = this.memberArr.get(i);
-                                    if (member.getEmail().equals(input)) break;
-                                    i++;
-                                    }break;
-    }
+        switch (key) {
+            case "Name":
+                while (i < this.getTotalMembers()) {
+                    Member member = this.memberArr.get(i);
+                    if (member.getName().equalsIgnoreCase(input)) {
+                        break;
+                    }
+                    i++;
+                }
+                break;
+            case "Email":
+                while (i < this.getTotalMembers()) {
+                    Member member = this.memberArr.get(i);
+                    if (member.getEmail().equals(input)) {
+                        break;
+                    }
+                    i++;
+                }
+                break;
+        }
         if (i >= this.getTotalMembers()) {
             Member retMember = new Member();
             return retMember;
@@ -123,8 +135,8 @@ public class MemberManager {
             return member;
         }
     }
-    
-    public void renewMembership(int index){
+
+    public void renewMembership(int index) {
         this.memberArr.get(index).setDate(this.memberArr.get(index).getDate());
     }
 }

@@ -7,7 +7,8 @@
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (4).png",
     "PhNo": "5594536546",
     "EnrollDate": "2021-05-23",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
   },
   {
     "Name": "Debanjan Dhar",
@@ -17,7 +18,8 @@
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (6).png",
     "PhNo": "6554656546",
     "EnrollDate": "2021-01-23",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Librarian"
   },
   {
     "Name": "m",
@@ -27,7 +29,8 @@
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (2).png",
     "PhNo": "3245678978",
     "EnrollDate": "2021-07-23",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
   },
   {
     "Name": "Debanjan Dhar",
@@ -37,7 +40,8 @@
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (2).png",
     "PhNo": "3475687923",
     "EnrollDate": "2021-12-23",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Librarian"
   },
   {
     "Name": "fdgd",
@@ -47,7 +51,8 @@
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
     "PhNo": "5343365634",
     "EnrollDate": "2021-08-23",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
   },
   {
     "Name": "fgdg",
@@ -57,7 +62,8 @@
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
     "PhNo": "6857465465",
     "EnrollDate": "2021-05-30",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
   },
   {
     "Name": "fgbdf",
@@ -67,7 +73,8 @@
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
     "PhNo": "5646564546",
     "EnrollDate": "2021-05-14",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
   },
   {
     "Name": "angshuman",
@@ -77,6 +84,18 @@
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
     "PhNo": "6546546767",
     "EnrollDate": "2021-05-25",
-    "Fine": 0
+    "Fine": 0,
+    "Role": "Student"
+  },
+  {
+    "Name": "asasd",
+    "Email": "aaa@gmail.com",
+    "Password": "qwe123asdas.&*A",
+    "EnrollNo": "45612347851204",
+    "ProfilePicPath": "/home/hackme/Without_Removing_Metadata.txt",
+    "PhNo": "6546546768",
+    "EnrollDate": "2021-05-26",
+    "Fine": 0,
+    "Role": "Student"
   }
 ]
