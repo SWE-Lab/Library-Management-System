@@ -27,14 +27,29 @@ import javax.swing.table.TableRowSorter;
  *
  * @author angshuman
  */
-public
-        class Home extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame {
 
+    private Member member;
     /**
      * Creates new form Home
      */
-    public
-            Home() {
+    public Home() {
+        initComponents();
+        jPanel3.setFocusable(true);
+        jPanel1.setFocusable(true);
+        jPanel15.setFocusable(true);
+        ImageIcon img = new ImageIcon("logo_title.png");
+        this.setIconImage(img.getImage());
+        jLabel9.setVisible(false);
+        jLabel14.setVisible(false);
+        jLabel8.setVisible(false);
+        jLabel11.setVisible(false);
+        jLabel10.setVisible(false);
+        jLabel29.setVisible(false);
+    }
+
+    public Home(Member member) {
+        this.member = member;
         initComponents();
         jPanel3.setFocusable(true);
         jPanel1.setFocusable(true);
@@ -271,32 +286,22 @@ public
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel6.setText("EMAIL - sept.proj@gmail.com");
+        jLabel6.setText("EMAIL - " +this.member.getEmail());
 
         jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel22.setText("PHONE NO - 0456895412");
+        jLabel22.setText("PHONE NO - " + this.member.getPhNo());
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel4.setText("ENROLL NO - 55556246586345");
+        jLabel4.setText("ENROLL NO - " + this.member.getEnrollNo());
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel3.setText("NAME - SEPT");
+        jLabel3.setText("NAME - " + this.member.getName());
 
         jLabel23.setForeground(new java.awt.Color(169, 224, 49));
-        jLabel23.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("https://lh3.googleusercontent.com/ogw/ADGmqu889Ej7dSGp3hFuhb1UyMykbXcAB_1Stzk5gHKbSw=s170-c-mo")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/logo_title.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -309,9 +314,9 @@ public
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 182, Short.MAX_VALUE)
+                .addGap(18, 327, Short.MAX_VALUE)
                 .addComponent(jLabel23)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(327, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,12 +435,12 @@ public
         jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 0));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel24.setText("MEMBERSHIP EXPIRES ON 2021-01-15");
+        jLabel24.setText("MEMBERSHIP EXPIRES O " + this.member.getDate());
 
         jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 0));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel25.setText(" FINE DUE : INR");
+        jLabel25.setText(" FINE DUE : "+this.member.getFine()+" INR");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -519,10 +524,10 @@ public
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -543,9 +548,9 @@ public
                 .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel11, "card2");
@@ -1437,8 +1442,7 @@ public
                 for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
                     if (j == (jTable2.getColumnCount() - 1)) {
                         bw.write(jTable2.getValueAt(i, j).toString());
-                    }
-                    else {
+                    } else {
                         bw.write(jTable2.getValueAt(i, j).toString() + ",");
                     }
 
@@ -1447,8 +1451,7 @@ public
             }
             bw.close();
             fw.close();
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
 //            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -1467,12 +1470,10 @@ public
         DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
         if (jTable2.getSelectedRow() >= 0) {
             tbModel.removeRow(jTable2.getSelectedRow());
-        }
-        else {
+        } else {
             if (jTable2.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "No Books Available");
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(this, "Please Select Book for delete");
             }
         }
@@ -1496,8 +1497,7 @@ public
             this.string += s + ',';
             this.string1 += s;
             this.jLabel14.setVisible(false);
-        }
-        else {
+        } else {
             this.jLabel14.setVisible(true);
         }
         if (jTextField9.getText().trim().equals("") || jTextField9.getText().trim().toLowerCase().equals("authors")) {
@@ -1521,13 +1521,11 @@ public
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if (jLabel9.isVisible() || jLabel14.isVisible() || jLabel8.isVisible() || jLabel10.isVisible()) {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
-            }
-            else {
+            } else {
                 saveRecord(this.string, "dtb.csv", false);
                 saveRecord(this.string1, "read.csv", true);
             }
-        }
-        else
+        } else
             JOptionPane.showMessageDialog(this, "Fill the details");
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -1541,8 +1539,7 @@ public
         if (Pattern.matches("[A-Za-z\\s]+", s)) {
             this.string += s + ',';
             this.jLabel9.setVisible(false);
-        }
-        else {
+        } else {
             this.jLabel9.setVisible(true);
         }
         if (jTextField8.getText().trim().equals("") || jTextField8.getText().trim().toLowerCase().equals("publisher")) {
@@ -1608,8 +1605,7 @@ public
         if (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", s)) {
             this.string += s + ',';
             this.jLabel10.setVisible(false);
-        }
-        else {
+        } else {
             this.jLabel10.setVisible(true);
         }
         if (jTextField5.getText().trim().equals("") || jTextField5.getText().trim().toLowerCase().equals("inr")) {
@@ -1640,8 +1636,7 @@ public
             this.string1 = s.substring(0, 3) + ',' + temp + ',' + '1';
             System.out.println(this.string1);
             this.jLabel8.setVisible(false);
-        }
-        else {
+        } else {
             this.jLabel8.setVisible(true);
         }
         if (jTextField2.getText().trim().equals("") || jTextField2.getText().trim().toLowerCase().equals("isbn")) {
@@ -1723,12 +1718,10 @@ public
         if (jTable1.getSelectedRow() >= 0) {
             tbModel.removeRow(jTable1.getSelectedRow());
             JOptionPane.showMessageDialog(this, "Returned Successfully");
-        }
-        else {
+        } else {
             if (jTable1.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "Bucket is Empty");
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(this, "Please Select Book to return");
             }
         }
@@ -1812,8 +1805,7 @@ public
         FileReader reader = null;
         try {
             reader = new FileReader(file);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
         }
@@ -1829,14 +1821,12 @@ public
                 line = infile.readLine();
                 if (line == null) {
                     done = true;
-                }
-                else {
+                } else {
                     String[] tokens = line.trim().split(",");
                     csvData.addRow(tokens);
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);
         }
@@ -1852,8 +1842,7 @@ public
     /**
      * @param args the command line arguments
      */
-    public static
-            void saveRecord(String string, String filepath, boolean prntMes) {
+    public static void saveRecord(String string, String filepath, boolean prntMes) {
         try {
             FileWriter fw = new FileWriter(filepath, true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -1865,14 +1854,12 @@ public
             if (prntMes) {
                 JOptionPane.showMessageDialog(null, "Record Saved");
             }
-        }
-        catch (Exception E) {
+        } catch (Exception E) {
             JOptionPane.showMessageDialog(null, "Record Not Saved");
         }
     }
 
-    public static
-            void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1886,23 +1873,16 @@ public
 
                 }
             }
-        }
-        catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(Home.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        catch (InstantiationException ex) {
+        } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(Home.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex) {
             java.util.logging.Logger.getLogger(Home.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-        catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Home.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
@@ -1910,8 +1890,7 @@ public
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public
-                    void run() {
+            public void run() {
                 //new Home().setVisible(true);
                 Home display = new Home();
                 display.setVisible(true);

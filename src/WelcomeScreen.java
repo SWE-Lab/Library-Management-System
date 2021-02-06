@@ -767,7 +767,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         if (member.getName().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No instance found");
         } else if (member.getPassword().equals(this.emailPass[1])) {
-            Home hpage = new Home();
+            Home hpage = new Home(member);
             hpage.show();
             dispose();
         } else {

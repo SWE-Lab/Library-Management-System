@@ -17,7 +17,7 @@ public class MemberManagerTest {
 
         // Get total number of Members
         System.out.println(obj.getTotalMembers());
-        assert obj.getTotalMembers() == 8 : "Wrong Total number of Member";
+        assert obj.getTotalMembers() == 9 : "Wrong Total number of Member";
 //        System.out.println("Total number of Member: " + obj.getTotalMembers());
 //
 ////        // Add new Member
@@ -42,7 +42,7 @@ public class MemberManagerTest {
 
         //Search Member
         Member member = obj.verifyMember("m@gmail.com", "Email");
-        assert member.getEmail().equals("m@gmail.com") : "Wrong Search Result";
+        assert member.getRole().equals("Student") : "Wrong Search Result";
 //        System.out.println("Date of registration : " + member.getDate());
 //        System.out.println("Name : " + member.getName());
 //        System.out.println("Email : " + member.getEmail());

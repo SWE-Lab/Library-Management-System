@@ -48,7 +48,7 @@ public class MemberManager {
         member.setProfilePicPath(arr[5]);
         member.setFine(0);
         member.setDate(LocalDate.now());
-        member.setRole(arr[6]);
+        member.setRole("Student");
         this.memberArr.add(member);
     }
 

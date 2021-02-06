@@ -4,10 +4,10 @@
     "Email": "m@gmail.com",
     "Password": "Dh@!1234",
     "EnrollNo": "12018002002165",
-    "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (4).png",
+    "ProfilePicPath": "./win10e/Users/anike/Desktop/Library-Management-System-v2/src/Resources/Screenshot_20210203_190908.png",
     "PhNo": "5594536546",
     "EnrollDate": "2021-05-23",
-    "Fine": 0,
+    "Fine": 100,
     "Role": "Student"
   },
   {

@@ -257,9 +257,9 @@
                               <Component id="jPanel14" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel12" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                              <EmptySpace pref="32" max="32767" attributes="0"/>
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="38" max="32767" attributes="0"/>
+                              <EmptySpace pref="48" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -283,9 +283,9 @@
                                       <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" pref="182" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" pref="327" max="32767" attributes="0"/>
                                   <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="180" max="32767" attributes="0"/>
+                                  <EmptySpace pref="327" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -315,7 +315,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="31" green="e0" red="a9" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="EMAIL - sept.proj@gmail.com"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;EMAIL - &quot; +this.member.getEmail()" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel22">
@@ -326,7 +328,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="31" green="e0" red="a9" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="PHONE NO - 0456895412"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;PHONE NO - &quot; + this.member.getPhNo()" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -337,7 +341,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="31" green="e0" red="a9" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="ENROLL NO - 55556246586345"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;ENROLL NO - &quot; + this.member.getEnrollNo()" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -348,7 +354,9 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="31" green="e0" red="a9" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="NAME - SEPT"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;NAME - &quot; + this.member.getName()" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel23">
@@ -357,7 +365,7 @@
                               <Color blue="31" green="e0" red="a9" type="rgb"/>
                             </Property>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="1" name="https://lh3.googleusercontent.com/ogw/ADGmqu889Ej7dSGp3hFuhb1UyMykbXcAB_1Stzk5gHKbSw=s170-c-mo"/>
+                              <Image iconType="3" name="/Resources/logo_title.png"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -591,7 +599,9 @@
                               <Color blue="0" green="ff" red="ff" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value="MEMBERSHIP EXPIRES ON 2021-01-15"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot;MEMBERSHIP EXPIRES O &quot; + this.member.getDate()" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel25">
@@ -603,7 +613,9 @@
                               <Color blue="0" green="ff" red="ff" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value=" FINE DUE : INR"/>
+                            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="&quot; FINE DUE : &quot;+this.member.getFine()+&quot; INR&quot;" type="code"/>
+                            </Property>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -634,10 +646,10 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel28" pref="107" max="32767" attributes="0"/>
+                                  <Component id="jLabel28" pref="112" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel26" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace pref="13" max="32767" attributes="0"/>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

@@ -6,7 +6,7 @@ import java.util.Vector;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  *
- *
+ * 
  *
  * @author angshuman
  */
@@ -18,6 +18,10 @@ public class BookManager {
     public BookManager(String jsonPath) {
         this.obj = new Book(jsonPath);
         this.bookArr = obj.getBookArray();
+    }
+    public BookManager(String jsonPath, String EnrollNo){
+        this.obj = new Book(jsonPath, EnrollNo);
+        
     }
 
     public void writeJSON() {

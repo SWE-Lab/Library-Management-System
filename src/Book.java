@@ -48,6 +48,10 @@ public class Book {
         this.createBookArray();
     }
     
+    public Book(String jsonPath,String EnrollNo){
+        this.jsonPath = jsonPath;
+        this.createBookArray(EnrollNo);
+    }
     public Book(JSONArray jsonArray, int index) {
             JSONObject joi = (JSONObject) jsonArray.get(index);
             this.publisher = (String) joi.get("Publisher");
@@ -142,6 +146,16 @@ public class Book {
             }
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    
+    private void createBookArray(String EnrollNo){
+        try{
+             Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
+             this.jsonArray = (JSONArray) jo;
+             
+        }catch(Exception e){
+            System.out.println("Exception "+e);
         }
     }
 
