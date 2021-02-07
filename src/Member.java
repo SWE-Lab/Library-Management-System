@@ -2,8 +2,8 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.Vector;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -63,7 +63,13 @@ public class Member {
         this.fine = (long) joi.get("Fine");
         this.date = LocalDate.parse((String) joi.get("EnrollDate"));
         this.role = (String) joi.get("Role");
-        this.MemBookArr = (JSONArray) joi.get("MemBookArr");
+        JSONArray ja = (JSONArray) joi.get("MemBookArr");
+        Iterator<String> iterator = ja.iterator();
+        JSONArray janew = new JSONArray();
+        while (iterator.hasNext()) {
+            janew.add(iterator.next());
+        }
+        this.MemBookArr = janew;
     }
 
     public String getName() {
@@ -102,15 +108,16 @@ public class Member {
         return this.role;
     }
 
+    public JSONArray getMemBookArr() {
+        return this.MemBookArr;
+    }
+
     public void addMemBook(String bookName) {
         this.MemBookArr.add(bookName);
     }
 
     public void remMemBook(int index) {
         this.MemBookArr.remove(index);
-    }
-    public JSONArray getMemBookArr() {
-        return this.MemBookArr;
     }
 
     public void setName(String input) {
@@ -149,7 +156,7 @@ public class Member {
         this.role = input;
     }
 
-    public void setMemBookArr(){
+    public void setMemBookArr() {
         this.MemBookArr = new JSONArray();
     }
     private void createMemberArray() {
@@ -188,16 +195,33 @@ public class Member {
                 obj.put("EnrollDate", member.getDate());
                 obj.put("Role", member.getRole());
                 obj.put("MemBookArr", member.getMemBookArr());
-                jaNew.add(obj);
-                i++;
-            }
-            File file = new File(this.jsonPath);
-            FileWriter fw = new FileWriter(file);
-            fw.write(jaNew.toJSONString());
-            fw.flush();
-            fw.close();
-        } catch (Exception e) {
+
+//                JSONArray array = member.getMemBookArr();
+//                for (int x = 0; x< array.size() ; x++){
+//                    JSONObject obj2 = array.getJSONObject(x);
+//                }
+//                JSONArray matches = obj.get("MemBookArr");
+//                if (matches != null) {
+//                    for (int i = 0; i < matchesLenght; i++) {
+//                        JSONObject objAtIndex = matches.optJSONObject(i);
+//                        if (objAtIndex != null) {
+//                            JSONArray smallImageUrls = objAtIndex.optJSONArray("smallImageUrls");
+//                            for (int j = 0; j < smallImageUrlsSize; j++) {
+//                                String urlAtIndex = smallImageUrls.optString(j);
+//                            }
+//                        }
+//                    }
+
+                    jaNew.add(obj);
+                    i++;
+                }
+                File file = new File(this.jsonPath);
+                FileWriter fw = new FileWriter(file);
+                fw.write(jaNew.toJSONString());
+                fw.flush();
+                fw.close();
+            }catch (Exception e) {
             System.out.println(e);
         }
+        }
     }
-}

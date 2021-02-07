@@ -30,6 +30,7 @@ import javax.swing.table.TableRowSorter;
 public class Home extends javax.swing.JFrame {
 
     private Member member;
+    BookManager bookObj = new BookManager("dtb-array.json");
 
     /**
      * Creates new form Home
@@ -587,7 +588,7 @@ public class Home extends javax.swing.JFrame {
         jTable3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable3.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel csvDataAvailable = new DefaultTableModel(){
+        DefaultTableModel jsonData1 = new DefaultTableModel(){
 
             boolean[] canEdit = new boolean[]{
                 false, false
@@ -596,36 +597,19 @@ public class Home extends javax.swing.JFrame {
                 return canEdit[columnIndex];
             }
         };
-        String filename1 = "read.csv";
-        File file1 = new File(filename1);
-        FileReader reader1 = null;
-        try {
-            reader1 = new FileReader(file1);
-        }catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(1);
+        jsonData1.addColumn("Book Code");
+        jsonData1.addColumn("Name");
+        i = 0;
+        BookManager bm = new BookManager("dtb-array.json");
+        while(i<bm.getTotalBooks()){
+            Book TBook1= bm.getBook(i);
+            Vector<String> v = new Vector<String>();
+            v.add(TBook1.getCode());
+            v.add(TBook1.getName());
+            jsonData1.addRow(v);
+            i++;
         }
-        csvDataAvailable.addColumn("Book Code");
-        csvDataAvailable.addColumn("List of Book");
-        BufferedReader infile1 = new BufferedReader(reader1);
-        String line1 = "";
-        try {
-            boolean done = false;
-            while (!done) {
-                line1 = infile1.readLine();
-                if (line1 == null) {
-                    done = true;
-                }
-                else {
-                    String[] tokens1 = line1.trim().split(",");
-                    csvDataAvailable.addRow(tokens1);
-                }
-            }
-        }catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        jTable3.setModel(csvDataAvailable);
+        jTable3.setModel(jsonData1);
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
             jTable3.getColumnModel().getColumn(0).setMinWidth(70);
@@ -636,6 +620,11 @@ public class Home extends javax.swing.JFrame {
         jButton17.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton17.setForeground(new java.awt.Color(51, 51, 51));
         jButton17.setText("ADD TO CART");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
@@ -1092,7 +1081,7 @@ public class Home extends javax.swing.JFrame {
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel csvData = new DefaultTableModel(){
+        DefaultTableModel jsonData3 = new DefaultTableModel(){
 
             boolean[] canEdit = new boolean[]{
                 false, false, false, true
@@ -1101,38 +1090,22 @@ public class Home extends javax.swing.JFrame {
                 return canEdit[columnIndex];
             }
         };
-        String filename = "read.csv";
-        File file = new File(filename);
-        FileReader reader = null;
-        try {
-            reader = new FileReader(file);
-        }catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(1);
+        jsonData3.addColumn("Book Code");
+        jsonData3.addColumn("Name");
+        jsonData3.addColumn("Author Name");
+        jsonData3.addColumn("Quantity");
+        i = 0;
+        while(i < this.bookObj.getTotalBooks()){
+            Book TBook3 = this.bookObj.getBook(i);
+            Vector<String> v3 = new Vector<String>();
+            v3.add(TBook3.getCode());
+            v3.add(TBook3.getName());
+            v3.add(TBook3.getAuthor());
+            v3.add(Long.toString(TBook3.getQuantity()));
+            jsonData3.addRow(v3);
+            i++;
         }
-        csvData.addColumn("Book Code");
-        csvData.addColumn("List of Book");
-        csvData.addColumn("Author Name");
-        csvData.addColumn("Quantity");
-        BufferedReader infile = new BufferedReader(reader);
-        String line = "";
-        try {
-            boolean done = false;
-            while (!done) {
-                line = infile.readLine();
-                if (line == null) {
-                    done = true;
-                }
-                else {
-                    String[] tokens = line.trim().split(",");
-                    csvData.addRow(tokens);
-                }
-            }
-        }catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        jTable2.setModel(csvData);
+        jTable2.setModel(jsonData3);
         jTable2.setEditingColumn(3);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
@@ -1164,6 +1137,11 @@ public class Home extends javax.swing.JFrame {
         jButton9.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton9.setForeground(new java.awt.Color(31, 36, 42));
         jButton9.setText("SAVE");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
@@ -1177,6 +1155,11 @@ public class Home extends javax.swing.JFrame {
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton10MouseClicked(evt);
+            }
+        });
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
 
@@ -1430,28 +1413,29 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        String filePath = "read.csv";
-        File file = new File(filePath);
-        try {
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-
-            for (int i = 0; i < jTable2.getRowCount(); i++) {//rows
-                for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
-                    if (j == (jTable2.getColumnCount() - 1)) {
-                        bw.write(jTable2.getValueAt(i, j).toString());
-                    } else {
-                        bw.write(jTable2.getValueAt(i, j).toString() + ",");
-                    }
-
-                }
-                bw.newLine();
-            }
-            bw.close();
-            fw.close();
-        } catch (IOException ex) {
-//            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        String filePath = "read.csv";
+//        File file = new File(filePath);
+//        
+//        try {
+//            FileWriter fw = new FileWriter(file);
+//            BufferedWriter bw = new BufferedWriter(fw);
+//
+//            for (int i = 0; i < jTable2.getRowCount(); i++) {//rows
+//                for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
+//                    if (j == (jTable2.getColumnCount() - 1)) {
+//                        bw.write(jTable2.getValueAt(i, j).toString());
+//                    } else {
+//                        bw.write(jTable2.getValueAt(i, j).toString() + ",");
+//                    }
+//
+//                }
+//                bw.newLine();
+//            }
+//            bw.close();
+//            fw.close();
+//        } catch (IOException ex) {
+////            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1467,7 +1451,9 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
         if (jTable2.getSelectedRow() >= 0) {
+//            System.out.println(jTable2.getSelectedRow());
             tbModel.removeRow(jTable2.getSelectedRow());
+            this.bookObj.deleteBook(jTable2.getSelectedRow());
         } else {
             if (jTable2.getRowCount() == 0) {
                 JOptionPane.showMessageDialog(this, "No Books Available");
@@ -1680,7 +1666,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Book successfully added");
+        
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
@@ -1836,6 +1822,83 @@ public class Home extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
         }
     }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        
+//        DefaultTableModel tbModel1 = (DefaultTableModel) jTable1.getModel();
+        MemberManager memmanager = new MemberManager("dtb-member.json");
+        jTable1.setBackground(new java.awt.Color(31, 36, 42));
+        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(169, 224, 49));
+        DefaultTableModel jsonData = new DefaultTableModel() {
+
+            boolean[] canEdit = new boolean[]{
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        jsonData.addColumn("Book Code");
+        jsonData.addColumn("Name");
+        jsonData.addColumn("Author Name");
+        int i = 0;
+        while (i < this.member.getMemBookArr().size()) {
+            BookManager bm = new BookManager("dtb-array.json");
+            Book TBook = bm.searchBook((String) this.member.getMemBookArr().get(i));
+            Vector<String> v = new Vector<String>();
+            v.add(TBook.getCode());
+            v.add(TBook.getName());
+            v.add(TBook.getAuthor());
+            jsonData.addRow(v);
+            i++;
+        }
+        jTable1.setModel(jsonData);
+//     
+
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+        }
+//
+////        if (jTable3.getSelectedRow() >= 0) {
+            int tempBookArr = jTable3.getSelectedRow();
+////
+//////            for (int p = 0; p < tempBookArr.length; p++) {
+            String bookName = (String) jTable3.getValueAt(tempBookArr, 1);
+            System.out.println(bookName);
+            this.member.addMemBook(bookName);
+            int j=0;
+            while(j<this.member.getMemBookArr().size()){
+                System.out.println("MemBookArr : [" + j +  "] " + this.member.getMemBookArr());
+                j++;
+            }
+            memmanager.writeJSON();
+////            System.out.println(this.member.getMemberArray().get(this.member.getMemBookArr().size() - 1));
+////        } 
+////else {
+////            if (jTable3.getRowCount() == 0) {
+////                JOptionPane.showMessageDialog(this, "No Books Available");
+////            } else {
+////                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
+////            }
+//        }
+        JOptionPane.showMessageDialog(this, "Book successfully added");
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        bookObj.writeJSON();
+        JOptionPane.showMessageDialog(this, "Operation Saved");
+    }//GEN-LAST:event_jButton9MouseClicked
 
     /**
      * @param args the command line arguments

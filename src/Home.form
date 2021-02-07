@@ -831,11 +831,11 @@
                                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                       <Font name="Trebuchet MS" size="14" style="1"/>
                                     </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel csvDataAvailable = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        String filename1 = &quot;read.csv&quot;;&#xa;        File file1 = new File(filename1);&#xa;        FileReader reader1 = null;&#xa;        try {&#xa;            reader1 = new FileReader(file1);&#xa;        }catch (FileNotFoundException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }&#xa;        csvDataAvailable.addColumn(&quot;Book Code&quot;);&#xa;        csvDataAvailable.addColumn(&quot;List of Book&quot;);&#xa;        BufferedReader infile1 = new BufferedReader(reader1);&#xa;        String line1 = &quot;&quot;;&#xa;        try {&#xa;            boolean done = false;&#xa;            while (!done) {&#xa;                line1 = infile1.readLine();&#xa;                if (line1 == null) {&#xa;                    done = true;&#xa;                }&#xa;                else {&#xa;                    String[] tokens1 = line1.trim().split(&quot;,&quot;);&#xa;                    csvDataAvailable.addRow(tokens1);&#xa;                }&#xa;            }&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }">
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel jsonData1 = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        jsonData1.addColumn(&quot;Book Code&quot;);&#xa;        jsonData1.addColumn(&quot;Name&quot;);&#xa;        i = 0;&#xa;        BookManager bm = new BookManager(&quot;dtb-array.json&quot;);&#xa;        while(i&lt;bm.getTotalBooks()){&#xa;        Book TBook1= bm.getBook(i);&#xa;            Vector&lt;String&gt; v = new Vector&lt;String&gt;();&#xa;            v.add(TBook1.getCode());&#xa;            v.add(TBook1.getName());&#xa;            jsonData1.addRow(v);&#xa;        i++;&#xa;        }">
                                       <Color blue="31" green="e0" red="a9" type="rgb"/>
                                     </Property>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                      <Connection code="csvDataAvailable" type="code"/>
+                                      <Connection code="jsonData1" type="code"/>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                       <TableColumnModel selectionModel="0">
@@ -872,6 +872,7 @@
                                 <Property name="text" type="java.lang.String" value="ADD TO CART"/>
                               </Properties>
                               <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton17MouseClicked"/>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton17ActionPerformed"/>
                               </Events>
                             </Component>
@@ -1631,11 +1632,11 @@
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Trebuchet MS" size="14" style="1"/>
                                 </Property>
-                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel csvData = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false, false, true&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        String filename = &quot;read.csv&quot;;&#xa;        File file = new File(filename);&#xa;        FileReader reader = null;&#xa;        try {&#xa;            reader = new FileReader(file);&#xa;        }catch (FileNotFoundException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }&#xa;        csvData.addColumn(&quot;Book Code&quot;);&#xa;        csvData.addColumn(&quot;List of Book&quot;);&#xa;        csvData.addColumn(&quot;Author Name&quot;);&#xa;        csvData.addColumn(&quot;Quantity&quot;);&#xa;        BufferedReader infile = new BufferedReader(reader);&#xa;        String line = &quot;&quot;;&#xa;        try {&#xa;            boolean done = false;&#xa;            while (!done) {&#xa;                line = infile.readLine();&#xa;                if (line == null) {&#xa;                    done = true;&#xa;                }&#xa;                else {&#xa;                    String[] tokens = line.trim().split(&quot;,&quot;);&#xa;                    csvData.addRow(tokens);&#xa;                }&#xa;            }&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace();&#xa;            System.exit(1);&#xa;        }">
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel jsonData3 = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false, false, true&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        jsonData3.addColumn(&quot;Book Code&quot;);&#xa;        jsonData3.addColumn(&quot;Name&quot;);&#xa;        jsonData3.addColumn(&quot;Author Name&quot;);&#xa;        jsonData3.addColumn(&quot;Quantity&quot;);&#xa;        i = 0;&#xa;        while(i &lt; this.bookObj.getTotalBooks()){&#xa;        Book TBook3 = this.bookObj.getBook(i);&#xa;            Vector&lt;String&gt; v3 = new Vector&lt;String&gt;();&#xa;            v3.add(TBook3.getCode());&#xa;            v3.add(TBook3.getName());&#xa;            v3.add(TBook3.getAuthor());&#xa;            v3.add(Long.toString(TBook3.getQuantity()));&#xa;            jsonData3.addRow(v3);&#xa;        i++;&#xa;        }">
                                   <Color blue="31" green="e0" red="a9" type="rgb"/>
                                 </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                                  <Connection code="csvData" type="code"/>
+                                  <Connection code="jsonData3" type="code"/>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
@@ -1717,6 +1718,7 @@
                             <Property name="text" type="java.lang.String" value="SAVE"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton9MouseClicked"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton9ActionPerformed"/>
                           </Events>
                         </Component>
@@ -1735,6 +1737,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton10MouseClicked"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

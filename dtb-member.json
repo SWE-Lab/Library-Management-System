@@ -3,108 +3,158 @@
     "Name": "Debanjan Dhar",
     "Email": "m@gmail.com",
     "Password": "Dh@!1234",
-    "EnrollNo": "12018002002165",
+    "EnrollNo": "12018002002143",
     "ProfilePicPath": "./win10e/Users/anike/Desktop/Library-Management-System-v2/src/Resources/Screenshot_20210203_190908.png",
-    "PhNo": "5594536546",
+    "PhNo": "9875185440",
     "EnrollDate": "2021-05-23",
     "Fine": 100,
     "Role": "Student",
-    "MemBookArr": ["fsgf","sss","Sen", "shu", "morning", "debanjan"]
+    "MemBookArr": [
+      "Engineering Mathematics",
+      "OS Concepts",
+      "Principles Of Physics"
+    ]
   },
   {
-    "Name": "Debanjan Dhar",
+    "Name": "Aniket Das",
     "Email": "me.debanjandhar2000@gmail.com",
     "Password": "Dhar!1234",
-    "EnrollNo": "12018002008165",
+    "EnrollNo": "12018002008160",
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (6).png",
-    "PhNo": "6554656546",
+    "PhNo": "9765437890",
     "EnrollDate": "2021-01-23",
     "Fine": 0,
     "Role": "Librarian",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "Engineering ThermoDynamics",
+      "Compiler Design",
+      "A Promised Land",
+      "Computer Networks",
+      "Automata & Formal Language",
+      "Automata Theory"
+    ]
   },
   {
-    "Name": "m",
+    "Name": "Budhaditya Sarkar",
     "Email": "abc@gmail.com",
     "Password": "dhonI@123",
-    "EnrollNo": "12018902002165",
+    "EnrollNo": "12018902002169",
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (2).png",
-    "PhNo": "3245678978",
+    "PhNo": "8420572544",
     "EnrollDate": "2021-07-23",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "OOP with Java",
+      "Environment and Ecology",
+      "Campbell Biology"
+    ]
   },
   {
-    "Name": "Debanjan Dhar",
+    "Name": "Angshuman Sengupta",
     "Email": "m@gmail.com",
     "Password": "Mani@1234",
     "EnrollNo": "12018007302165",
     "ProfilePicPath": "C:\\Users\\Debanjan Dhar\\Pictures\\Screenshots\\Screenshot (2).png",
-    "PhNo": "3475687923",
+    "PhNo": "9830108639",
     "EnrollDate": "2021-12-23",
     "Fine": 0,
     "Role": "Librarian",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "Objective Biology",
+      "Physics",
+      "Concepts Of Physics",
+      "Algebra",
+      "Vedic Maths",
+      "Fundamentals Of DBMS"
+    ]
   },
   {
-    "Name": "fdgd",
-    "Email": "fghnfghg@gdfg.com",
+    "Name": "Hritam Saha",
+    "Email": "abcde@gmail.com",
     "Password": "4535^%&%hgjhgJHGJHG",
     "EnrollNo": "12018002002187",
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
-    "PhNo": "5343365634",
+    "PhNo": "9830147893",
     "EnrollDate": "2021-08-23",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "The World Within",
+      "English Grammar",
+      "The Professor"
+    ]
   },
   {
-    "Name": "fgdg",
-    "Email": "rttgergr@gg.com",
+    "Name": "Debayan Gangulky",
+    "Email": "debayan@gmail.com",
     "Password": "3453fgfgFF%^^",
-    "EnrollNo": "12018002002195",
+    "EnrollNo": "12018002002190",
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
-    "PhNo": "6857465465",
+    "PhNo": "9903827689",
     "EnrollDate": "2021-05-30",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "Environment and Ecology",
+      "Campbell Biology"
+    ]
   },
   {
-    "Name": "fgbdf",
-    "Email": "ggfd@rgege.com",
+    "Name": "Ritwik Mitra",
+    "Email": "natsu@gmail.com",
     "Password": "dskjfhs7678966^^&^GJG",
     "EnrollNo": "12018002002165",
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
-    "PhNo": "5646564546",
+    "PhNo": "9832108639",
     "EnrollDate": "2021-05-14",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": [ "Java", "JavaFX", "Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "OOP with Java",
+      "Environment and Ecology",
+      "OS Concepts",
+      "Principles Of Physics",
+      "English Grammar",
+      "The Professor"
+    ]
   },
   {
-    "Name": "angshuman",
-    "Email": "senguptaangshuman17@gmail.com",
+    "Name": "Avik Mukherjee",
+    "Email": "avikmukherjee@gmail.com",
     "Password": "gjkgJHGJHKG86578&*^*&^",
-    "EnrollNo": "12018002002365",
+    "EnrollNo": "12018002002198",
     "ProfilePicPath": "/home/angshuman/Pictures/Screenshot_20210104_104632.png",
-    "PhNo": "6546546767",
+    "PhNo": "9748654321",
     "EnrollDate": "2021-05-25",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": [ "Java", "JavaFX", "Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "Principles Of Physics",
+      "OS Concepts",
+      "Concepts Of Physics",
+      "Algebra",
+      "Vedic Maths",
+      "Fundamentals Of DBMS"
+    ]
   },
   {
-    "Name": "asasd",
-    "Email": "aaa@gmail.com",
+    "Name": "Pritam Dey",
+    "Email": "deypritam@gmail.com",
     "Password": "qwe123asdas.&*A",
-    "EnrollNo": "45612347851204",
+    "EnrollNo": "12018002002151",
     "ProfilePicPath": "/home/hackme/Without_Removing_Metadata.txt",
-    "PhNo": "6546546768",
+    "PhNo": "9874123445",
     "EnrollDate": "2021-05-26",
     "Fine": 0,
     "Role": "Student",
-    "MemBookArr": ["Java","JavaFX","Hbase", "Cassandra", "WebGL", "JOGL"]
+    "MemBookArr": [
+      "Principles Of Physics",
+      "OS Concepts",
+      "Computer Networks",
+      "Engineering Mathematics",
+      "A Promised Land",
+      "Automata Theory"
+    ]
   }
 ]
