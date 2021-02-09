@@ -1,6 +1,7 @@
 
 import java.awt.Color;
 import java.io.File;
+import java.util.List;
 import java.util.regex.*;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -760,11 +761,13 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Member member = memMan.verifyMember(this.emailPass[0], "Email");
+        List<Object> arr = memMan.verifyMember(this.emailPass[0], "Email");
+        Member member = (Member)arr.get(0);
+        int index = (int) arr.get(1);
         if (member.getName().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No instance found");
         } else if (member.getPassword().equals(this.emailPass[1])) {
-            Home hpage = new Home(member);
+            Home hpage = new Home(member,index);
             hpage.show();
             dispose();
         } else {

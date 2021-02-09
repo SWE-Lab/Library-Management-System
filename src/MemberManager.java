@@ -1,6 +1,9 @@
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
+import org.json.simple.JSONArray;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +18,7 @@ public class MemberManager {
 
     private Vector<Member> memberArr;
     private Member obj;
-    
+
     public MemberManager(String jsonPath) {
         this.obj = new Member(jsonPath);
         this.memberArr = obj.getMemberArray();
@@ -37,17 +40,11 @@ public class MemberManager {
         return this.memberArr.get(index);
     }
 
-    public Vector<String> getMemBookArray(){
-        Vector<String> v = new Vector<String>();
-        int i = 0;
-        while(i<obj.getMemBookArr().size()){
-            v.add((String) obj.getMemBookArr().get(i));
-            i++;
-        }
-        return v;
-    }
-    
-    public void registerMember(String inputString) {
+    public void addMemBook(int index,String bookName) {
+        this.memberArr.get(index).addMemBook(bookName);
+}
+
+public void registerMember(String inputString) {
         String arr[] = inputString.split(",");
         Member member = new Member();
         member.setName(arr[0]);
@@ -106,7 +103,7 @@ public class MemberManager {
         }
     }
 
-    public Member verifyMember(String input, String key) {
+    public List<Object> verifyMember(String input, String key) {
         int i = 0;
         switch (key) {
             case "Name":
@@ -130,7 +127,7 @@ public class MemberManager {
         }
         if (i >= this.getTotalMembers()) {
             Member retMember = new Member();
-            return retMember;
+            return Arrays.asList(retMember,-1);
         } else {
             Member member = this.memberArr.get(i);
 //            System.out.println("Match Found: ");
@@ -143,7 +140,7 @@ public class MemberManager {
 //            System.out.println("Price: " + book.getPrice());
 //            System.out.println("Path of Picture: " + book.getPicPath());
 //            System.out.println("Quantity: " + book.getQuantity());
-            return member;
+            return Arrays.asList(member,i);
         }
     }
 

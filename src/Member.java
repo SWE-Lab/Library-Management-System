@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.Vector;
 import org.json.simple.JSONArray;
@@ -159,6 +160,7 @@ public class Member {
     public void setMemBookArr() {
         this.MemBookArr = new JSONArray();
     }
+
     private void createMemberArray() {
         try {
             Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
@@ -192,36 +194,21 @@ public class Member {
                 obj.put("EnrollNo", member.getEnrollNo());
                 obj.put("ProfilePicPath", member.getPicPath());
                 obj.put("Fine", member.getFine());
-                obj.put("EnrollDate", member.getDate());
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
+                String formattedString = member.getDate().format(formatter);
+                obj.put("EnrollDate", formattedString);
                 obj.put("Role", member.getRole());
                 obj.put("MemBookArr", member.getMemBookArr());
-
-//                JSONArray array = member.getMemBookArr();
-//                for (int x = 0; x< array.size() ; x++){
-//                    JSONObject obj2 = array.getJSONObject(x);
-//                }
-//                JSONArray matches = obj.get("MemBookArr");
-//                if (matches != null) {
-//                    for (int i = 0; i < matchesLenght; i++) {
-//                        JSONObject objAtIndex = matches.optJSONObject(i);
-//                        if (objAtIndex != null) {
-//                            JSONArray smallImageUrls = objAtIndex.optJSONArray("smallImageUrls");
-//                            for (int j = 0; j < smallImageUrlsSize; j++) {
-//                                String urlAtIndex = smallImageUrls.optString(j);
-//                            }
-//                        }
-//                    }
-
-                    jaNew.add(obj);
-                    i++;
-                }
-                File file = new File(this.jsonPath);
-                FileWriter fw = new FileWriter(file);
-                fw.write(jaNew.toJSONString());
-                fw.flush();
-                fw.close();
-            }catch (Exception e) {
+                jaNew.add(obj);
+                i++;
+            }
+            File file = new File(this.jsonPath);
+            FileWriter fw = new FileWriter(file);
+            fw.write(jaNew.toJSONString());
+            fw.flush();
+            fw.close();
+        } catch (Exception e) {
             System.out.println(e);
         }
-        }
     }
+}

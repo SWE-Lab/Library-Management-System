@@ -38,20 +38,20 @@ public class WriteJSONExample {
         employeeObject2.put("employee", employeeDetails2);
 
         //Add employees to list
-//        JSONArray employeeList = new JSONArray();
-//        employeeList.add(employeeObject);
-//        employeeList.add(employeeObject2);
-        JSONArray number = new JSONArray();
-        number.add(("one"));
-        number.add(("two"));
-        number.add(("three"));
-        employeeObject.put("number", number);
-        number.add(employeeObject);
+        JSONArray employeeList = new JSONArray();
+        employeeList.add(employeeObject);
+        employeeList.add(employeeObject2);
+//        JSONArray number = new JSONArray();
+//        number.add(("one"));
+//        number.add(("two"));
+//        number.add(("three"));
+//        employeeObject.put("number", number);
+//        number.add(employeeObject);
 
         //Write JSON file
         try ( FileWriter file = new FileWriter("employees.json")) {
 
-            file.write(employeeObject.toJSONString());
+            file.write(employeeObject2.toJSONString());
             file.flush();
 
         } catch (IOException e) {
