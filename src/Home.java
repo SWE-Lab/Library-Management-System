@@ -78,6 +78,9 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -164,6 +167,42 @@ public class Home extends javax.swing.JFrame {
         jButton14 = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
+
+        jLabel33.setText("adasdkasdja");
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(483, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap(158, Short.MAX_VALUE)
+                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(353, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Profile");
@@ -403,6 +442,11 @@ public class Home extends javax.swing.JFrame {
         jButton13.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jButton13.setForeground(new java.awt.Color(51, 51, 51));
         jButton13.setText("RETURN");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
@@ -664,14 +708,12 @@ public class Home extends javax.swing.JFrame {
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap(174, Short.MAX_VALUE)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
-            .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -1122,6 +1164,11 @@ public class Home extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Monospaced", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(31, 36, 42));
         jButton7.setText("DELETE BOOK");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -1418,29 +1465,6 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-//        String filePath = "read.csv";
-//        File file = new File(filePath);
-//        
-//        try {
-//            FileWriter fw = new FileWriter(file);
-//            BufferedWriter bw = new BufferedWriter(fw);
-//
-//            for (int i = 0; i < jTable2.getRowCount(); i++) {//rows
-//                for (int j = 0; j < jTable2.getColumnCount(); j++) {//column
-//                    if (j == (jTable2.getColumnCount() - 1)) {
-//                        bw.write(jTable2.getValueAt(i, j).toString());
-//                    } else {
-//                        bw.write(jTable2.getValueAt(i, j).toString() + ",");
-//                    }
-//
-//                }
-//                bw.newLine();
-//            }
-//            bw.close();
-//            fw.close();
-//        } catch (IOException ex) {
-////            Logger.getLogger(JTable_import_and_export_to_text_file.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -1454,18 +1478,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
-        if (jTable2.getSelectedRow() >= 0) {
-//            System.out.println(jTable2.getSelectedRow());
-            tbModel.removeRow(jTable2.getSelectedRow());
-            this.bookObj.deleteBook(jTable2.getSelectedRow());
-        } else {
-            if (jTable2.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "No Books Available");
-            } else {
-                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
-            }
-        }
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
@@ -1671,7 +1684,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
@@ -1703,17 +1716,17 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            tbModel.removeRow(jTable1.getSelectedRow());
-            JOptionPane.showMessageDialog(this, "Returned Successfully");
-        } else {
-            if (jTable1.getRowCount() == 0) {
-                JOptionPane.showMessageDialog(this, "Bucket is Empty");
-            } else {
-                JOptionPane.showMessageDialog(this, "Please Select Book to return");
-            }
-        }
+//        DefaultTableModel tbModel = (DefaultTableModel) jTable1.getModel();
+//        if (jTable1.getSelectedRow() >= 0) {
+//            tbModel.removeRow(jTable1.getSelectedRow());
+//            JOptionPane.showMessageDialog(this, "Returned Successfully");
+//        } else {
+//            if (jTable1.getRowCount() == 0) {
+//                JOptionPane.showMessageDialog(this, "Bucket is Empty");
+//            } else {
+//                JOptionPane.showMessageDialog(this, "Please Select Book to return");
+//            }
+//        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -1784,43 +1797,36 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
+
         jTable2.setBackground(new java.awt.Color(31, 36, 42));
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel csvData = new DefaultTableModel();
-        String filename = "read.csv";
-        File file = new File(filename);
-        FileReader reader = null;
-        try {
-            reader = new FileReader(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        csvData.addColumn("Book Code");
-        csvData.addColumn("List of Book");
-        csvData.addColumn("Author Name");
-        csvData.addColumn("Quantity");
-        BufferedReader infile = new BufferedReader(reader);
-        String line = "";
-        try {
-            boolean done = false;
-            while (!done) {
-                line = infile.readLine();
-                if (line == null) {
-                    done = true;
-                } else {
-                    String[] tokens = line.trim().split(",");
-                    csvData.addRow(tokens);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+        DefaultTableModel jsonData3 = new DefaultTableModel() {
+            boolean[] canEdit = new boolean[]{
+                false, false, false, true
+            };
 
-        jTable2.setModel(csvData);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        jsonData3.addColumn("Book Code");
+        jsonData3.addColumn("Name");
+        jsonData3.addColumn("Author Name");
+        jsonData3.addColumn("Quantity");
+        int i = 0;
+        while (i < this.bookObj.getTotalBooks()) {
+            Book TBook3 = this.bookObj.getBook(i);
+            Vector<String> v3 = new Vector<String>();
+            v3.add(TBook3.getCode());
+            v3.add(TBook3.getName());
+            v3.add(TBook3.getAuthor());
+            v3.add(Long.toString(TBook3.getQuantity()));
+            jsonData3.addRow(v3);
+            i++;
+        }
+        jTable2.setModel(jsonData3);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
@@ -1833,68 +1839,155 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        // TODO add your handling code here:
-        
-        if (jTable3.getSelectedRow() >= 0) {
+        if (jTable3.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this, "No Books Available");
+        } else if (jTable3.getSelectedRow() >= 0) {
             int row = jTable3.getSelectedRow();
             String bookName = (String) jTable3.getValueAt(row, 1);
             this.memmanager.addMemBook(this.index, bookName);
             this.memmanager.writeJSON();
-            
-//        DefaultTableModel tbModel1 = (DefaultTableModel) jTable1.getModel();
-//        MemberManager memmanager = new MemberManager("dtb-member.json");
-        jTable1.setBackground(new java.awt.Color(31, 36, 42));
-        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
-        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel jsonData = new DefaultTableModel() {
-            boolean[] canEdit = new boolean[]{
-                false, false, false
-            };
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit[columnIndex];
-            }
-        };
-        jsonData.addColumn("Book Code");
-        jsonData.addColumn("Name");
-        jsonData.addColumn("Author Name");
-        int i = 0;
-        while (i < this.member.getMemBookArr().size()+1) {
-            BookManager bm = new BookManager("dtb-array.json");
-            Book TBook = bm.searchBook((String)this.memmanager.getMember(this.index).getMemBookArr().get(i));
-            Vector<String> v = new Vector<String>();
-            v.add(TBook.getCode());
-            v.add(TBook.getName());
-            v.add(TBook.getAuthor());
-            jsonData.addRow(v);
-            i++;
-        }
-        jTable1.setModel(jsonData);
-        
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(80);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
-        }
+            jTable1.setBackground(new java.awt.Color(31, 36, 42));
+            jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+            jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+            jTable1.setForeground(new java.awt.Color(169, 224, 49));
+            DefaultTableModel jsonData = new DefaultTableModel() {
+                boolean[] canEdit = new boolean[]{
+                    false, false, false
+                };
 
-        
-////            System.out.println(this.member.getMemberArray().get(this.member.getMemBookArr().size() - 1));
-////        } 
-////else {
-////            if (jTable3.getRowCount() == 0) {
-////                JOptionPane.showMessageDialog(this, "No Books Available");
-////            } else {
-////                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
-////            }
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit[columnIndex];
+                }
+            };
+            jsonData.addColumn("Book Code");
+            jsonData.addColumn("Name");
+            jsonData.addColumn("Author Name");
+            int i = 0;
+            while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
+                BookManager bm = new BookManager("dtb-array.json");
+                Book TBook = bm.searchBook((String) this.memmanager.getMember(this.index).getMemBookArr().get(i));
+                Vector<String> v = new Vector<String>();
+                v.add(TBook.getCode());
+                v.add(TBook.getName());
+                v.add(TBook.getAuthor());
+                jsonData.addRow(v);
+                i++;
+            }
+            jTable1.setModel(jsonData);
+            jScrollPane1.setViewportView(jTable1);
+            if (jTable1.getColumnModel().getColumnCount() > 0) {
+                jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+                jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+            }
+            JOptionPane.showMessageDialog(this, "Book successfully borrowed");
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Select Book for borrowing");
         }
-        JOptionPane.showMessageDialog(this, "Book successfully added");
     }//GEN-LAST:event_jButton17MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
-        bookObj.writeJSON();
+        this.bookObj.writeJSON();
         JOptionPane.showMessageDialog(this, "Operation Saved");
     }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        if (jTable3.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(this, "No Books Available to Return");
+        } else if (jTable1.getSelectedRow() >= 0) {
+            int row = jTable1.getSelectedRow();
+            this.memmanager.delMemBook(this.index, row);
+            this.memmanager.writeJSON();
+            jTable1.setBackground(new java.awt.Color(31, 36, 42));
+            jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+            jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+            jTable1.setForeground(new java.awt.Color(169, 224, 49));
+            DefaultTableModel jsonData = new DefaultTableModel() {
+                boolean[] canEdit = new boolean[]{
+                    false, false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit[columnIndex];
+                }
+            };
+            jsonData.addColumn("Book Code");
+            jsonData.addColumn("Name");
+            jsonData.addColumn("Author Name");
+            int i = 0;
+            while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
+                BookManager bm = new BookManager("dtb-array.json");
+                Book TBook = bm.searchBook((String) this.memmanager.getMember(this.index).getMemBookArr().get(i));
+                Vector<String> v = new Vector<String>();
+                v.add(TBook.getCode());
+                v.add(TBook.getName());
+                v.add(TBook.getAuthor());
+                jsonData.addRow(v);
+                i++;
+            }
+            jTable1.setModel(jsonData);
+            jScrollPane1.setViewportView(jTable1);
+            if (jTable1.getColumnModel().getColumnCount() > 0) {
+                jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+                jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+            }
+
+            JOptionPane.showMessageDialog(this, "Book successfully removed");
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Select Book for removing");
+        }
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+//        DefaultTableModel tbModel = (DefaultTableModel) jTable2.getModel();
+        if (jTable2.getSelectedRow() >= 0) {
+            int row = jTable2.getSelectedRow();
+            this.bookObj.deleteBook(row);
+//            this.bookObj.writeJSON();
+            JOptionPane.showMessageDialog(this, "Book deleted successfully form database");
+            jTable2.setBackground(new java.awt.Color(31, 36, 42));
+            jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+            jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+            jTable2.setForeground(new java.awt.Color(169, 224, 49));
+            DefaultTableModel jsonData3 = new DefaultTableModel() {
+                boolean[] canEdit = new boolean[]{
+                    false, false, false, true
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit[columnIndex];
+                }
+            };
+            jsonData3.addColumn("Book Code");
+            jsonData3.addColumn("Name");
+            jsonData3.addColumn("Author Name");
+            jsonData3.addColumn("Quantity");
+            int i = 0;
+            while (i < this.bookObj.getTotalBooks()) {
+                Book TBook3 = this.bookObj.getBook(i);
+                Vector<String> v3 = new Vector<String>();
+                v3.add(TBook3.getCode());
+                v3.add(TBook3.getName());
+                v3.add(TBook3.getAuthor());
+                v3.add(Long.toString(TBook3.getQuantity()));
+                jsonData3.addRow(v3);
+                i++;
+            }
+            jTable2.setModel(jsonData3);
+            jScrollPane2.setViewportView(jTable2);
+            if (jTable2.getColumnModel().getColumnCount() > 0) {
+                jTable2.getColumnModel().getColumn(0).setMinWidth(80);
+                jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+            }
+        } else {
+            if (jTable2.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(this, "No Books Available");
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Select Book for delete");
+            }
+        }
+    }//GEN-LAST:event_jButton7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1974,6 +2067,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2000,6 +2094,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2017,6 +2112,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

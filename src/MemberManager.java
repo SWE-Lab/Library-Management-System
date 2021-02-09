@@ -40,11 +40,15 @@ public class MemberManager {
         return this.memberArr.get(index);
     }
 
-    public void addMemBook(int index,String bookName) {
+    public void addMemBook(int index, String bookName) {
         this.memberArr.get(index).addMemBook(bookName);
-}
+    }
 
-public void registerMember(String inputString) {
+    public void delMemBook(int index, int deleteindex) {
+        this.memberArr.get(index).remMemBook(deleteindex);
+    }
+
+    public void registerMember(String inputString) {
         String arr[] = inputString.split(",");
         Member member = new Member();
         member.setName(arr[0]);
@@ -127,7 +131,7 @@ public void registerMember(String inputString) {
         }
         if (i >= this.getTotalMembers()) {
             Member retMember = new Member();
-            return Arrays.asList(retMember,-1);
+            return Arrays.asList(retMember, -1);
         } else {
             Member member = this.memberArr.get(i);
 //            System.out.println("Match Found: ");
@@ -140,7 +144,7 @@ public void registerMember(String inputString) {
 //            System.out.println("Price: " + book.getPrice());
 //            System.out.println("Path of Picture: " + book.getPicPath());
 //            System.out.println("Quantity: " + book.getQuantity());
-            return Arrays.asList(member,i);
+            return Arrays.asList(member, i);
         }
     }
 

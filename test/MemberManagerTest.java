@@ -29,6 +29,8 @@ public class MemberManagerTest {
         assert obj.getMember(oldNo).getName().equals("Alpa") : "Wrong Member added";
         System.out.println(obj.getMemberArr().get(oldNo).getName());
 //
+
+        obj.delMemBook(0, 1);
 ////        // Delete Member
 //        String oldPub = obj.getMember(5).getName();
 //        obj.deleteMember(5);
