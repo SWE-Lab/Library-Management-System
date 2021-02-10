@@ -25,7 +25,7 @@ public class BookManagerTest {
 
         // Add new Book
         int oldNo = obj.getTotalBooks();
-        obj.addBook("Evening,morning,night,ENGLISH,978-1-56619-909-4,2134,/home/angshuman/Pictures/Screenshot_20210104_110819.png,563");
+//        obj.addBook("Evening,morning,night,ENGLISH,978-1-56619-909-4,2134,/home/angshuman/Pictures/Screenshot_20210104_110819.png,563");
         assert obj.getTotalBooks() == oldNo + 1 : "Book not Added";
         assert obj.getBook(oldNo).getPublisher().equals("Evening") : "Wrong Book added";
 //        System.out.println("New Book added");

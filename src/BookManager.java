@@ -36,8 +36,8 @@ public class BookManager {
         return this.bookArr.get(index);
     }
 
-    public void addBook(String inputString) {
-        String arr[] = inputString.split(",");
+    public void addBook(String arr[]) {
+//        String arr[] = inputString.split(",");
         Book book = new Book();
         book.setPublisher(arr[0]);
         book.setName(arr[1]);
