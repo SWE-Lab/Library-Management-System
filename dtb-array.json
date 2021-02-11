@@ -32,7 +32,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 656,
-    "PicPath": "https://softwareengteam.page.link/book1",
+    "PicPath": "https://softwareengteam.page.link/book4",
     "Author": "Alfred V.Aho",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -42,7 +42,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 4363,
-    "PicPath": "https://softwareengteam.page.link/book1",
+    "PicPath": "https://softwareengteam.page.link/book5",
     "Author": "Peter B Galvin",
     "Quantity": 1,
     "Publisher": "Jaico Publishing House",
@@ -52,7 +52,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 541,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book6",
     "Author": "Barack Obama",
     "Quantity": 140,
     "Publisher": "Rupa Publications",
@@ -62,7 +62,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 5654654,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book7",
     "Author": "Andrew S. Tanenbaum",
     "Quantity": 200,
     "Publisher": "Rupa Publications",
@@ -72,7 +72,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 2314,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book8",
     "Author": "Peter Linz",
     "Quantity": 175,
     "Publisher": "Roli Books",
