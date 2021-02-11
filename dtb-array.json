@@ -2,7 +2,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 243,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_104632.png",
+    "PicPath": "https://softwareengteam.page.link/book1",
     "Author": "Das Pal",
     "Quantity": 1,
     "Publisher": "Westland Publications",
@@ -12,7 +12,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 3242323,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_104632.png",
+    "PicPath": "https://softwareengteam.page.link/book2",
     "Author": "VK Mehta",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -22,7 +22,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 2334,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book3",
     "Author": "angani",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -32,7 +32,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 656,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book1",
     "Author": "Alfred V.Aho",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -42,7 +42,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 4363,
-    "PicPath": "\\/home\\/angshuman\\/Pictures\\/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book1",
     "Author": "Peter B Galvin",
     "Quantity": 1,
     "Publisher": "Jaico Publishing House",
