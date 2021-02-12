@@ -1,0 +1,177 @@
+[
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002143",
+    "Email": "m@gmail.com",
+    "MemBookArr": [
+      [
+        "A Promised Land",
+        "2021-02-13"
+      ],
+      [
+        "Automata Theory",
+        "2021-02-13"
+      ],
+      [
+        "OS Concepts",
+        "2021-02-13"
+      ],
+      [
+        "Wuthering Heights",
+        "2021-02-13"
+      ],
+      [
+        "Algebra",
+        "2021-02-13"
+      ]
+    ],
+    "Fine": 100,
+    "PhNo": "9875185440",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-05-23",
+    "Name": "Debanjan Dhar",
+    "Password": "Dh@!1234"
+  },
+  {
+    "Role": "Librarian",
+    "EnrollNo": "12018002008160",
+    "Email": "me.debanjandhar2000@gmail.com",
+    "MemBookArr": [
+      "Engineering ThermoDynamics",
+      "Compiler Design",
+      "A Promised Land",
+      "Computer Networks",
+      "Automata & Formal Language",
+      "Automata Theory"
+    ],
+    "Fine": 0,
+    "PhNo": "9765437890",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-01-23",
+    "Name": "Aniket Das",
+    "Password": "Dhar!1234"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018902002169",
+    "Email": "abc@gmail.com",
+    "MemBookArr": [
+      "OOP with Java",
+      "Environment and Ecology",
+      "Campbell Biology"
+    ],
+    "Fine": 0,
+    "PhNo": "8420572544",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-07-23",
+    "Name": "Budhaditya Sarkar",
+    "Password": "dhonI@123"
+  },
+  {
+    "Role": "Librarian",
+    "EnrollNo": "12018007302165",
+    "Email": "m@gmail.com",
+    "MemBookArr": [
+      "Objective Biology",
+      "Physics",
+      "Concepts Of Physics",
+      "Algebra",
+      "Vedic Maths",
+      "Fundamentals Of DBMS"
+    ],
+    "Fine": 0,
+    "PhNo": "9830108639",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-12-23",
+    "Name": "Angshuman Sengupta",
+    "Password": "Mani@1234"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002187",
+    "Email": "abcde@gmail.com",
+    "MemBookArr": [
+      "The World Within",
+      "English Grammar",
+      "The Professor"
+    ],
+    "Fine": 0,
+    "PhNo": "9830147893",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-08-23",
+    "Name": "Hritam Saha",
+    "Password": "4535^%&%hgjhgJHGJHG"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002190",
+    "Email": "debayan@gmail.com",
+    "MemBookArr": [
+      "Environment and Ecology",
+      "Campbell Biology"
+    ],
+    "Fine": 0,
+    "PhNo": "9903827689",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-05-30",
+    "Name": "Debayan Gangulky",
+    "Password": "3453fgfgFF%^^"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002165",
+    "Email": "natsu@gmail.com",
+    "MemBookArr": [
+      "OOP with Java",
+      "Environment and Ecology",
+      "OS Concepts",
+      "Principles Of Physics",
+      "English Grammar",
+      "The Professor"
+    ],
+    "Fine": 0,
+    "PhNo": "9832108639",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-05-14",
+    "Name": "Ritwik Mitra",
+    "Password": "dskjfhs7678966^^&^GJG"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002198",
+    "Email": "avikmukherjee@gmail.com",
+    "MemBookArr": [
+      "Principles Of Physics",
+      "OS Concepts",
+      "Concepts Of Physics",
+      "Algebra",
+      "Vedic Maths",
+      "Fundamentals Of DBMS"
+    ],
+    "Fine": 0,
+    "PhNo": "9748654321",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-05-25",
+    "Name": "Avik Mukherjee",
+    "Password": "gjkgJHGJHKG86578&*^*&^"
+  },
+  {
+    "Role": "Student",
+    "EnrollNo": "12018002002151",
+    "Email": "deypritam@gmail.com",
+    "MemBookArr": [
+      "Principles Of Physics",
+      "OS Concepts",
+      "Computer Networks",
+      "Engineering Mathematics",
+      "A Promised Land",
+      "Automata Theory"
+    ],
+    "Fine": 0,
+    "PhNo": "9874123445",
+    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "EnrollDate": "2033-05-26",
+    "Name": "Pritam Dey",
+    "Password": "qwe123asdas.&*A"
+  }
+]

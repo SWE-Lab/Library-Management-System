@@ -1,7 +1,7 @@
 
 import java.awt.Color;
 import java.io.File;
-import java.io.FileWriter;
+import java.util.List;
 import java.util.regex.*;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -17,12 +17,16 @@ import javax.swing.JOptionPane;
  */
 public class WelcomeScreen extends javax.swing.JFrame {
 
+    private String text = "";
+    private MemberManager memMan;
+    private String emailPass[] = {"", ""};
     /**
      * Creates new form WelcomeScreen
      */
     public WelcomeScreen() {
 
         initComponents();
+        this.memMan = new MemberManager("dtb-member.json");
         jLabel15.setVisible(false);
         jLabel17.setVisible(false);
         jLabel16.setVisible(false);
@@ -30,6 +34,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jLabel19.setVisible(false);
         jLabel20.setVisible(false);
         jLabel21.setVisible(false);
+        jLabel22.setVisible(false);
     }
 
     /**
@@ -50,6 +55,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         kButton2 = new keeptoo.KButton();
         jLabel1 = new javax.swing.JLabel();
         Registration_Form = new KGradientPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
@@ -57,8 +63,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         password = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         enrollment = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
@@ -69,7 +75,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        phoneno = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
         Login_Form = new KGradientPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -90,7 +100,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
 
-        jPanel3.setBackground(new java.awt.Color(31, 36, 42));
+        jPanel3.setBackground(new java.awt.Color(21, 25, 28));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(169, 224, 49));
@@ -107,6 +117,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         kButton1.setForeground(new java.awt.Color(31, 36, 42));
         kButton1.setText("LOGIN");
         kButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        kButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         kButton1.setkPressedColor(new java.awt.Color(31, 36, 42));
         kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +129,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         kButton2.setForeground(new java.awt.Color(31, 36, 42));
         kButton2.setText("REGISTER");
         kButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        kButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         kButton2.setkPressedColor(new java.awt.Color(31, 36, 42));
         kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +187,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -193,14 +205,21 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
         jLayeredPane1.add(kGradientPanel1, "card2");
 
+        Registration_Form.setPreferredSize(new java.awt.Dimension(1280, 720));
+
+        jPanel1.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.5f));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1280, 720));
+        jPanel1.setPreferredSize(new java.awt.Dimension(550, 720));
+
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel7.setText("Name");
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Full Name");
 
         name.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         name.setForeground(new java.awt.Color(192, 192, 192));
         name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         name.setText("Enter Your Name");
-        name.setCaretColor(new java.awt.Color(0, 0, 0));
+        name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         name.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 nameFocusGained(evt);
@@ -234,7 +253,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel8.setText("Email");
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Email ID");
 
         password.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         password.setForeground(new java.awt.Color(192, 192, 192));
@@ -255,6 +275,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         });
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Password");
 
         enrollment.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -275,10 +296,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel10.setText("Add Profile Image");
-
-        jButton2.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(48, 179, 70));
+        jButton2.setForeground(new java.awt.Color(255,255,255));
         jButton2.setText("Submit");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,14 +306,21 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Profile Pic");
+
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("REGISTRATION FORM");
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Enrollment No");
 
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("Upload");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jButton3FocusLost(evt);
@@ -317,23 +344,28 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         }.getIcon());
 
-        jButton4.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(97,0,250));
+        jButton4.setFont(new java.awt.Font("NSimSun", 1, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Home");
-        jButton4.setPreferredSize(new java.awt.Dimension(111, 37));
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setMaximumSize(new java.awt.Dimension(116, 37));
+        jButton4.setMinimumSize(new java.awt.Dimension(116, 37));
+        jButton4.setPreferredSize(new java.awt.Dimension(116, 37));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel15.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 0, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Please enter a valid name");
         jLabel15.setOpaque(true);
 
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel16.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 0, 0));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -345,118 +377,186 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.5f));
         jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 0, 0));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("Please enter proper password");
         jLabel17.setOpaque(true);
 
-        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 0, 0));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Please enter a valid Enrollment no.");
         jLabel18.setOpaque(true);
 
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 0, 0));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Upload only JPG/PNG");
         jLabel19.setOpaque(true);
 
+        jLabel22.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
+        jLabel22.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Please enter a valid phone no.");
+        jLabel22.setOpaque(true);
+        jLabel22.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jLabel22FocusLost(evt);
+            }
+        });
+
+        phoneno.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        phoneno.setForeground(new java.awt.Color(192, 192, 192));
+        phoneno.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        phoneno.setText("Enter Your Phone No.");
+        phoneno.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phonenoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phonenoFocusLost(evt);
+            }
+        });
+        phoneno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phonenoActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("Phone No.");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(name)
+                                .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(enrollment, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(phoneno)
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel11))
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel15)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel16)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phoneno, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel17)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(enrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jLabel18)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel19)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout Registration_FormLayout = new javax.swing.GroupLayout(Registration_Form);
         Registration_Form.setLayout(Registration_FormLayout);
         Registration_FormLayout.setHorizontalGroup(
             Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Registration_FormLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(Registration_FormLayout.createSequentialGroup()
-                            .addComponent(jButton2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Registration_FormLayout.createSequentialGroup()
-                            .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(23, 23, 23)
-                            .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(email, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                .addComponent(enrollment, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                .addGroup(Registration_FormLayout.createSequentialGroup()
-                                    .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(Registration_FormLayout.createSequentialGroup()
-                                            .addGap(10, 10, 10)
-                                            .addComponent(jLabel19))
-                                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(21, 21, 21))
-                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel13))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Registration_FormLayout.createSequentialGroup()
+                .addContainerGap(365, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(365, Short.MAX_VALUE))
         );
         Registration_FormLayout.setVerticalGroup(
             Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Registration_FormLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addComponent(jLabel15)
-                .addGap(15, 15, 15)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addComponent(jLabel16)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enrollment, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(2, 2, 2)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 699, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Registration_Form, "card2");
 
+        jPanel2.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.5f));
+
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Login Form");
 
         jTextField1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(192, 192, 192));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Enter your Email");
+        jTextField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
@@ -471,25 +571,49 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(97,0,250));
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Home");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Password");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        jLabel6.setText("Email");
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Email ID");
 
         jPasswordField1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPasswordField1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordField1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jPasswordField1FocusLost(evt);
+            }
+        });
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
-        jButton5.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jButton5.setBackground(new java.awt.Color(48, 179, 70));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Login");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton5.setPreferredSize(new java.awt.Dimension(95, 37));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -508,72 +632,97 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        jLabel14.setText("jLabel14");
 
+        jLabel20.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel20.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Enter a valid email");
         jLabel20.setOpaque(true);
 
+        jLabel21.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel21.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 0, 0));
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel21.setText("Please enter valid password");
         jLabel21.setOpaque(true);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(6, 6, 6)
+                .addComponent(jLabel20)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
+                .addComponent(jLabel21)
+                .addGap(52, 52, 52)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout Login_FormLayout = new javax.swing.GroupLayout(Login_Form);
         Login_Form.setLayout(Login_FormLayout);
         Login_FormLayout.setHorizontalGroup(
             Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Login_FormLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Login_FormLayout.createSequentialGroup()
-                .addContainerGap(480, Short.MAX_VALUE)
-                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Login_FormLayout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(187, 187, 187)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4)
-                    .addGroup(Login_FormLayout.createSequentialGroup()
-                        .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(Login_FormLayout.createSequentialGroup()
-                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(2, 2, 2)))))
-                .addContainerGap(480, Short.MAX_VALUE))
+            .addGroup(Login_FormLayout.createSequentialGroup()
+                .addContainerGap(377, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(425, Short.MAX_VALUE))
         );
         Login_FormLayout.setVerticalGroup(
             Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Login_FormLayout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addComponent(jLabel14)
-                .addGap(30, 30, 30)
-                .addComponent(jLabel4)
-                .addGap(41, 41, 41)
-                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
-                .addGap(7, 7, 7)
-                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
-                .addGap(10, 10, 10)
-                .addGroup(Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(213, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Login_FormLayout.createSequentialGroup()
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Login_Form, "card3");
@@ -612,69 +761,105 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-
-
-    }//GEN-LAST:event_nameActionPerformed
-
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
-
-    private void enrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enrollmentActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String Name=name.getText();
-        String Email=email.getText();
-        String Phone=password.getText();
-        String Enroll=enrollment.getText();
-        
-        try{
-            FileWriter Writer=new FileWriter("NewRegistration.csv",true);
-            if ((Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", name.getText())) && (Pattern.matches("^(.+)@(.+)$", email.getText())) 
-                    && (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", password.getText())) && (Pattern.matches("^\\d{14}$", enrollment.getText())) ){
-                Writer.write(Name+","+ Email+","+Phone+","+Enroll+","+(jLabel19.getText()));
-                
-               
-            }
-            
-            Writer.write(System.getProperty("line.separator"));
-            Writer.close();
-            if ((Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", name.getText())) && (Pattern.matches("^(.+)@(.+)$", email.getText())) 
-                    && (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", password.getText())) && (Pattern.matches("^\\d{14}$", enrollment.getText())) ){
-                JOptionPane.showMessageDialog(null, "Success");
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Error");
-            }
-            
-            
+        List<Object> arr = memMan.verifyMember(this.emailPass[0], "Email");
+        Member member = (Member)arr.get(0);
+        int index = (int) arr.get(1);
+        if (member.getName().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No instance found");
+        } else if (member.getPassword().equals(this.emailPass[1])) {
+            Home hpage = new Home(member,index);
+            hpage.show();
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect Username or Password");
         }
-        
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "Error");
-        }
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
         // TODO add your handling code here:
-        JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
-            j.showSaveDialog(null);
-            File f = j.getSelectedFile();
-            String fn = f.getPath();
-            jLabel19.setText(fn);
-            jLabel19.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (jTextField1.getText().trim().toLowerCase().equals("enter your email")) {
+            jTextField1.setText("");
+            jTextField1.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+        String s = jTextField1.getText().trim();
+        if (Pattern.matches("^(.+)@(.+)$", s)) {
+            this.jLabel20.setVisible(false);
+            this.emailPass[0] = s;
+        } else {
+            this.jLabel20.setVisible(true);
+        }
+        if (jTextField1.getText().trim().equals("") || jTextField1.getText().trim().toLowerCase().equals("enter your email")) {
+            jTextField1.setText("Enter your Email");
+            jTextField1.setForeground(new Color(187, 187, 187));
+        }
+    }//GEN-LAST:event_jTextField1FocusLost
+
+    private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
+        // TODO add your handling code here:
+//        if (jPasswordField1.getText().trim().toLowerCase().equals("********")) {
+//            jPasswordField1.setText("");
+        jPasswordField1.setForeground(new Color(0, 0, 0));
+//        }
+    }//GEN-LAST:event_jPasswordField1FocusGained
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jPasswordField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusLost
+        // TODO add your handling code here:
+        String s = jPasswordField1.getText();
+        if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", s)) {
+            this.jLabel21.setVisible(false);
+            this.emailPass[1] = s;
+        } else {
+            this.jLabel21.setVisible(true);
+        }
+//        if (jPasswordField1.getText().trim().equals("") || jPasswordField1.getText().trim().toLowerCase().equals("********")) {
+//            jPasswordField1.setText("********");
+//            jPasswordField1.setForeground(new Color(192, 192, 192));
+//        }
+    }//GEN-LAST:event_jPasswordField1FocusLost
+
+    private void phonenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phonenoActionPerformed
+
+    private void phonenoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phonenoFocusLost
+        // TODO add your handling code here:
+        String s = phoneno.getText().trim();
+        if (Pattern.matches("^\\d{10}$", s)) {
+            this.jLabel22.setVisible(false);
+            this.text += s + ",";
+        } else {
+            this.jLabel22.setVisible(true);
+        }
+        if (email.getText().trim().equals("") || email.getText().trim().toLowerCase().equals("enter your phone no.")) {
+            email.setText("Enter your Phone No.");
+            email.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_phonenoFocusLost
+
+    private void phonenoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phonenoFocusGained
+        // TODO add your handling code here:
+        if (phoneno.getText().trim().toLowerCase().equals("enter your phone no.")) {
+            phoneno.setText("");
+            phoneno.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_phonenoFocusGained
+
+    private void jLabel22FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel22FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel22FocusLost
+
+    private void jLabel16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel16FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel16FocusLost
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -684,100 +869,49 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jLayeredPane1.revalidate();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        String userName = jTextField1.getText();
-        String passWord = jPasswordField1.getText();
+        JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
+            j.showSaveDialog(null);
+            File f = j.getSelectedFile();
+            String fn = f.getPath();
+            this.text += fn + ",";
+            jLabel19.setText(fn);
+            jLabel19.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-        if (userName.equals("admin") && passWord.equals("abc")) {
-            Home hpage = new Home();
-            hpage.show();
-
-        } else if (userName.equals("java") && passWord.equals("123")) {
-            Home hpage = new Home();
-            hpage.show();
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Incorrect Username or Password");
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void nameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusGained
+    private void jButton3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton3FocusLost
         // TODO add your handling code here:
-        if (name.getText().trim().toLowerCase().equals("enter your name")) {
-            name.setText("");
-            name.setForeground(new Color(0,0,0));
-        }
-    }//GEN-LAST:event_nameFocusGained
+    }//GEN-LAST:event_jButton3FocusLost
 
-    private void nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusLost
-        // TODO add your handling code here:
-        String s = name.getText().trim();
-        if (Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", s)) {
-            this.jLabel15.setVisible(false);
-        } else {
-            this.jLabel15.setVisible(true);
-        }
-        if (name.getText().trim().equals("") || name.getText().trim().toLowerCase().equals("enter your name")) {
-            name.setText("Enter your Name");
-            name.setForeground(new Color(187,187,187));
-        }
-    }//GEN-LAST:event_nameFocusLost
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //        String Name=name.getText();
+        //        String Email=email.getText();
+        //        String Phone=password.getText();
+        //        String Enroll=enrollment.getText();
+        if ((jLabel19.isVisible() && !name.getText().trim().toLowerCase().equals("enter your name") && !email.getText().trim().toLowerCase().equals("enter your email") && !phoneno.getText().trim().toLowerCase().equals("enter your phone no.") && !password.getText().trim().toLowerCase().equals("new password") && !enrollment.getText().trim().toLowerCase().equals("enrollment no"))) {
+            //JOptionPane.showMessageDialog(this, "Operation successfully done");
+            if (jLabel15.isVisible() || jLabel16.isVisible() || jLabel22.isVisible() || jLabel17.isVisible() || jLabel18.isVisible()) {
+                JOptionPane.showMessageDialog(null, "Fill Details Correctly");
+            } else {
+                memMan.registerMember(this.text);
+                memMan.writeJSON();
+                JOptionPane.showMessageDialog(null, "Registration Completed");
+            }
+        } else
+        JOptionPane.showMessageDialog(null, "Fill All Details");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+    private void enrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentActionPerformed
         // TODO add your handling code here:
-        if (email.getText().trim().toLowerCase().equals("enter your email")) {
-            email.setText("");
-            email.setForeground(new Color(0,0,0));
-        }
-    }//GEN-LAST:event_emailFocusGained
-
-    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
-        // TODO add your handling code here:
-        String s = email.getText().trim();
-        if (Pattern.matches("^(.+)@(.+)$", s)) {
-            this.jLabel16.setVisible(false);
-        } else {
-            this.jLabel16.setVisible(true);
-        }
-        if (email.getText().trim().equals("") || email.getText().trim().toLowerCase().equals("enter your email")) {
-            email.setText("Enter your Email");
-            email.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_emailFocusLost
-
-    private void jLabel16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel16FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel16FocusLost
-
-    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
-        // TODO add your handling code here:
-        if (password.getText().trim().toLowerCase().equals("new password")) {
-            password.setText("");
-            password.setForeground(new Color(0,0,0));
-        }
-    }//GEN-LAST:event_passwordFocusGained
-
-    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
-        // TODO add your handling code here:
-        String s = password.getText().trim();
-        if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", s)) {
-            this.jLabel17.setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(null, "Length must be 8-32\nEnter combination of atleast one uppercase\natleast one lowercase letter\natleast one number\natleast any of these special charaters !@#$%^&*()_+={}:;\"|,<.>?/~`'", "Error", JOptionPane.ERROR_MESSAGE);
-            this.jLabel17.setVisible(true);
-        }
-        if (password.getText().trim().equals("") || password.getText().trim().toLowerCase().equals("new password")) {
-            password.setText("New Password");
-            password.setForeground(new Color(192, 192, 192));
-        }
-    }//GEN-LAST:event_passwordFocusLost
+    }//GEN-LAST:event_enrollmentActionPerformed
 
     private void enrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_enrollmentFocusLost
         // TODO add your handling code here:
         String s = enrollment.getText().trim();
         if (Pattern.matches("^\\d{14}$", s)) {
             this.jLabel18.setVisible(false);
+            this.text += s + ",";
         } else {
             this.jLabel18.setVisible(true);
         }
@@ -791,28 +925,48 @@ public class WelcomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (enrollment.getText().trim().toLowerCase().equals("enrollment no")) {
             enrollment.setText("");
-            enrollment.setForeground(new Color(0,0,0));
+            enrollment.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_enrollmentFocusGained
 
-    private void jButton3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton3FocusLost
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton3FocusLost
+    }//GEN-LAST:event_passwordActionPerformed
 
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+    private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
         // TODO add your handling code here:
-        if (email.getText().trim().toLowerCase().equals("enter your email")) {
-            email.setText("");
-            email.setForeground(new Color(0,0,0));
-        }                               
-    }//GEN-LAST:event_jTextField1FocusGained
+        String s = password.getText().trim();
+        if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", s)) {
+            this.jLabel17.setVisible(false);
+            this.text += s + ",";
+        } else {
+            JOptionPane.showMessageDialog(null, "Length must be 8-32\nEnter combination of atleast one uppercase\natleast one lowercase letter\natleast one number\natleast any of these special charaters !@#$%^&*()_+={}:;\"|,<.>?/~`'", "Error", JOptionPane.ERROR_MESSAGE);
+            this.jLabel17.setVisible(true);
+        }
+        if (password.getText().trim().equals("") || password.getText().trim().toLowerCase().equals("new password")) {
+            password.setText("New Password");
+            password.setForeground(new Color(192, 192, 192));
+        }
+    }//GEN-LAST:event_passwordFocusLost
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
+    private void passwordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusGained
+        // TODO add your handling code here:
+        if (password.getText().trim().toLowerCase().equals("new password")) {
+            password.setText("");
+            password.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_passwordFocusGained
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
         // TODO add your handling code here:
         String s = email.getText().trim();
-        if (Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", s)) {
+        if (Pattern.matches("^(.+)@(.+)$", s)) {
             this.jLabel16.setVisible(false);
+            this.text += s + ",";
         } else {
             this.jLabel16.setVisible(true);
         }
@@ -820,7 +974,42 @@ public class WelcomeScreen extends javax.swing.JFrame {
             email.setText("Enter your Email");
             email.setForeground(new Color(192, 192, 192));
         }
-    }//GEN-LAST:event_jTextField1FocusLost
+    }//GEN-LAST:event_emailFocusLost
+
+    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+        // TODO add your handling code here:
+        if (email.getText().trim().toLowerCase().equals("enter your email")) {
+            email.setText("");
+            email.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_emailFocusGained
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusLost
+        // TODO add your handling code here:
+        String s = name.getText().trim();
+        if (Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", s)) {
+            this.jLabel15.setVisible(false);
+            this.text += s + ",";
+        } else {
+            this.jLabel15.setVisible(true);
+        }
+        if (name.getText().trim().equals("") || name.getText().trim().toLowerCase().equals("enter your name")) {
+            name.setText("Enter your Name");
+            name.setForeground(new Color(187, 187, 187));
+        }
+    }//GEN-LAST:event_nameFocusLost
+
+    private void nameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusGained
+        // TODO add your handling code here:
+        if (name.getText().trim().toLowerCase().equals("enter your name")) {
+            name.setText("");
+            name.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_nameFocusGained
 
     /**
      * @param args the command line arguments
@@ -852,7 +1041,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WelcomeScreen().setVisible(true);
+                WelcomeScreen screen = new WelcomeScreen();
+                screen.setVisible(true);
             }
         });
     }
@@ -881,6 +1071,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -889,6 +1081,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
@@ -897,5 +1091,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private KGradientPanel kGradientPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField password;
+    private javax.swing.JTextField phoneno;
     // End of variables declaration//GEN-END:variables
 }

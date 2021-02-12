@@ -28,7 +28,7 @@ public class Starting {
             java.util.logging.Logger.getLogger(SplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         SplashScreen screen = new SplashScreen();
-        Home start = new Home();
+        WelcomeScreen start = new WelcomeScreen();
         screen.setVisible(true);
         try {
             for (int row = 0; row <= 100; row++) {
@@ -38,7 +38,7 @@ public class Starting {
                 if (row == 100) {
 
                     screen.setVisible(false);
-                    //screen.dispose();
+//                    screen.dispose();
                     //new Home();
                     start.setVisible(true);
                 }

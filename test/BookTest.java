@@ -1,45 +1,42 @@
 
+import java.util.Vector;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
-/**
+ *
+ *
  *
  * @author hackme
  */
 public class BookTest {
 
-    public static void main(String a[]) {
-// Unit test to check read from csv
-//        Book obj = new Book("Publisher,debanjan,author,ENGLISH,978-1-56619-909-4,213414,/home/angshuman/Pictures/Screenshot_20210104_110819.png,52");
-//        System.out.println(obj.getQuantity());
-        try {
-            String filename = "dtb.csv";
-            File file = new File(filename);
-            FileReader reader = new FileReader(file);
-            BufferedReader infile = new BufferedReader(reader);
-            String line = "";
-            boolean done = false;
-            while (!done) {
-                line = infile.readLine();
-                if (line == null) {
-                    done = true;
-
-                } else {
-                    Book obj = new Book(line);
-                    System.out.println(obj.getAuthor());
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+    public static void main(String args[]) {
+        Book obj = new Book("dtb-array.json");
+        Vector<Book> bookArr = obj.getBookArray();
+        
+        // Get total number of books
+        assert bookArr.size() == 22 : "Wrong Total number of Books";
+        System.out.println("Total number of Books: " + bookArr.size());
+        
+        Book book1 = bookArr.get(21);
+        assert book1.getPrice() == 2134 : "Wrong Price";
+        
+        int i = 0;
+        while (i < bookArr.size()) {
+            Book book = bookArr.get(i);
+            System.out.println("Book Code: " + book.getCode());
+            System.out.println("Publisher: " + book.getPublisher());
+            System.out.println("Book Name: " + book.getName());
+            System.out.println("Author: " + book.getAuthor());
+            System.out.println("Subject: " + book.getSubject());
+            System.out.println("ISBN: " + book.getISBN());
+            System.out.println("Price: " + book.getPrice());
+            System.out.println("Path of Picture: " + book.getPicPath());
+            System.out.println("Quantity: " + book.getQuantity());
+            i++;
+        } 
     }
 }
