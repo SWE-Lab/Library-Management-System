@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import org.json.simple.JSONArray;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -74,7 +75,7 @@ public class Home extends javax.swing.JFrame {
             jButton18.setVisible(true);
             jButton3.setVisible(true);
             jButton4.setVisible(true);
-            
+
         }
         jLabel9.setVisible(false);
         jLabel14.setVisible(false);
@@ -409,14 +410,17 @@ public class Home extends javax.swing.JFrame {
         jsonData.addColumn("Book Code");
         jsonData.addColumn("Name");
         jsonData.addColumn("Author Name");
+        jsonData.addColumn("DOI");
         int i = 0;
         while(i<this.member.getMemBookArr().size()){
             BookManager bm = new BookManager("dtb-array.json");
-            Book TBook = bm.searchBook((String)this.member.getMemBookArr().get(i));
+            JSONArray ja = (JSONArray) this.member.getMemBookArr().get(i);
+            Book TBook = bm.searchBook((String) ja.get(0));
             Vector<String> v = new Vector<String>();
             v.add(TBook.getCode());
             v.add(TBook.getName());
             v.add(TBook.getAuthor());
+            v.add((String)ja.get(1));
             jsonData.addRow(v);
             i++;
         }
@@ -1657,11 +1661,9 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel35)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel36)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
@@ -1970,6 +1972,10 @@ public class Home extends javax.swing.JFrame {
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        WelcomeScreen wscreen = new WelcomeScreen();
+        wscreen.setVisible(true);
+
+
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -2057,14 +2063,17 @@ public class Home extends javax.swing.JFrame {
             jsonData.addColumn("Book Code");
             jsonData.addColumn("Name");
             jsonData.addColumn("Author Name");
+            jsonData.addColumn("DOI");
             int i = 0;
             while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
                 BookManager bm = new BookManager("dtb-array.json");
-                Book TBook = bm.searchBook((String) this.memmanager.getMember(this.index).getMemBookArr().get(i));
+                JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
+                Book TBook = bm.searchBook((String) ja.get(0));
                 Vector<String> v = new Vector<String>();
                 v.add(TBook.getCode());
                 v.add(TBook.getName());
                 v.add(TBook.getAuthor());
+                v.add((String) ja.get(1));
                 jsonData.addRow(v);
                 i++;
             }
@@ -2166,14 +2175,17 @@ public class Home extends javax.swing.JFrame {
             jsonData.addColumn("Book Code");
             jsonData.addColumn("Name");
             jsonData.addColumn("Author Name");
+            jsonData.addColumn("DOI");
             int i = 0;
             while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
+                JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
                 BookManager bm = new BookManager("dtb-array.json");
-                Book TBook = bm.searchBook((String) this.memmanager.getMember(this.index).getMemBookArr().get(i));
+                Book TBook = bm.searchBook((String) ja.get(0));
                 Vector<String> v = new Vector<String>();
                 v.add(TBook.getCode());
                 v.add(TBook.getName());
                 v.add(TBook.getAuthor());
+                v.add((String) ja.get(1));
                 jsonData.addRow(v);
                 i++;
             }
@@ -2494,7 +2506,7 @@ public class Home extends javax.swing.JFrame {
         MemberManager memmanager = new MemberManager("dtb-member.json");
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Home hpage = new Home(memmanager.getMember(1), 1);
+                Home hpage = new Home(memmanager.getMember(0), 0);
                 hpage.show();
 //                //new Home().setVisible(true);
 //                Home display = new Home();

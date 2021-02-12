@@ -114,7 +114,12 @@ public class Member {
     }
 
     public void addMemBook(String bookName) {
-        this.MemBookArr.add(bookName);
+        JSONArray pair = new JSONArray();
+        pair.add(bookName);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
+        String formattedString = LocalDate.now().format(formatter);
+        pair.add(formattedString);
+        this.MemBookArr.add(pair);
     }
 
     public void remMemBook(int index) {
