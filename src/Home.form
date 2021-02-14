@@ -482,7 +482,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor" postCode="DefaultTableModel jsonData = new DefaultTableModel(){&#xa;&#xa;            boolean[] canEdit = new boolean[]{&#xa;                    false, false, false&#xa;            };&#xa;         public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;                return canEdit[columnIndex];&#xa;            }&#xa;        };&#xa;        jsonData.addColumn(&quot;Book Code&quot;);&#xa;        jsonData.addColumn(&quot;Name&quot;);&#xa;        jsonData.addColumn(&quot;Author Name&quot;);&#xa;        jsonData.addColumn(&quot;DOI&quot;);&#xa;        int i = 0;&#xa;        while(i&lt;this.member.getMemBookArr().size()){&#xa;        BookManager bm = new BookManager(&quot;dtb-array.json&quot;);&#xa;        JSONArray ja = (JSONArray) this.member.getMemBookArr().get(i);&#xa;        Book TBook = bm.searchBook((String) ja.get(0));&#xa;            Vector&lt;String&gt; v = new Vector&lt;String&gt;();&#xa;            v.add(TBook.getCode());&#xa;            v.add(TBook.getName());&#xa;            v.add(TBook.getAuthor());&#xa;            v.add((String)ja.get(1));&#xa;            jsonData.addRow(v);&#xa;        i++;&#xa;        }">
                                   <Color blue="31" green="e0" red="a9" type="rgb"/>
                                 </Property>
-                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jTable1.setRowHeight(40);">
                                   <Connection code="jsonData" type="code"/>
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1712,6 +1712,9 @@
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
                               </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jTable2.setRowHeight(40);"/>
+                              </AuxValues>
                             </Component>
                           </SubComponents>
                         </Container>

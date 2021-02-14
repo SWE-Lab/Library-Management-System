@@ -1,6 +1,6 @@
 [
   {
-    "Role": "Student",
+    "Role": "Librarian",
     "EnrollNo": "12018002002143",
     "Email": "m@gmail.com",
     "MemBookArr": [
@@ -27,7 +27,7 @@
     ],
     "Fine": 100,
     "PhNo": "9875185440",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-05-23",
     "Name": "Debanjan Dhar",
     "Password": "Dh@!1234"
@@ -46,7 +46,7 @@
     ],
     "Fine": 0,
     "PhNo": "9765437890",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-01-23",
     "Name": "Aniket Das",
     "Password": "Dhar!1234"
@@ -62,7 +62,7 @@
     ],
     "Fine": 0,
     "PhNo": "8420572544",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-07-23",
     "Name": "Budhaditya Sarkar",
     "Password": "dhonI@123"
@@ -81,7 +81,7 @@
     ],
     "Fine": 0,
     "PhNo": "9830108639",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-12-23",
     "Name": "Angshuman Sengupta",
     "Password": "Mani@1234"
@@ -97,7 +97,7 @@
     ],
     "Fine": 0,
     "PhNo": "9830147893",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-08-23",
     "Name": "Hritam Saha",
     "Password": "4535^%&%hgjhgJHGJHG"
@@ -112,7 +112,7 @@
     ],
     "Fine": 0,
     "PhNo": "9903827689",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-05-30",
     "Name": "Debayan Gangulky",
     "Password": "3453fgfgFF%^^"
@@ -131,7 +131,7 @@
     ],
     "Fine": 0,
     "PhNo": "9832108639",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-05-14",
     "Name": "Ritwik Mitra",
     "Password": "dskjfhs7678966^^&^GJG"
@@ -150,7 +150,7 @@
     ],
     "Fine": 0,
     "PhNo": "9748654321",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-05-25",
     "Name": "Avik Mukherjee",
     "Password": "gjkgJHGJHKG86578&*^*&^"
@@ -169,7 +169,7 @@
     ],
     "Fine": 0,
     "PhNo": "9874123445",
-    "ProfilePicPath": "https:\\\\/\\\\/softwareengteam.page.link\\\\/profilepic",
+    "ProfilePicPath": "https://softwareengteam.page.link/profilepic",
     "EnrollDate": "2033-05-26",
     "Name": "Pritam Dey",
     "Password": "qwe123asdas.&*A"
