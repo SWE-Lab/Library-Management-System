@@ -113,6 +113,15 @@ public class Member {
         return this.MemBookArr;
     }
 
+    public int getTotalMemBook(){
+        return this.MemBookArr.size();
+    }
+    
+    public LocalDate getBookIssueDate(int bookIndex){
+        JSONArray bp = (JSONArray) this.MemBookArr.get(bookIndex);
+        return LocalDate.parse((String) bp.get(1));
+    }
+    
     public void addMemBook(String bookName) {
         JSONArray pair = new JSONArray();
         pair.add(bookName);

@@ -41,13 +41,14 @@ public class MemberTest {
             System.out.println("Fine : " + member.getFine());
             System.out.println("EnrollDate : " + member.getDate());
             System.out.println("Role : " + member.getRole());
+            System.out.println("Get individual book issue date: " + member.getBookIssueDate(0));
+//            member.getBookIssueDate(0);
 //            if(i==2)
 //            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
 //            String formattedString = member.getDate().format(formatter);
             member.addMemBook("d");
 //            member.remMemBook(1);
             JSONArray ja = member.getMemBookArr();
-            obj.saveInfo();
             System.out.println(ja);
             int j = 0;
             while (j < ja.size()) {
