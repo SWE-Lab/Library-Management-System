@@ -425,6 +425,7 @@ public class Home extends javax.swing.JFrame {
             i++;
         }
         jTable1.setModel(jsonData);
+        jTable1.setRowHeight(40);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -1219,6 +1220,7 @@ public class Home extends javax.swing.JFrame {
         jTable2.setEditingColumn(3);
         jTable2.setEditingColumn(5);
         jTable2.setEditingColumn(6);
+        jTable2.setRowHeight(40);
         jScrollPane2.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
@@ -2098,9 +2100,15 @@ public class Home extends javax.swing.JFrame {
         if (jTable2.getSelectedColumn() >= 0) {
             col = jTable2.getSelectedColumn();
         }
-        this.bookObj.updateBook(row, jTable2.getColumnName(col), (String) jTable2.getValueAt(row, col));
-        this.bookObj.writeJSON();
-        JOptionPane.showMessageDialog(this, "Updated in database");
+        String check = (String) jTable2.getValueAt(row, col);
+        if ((Pattern.matches("[A-Za-z\\s]+", check)) && (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", check)) && (Pattern.matches("[0-9]", check))) {
+            this.bookObj.updateBook(row, jTable2.getColumnName(col), check);
+            this.bookObj.writeJSON();
+            JOptionPane.showMessageDialog(this, "Updated in database");
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect entry");
+        }
         jTable2.setBackground(new java.awt.Color(31, 36, 42));
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -2144,12 +2152,11 @@ public class Home extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
             jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
         }
-
         jTable2.setModel(jsonData3);
-
         jTable2.setEditingColumn(3);
         jTable2.setEditingColumn(5);
         jTable2.setEditingColumn(6);
+
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
@@ -2407,12 +2414,7 @@ public class Home extends javax.swing.JFrame {
         jsonData4.addColumn("Books Issued");
         int i = 0;
         MemberManager bm4 = new MemberManager("dtb-member.json");
-//        Vector<Member> memberArr = this.member.getMemberArray();
         while (i < this.memmanager.getTotalMembers()) {
-//        Book TBook1= bm.getBook(i);
-
-//            System.out.println(bm4.getMember(i).getEmail());
-//            System.out.println(bm.getMember(i).);
             Vector<String> v4 = new Vector<String>();
             v4.add(bm4.getMember(i).getEnrollNo());
             v4.add(bm4.getMember(i).getName());
@@ -2422,7 +2424,6 @@ public class Home extends javax.swing.JFrame {
             v4.add(date.toString());
             v4.add(Long.toString(bm4.getMember(i).getFine()));
             v4.add(String.valueOf(bm4.getMember(i).getMemBookArr().size()));
-//            v.add(TBook1.getName());
             jsonData4.addRow(v4);
             i++;
         }
