@@ -47,8 +47,8 @@ public class MemberManager {
         this.memberArr.get(index).remMemBook(deleteindex);
     }
 
-    public void registerMember(String inputString) {
-        String arr[] = inputString.split(",");
+    public void registerMember(String arr[]) {
+//        String arr[] = inputString.split(",");
         Member member = new Member();
         member.setName(arr[0]);
         member.setEmail(arr[1]);

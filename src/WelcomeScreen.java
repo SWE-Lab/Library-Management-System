@@ -20,6 +20,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private String text = "";
     private MemberManager memMan;
     private String emailPass[] = {"", ""};
+    private String arr[] = {"", "", "", "", "", ""};
+
     /**
      * Creates new form WelcomeScreen
      */
@@ -764,12 +766,12 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         List<Object> arr = memMan.verifyMember(this.emailPass[0], "Email");
-        Member member = (Member)arr.get(0);
+        Member member = (Member) arr.get(0);
         int index = (int) arr.get(1);
         if (member.getName().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No instance found");
         } else if (member.getPassword().equals(this.emailPass[1])) {
-            Home hpage = new Home(member,index);
+            Home hpage = new Home(member, index);
             hpage.show();
             dispose();
         } else {
@@ -835,13 +837,14 @@ public class WelcomeScreen extends javax.swing.JFrame {
         String s = phoneno.getText().trim();
         if (Pattern.matches("^\\d{10}$", s)) {
             this.jLabel22.setVisible(false);
-            this.text += s + ",";
+//            this.text += s + ",";
+            this.arr[2] = s;
         } else {
             this.jLabel22.setVisible(true);
         }
-        if (email.getText().trim().equals("") || email.getText().trim().toLowerCase().equals("enter your phone no.")) {
-            email.setText("Enter your Phone No.");
-            email.setForeground(new Color(192, 192, 192));
+        if (phoneno.getText().trim().equals("") || phoneno.getText().trim().toLowerCase().equals("enter your phone no.")) {
+            phoneno.setText("Enter your Phone No.");
+            phoneno.setForeground(new Color(192, 192, 192));
         }
     }//GEN-LAST:event_phonenoFocusLost
 
@@ -872,12 +875,13 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
-            j.showSaveDialog(null);
-            File f = j.getSelectedFile();
-            String fn = f.getPath();
-            this.text += fn + ",";
-            jLabel19.setText(fn);
-            jLabel19.setVisible(true);
+        j.showSaveDialog(null);
+        File f = j.getSelectedFile();
+        String fn = f.getPath();
+        this.arr[5] = fn;
+//        this.text += fn + ",";
+        jLabel19.setText(fn);
+        jLabel19.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton3FocusLost
@@ -894,12 +898,12 @@ public class WelcomeScreen extends javax.swing.JFrame {
             if (jLabel15.isVisible() || jLabel16.isVisible() || jLabel22.isVisible() || jLabel17.isVisible() || jLabel18.isVisible()) {
                 JOptionPane.showMessageDialog(null, "Fill Details Correctly");
             } else {
-                memMan.registerMember(this.text);
+                memMan.registerMember(this.arr);
                 memMan.writeJSON();
                 JOptionPane.showMessageDialog(null, "Registration Completed");
             }
         } else
-        JOptionPane.showMessageDialog(null, "Fill All Details");
+            JOptionPane.showMessageDialog(null, "Fill All Details");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void enrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentActionPerformed
@@ -911,7 +915,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         String s = enrollment.getText().trim();
         if (Pattern.matches("^\\d{14}$", s)) {
             this.jLabel18.setVisible(false);
-            this.text += s + ",";
+//            this.text += s + ",";
+            this.arr[4] = s;
         } else {
             this.jLabel18.setVisible(true);
         }
@@ -938,7 +943,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         String s = password.getText().trim();
         if (Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+={}:;\"|,<.>?/~`'])[A-Za-z\\d!@#$%^&*()_+={}:;\"|,<.>?/~`']{8,32}$", s)) {
             this.jLabel17.setVisible(false);
-            this.text += s + ",";
+//            this.text += s + ",";
+            this.arr[3] = s;
         } else {
             JOptionPane.showMessageDialog(null, "Length must be 8-32\nEnter combination of atleast one uppercase\natleast one lowercase letter\natleast one number\natleast any of these special charaters !@#$%^&*()_+={}:;\"|,<.>?/~`'", "Error", JOptionPane.ERROR_MESSAGE);
             this.jLabel17.setVisible(true);
@@ -966,7 +972,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
         String s = email.getText().trim();
         if (Pattern.matches("^(.+)@(.+)$", s)) {
             this.jLabel16.setVisible(false);
-            this.text += s + ",";
+//            this.text += s + ",";
+            this.arr[1] = s;
         } else {
             this.jLabel16.setVisible(true);
         }
@@ -993,7 +1000,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         String s = name.getText().trim();
         if (Pattern.matches("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$", s)) {
             this.jLabel15.setVisible(false);
-            this.text += s + ",";
+            this.arr[0] = s;
         } else {
             this.jLabel15.setVisible(true);
         }
