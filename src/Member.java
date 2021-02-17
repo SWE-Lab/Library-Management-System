@@ -163,8 +163,11 @@ public class Member {
         this.fine = input;
     }
 
+    public void setDate() {
+        this.date = this.date.plusYears(1);
+    }
     public void setDate(LocalDate input) {
-        this.date = input.plusYears(1);
+        this.date = input;
     }
 
     public void setRole(String input) {

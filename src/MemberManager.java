@@ -148,6 +148,6 @@ public class MemberManager {
     }
 
     public void renewMembership(int index) {
-        this.memberArr.get(index).setDate(this.memberArr.get(index).getDate());
+        this.memberArr.get(index).setDate();
     }
 }
