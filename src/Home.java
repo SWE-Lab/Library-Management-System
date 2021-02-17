@@ -29,9 +29,9 @@ public class Home extends javax.swing.JFrame {
 
     private Member member;
     private int index;
-    private MemberManager memmanager = new MemberManager("dtb-member.json");
+    private MemberManager memmanager;
+    private LoanManager lm;
     private BookManager bookObj = new BookManager("dtb-array.json");
-    private LoanManager lm = new LoanManager(this.memmanager, this.index);
     private String arr[] = {"", "", "", "", "", "", "", "1"};
 
     /**
@@ -52,9 +52,11 @@ public class Home extends javax.swing.JFrame {
         jLabel29.setVisible(false);
     }
 
-    public Home(Member member, int index) {
+    public Home(MemberManager memMan, Member member, int index) {
+        this.memmanager = memMan;
         this.member = member;
         this.index = index;
+        this.lm = new LoanManager(this.memmanager, this.index);
         initComponents();
         jPanel3.setFocusable(true);
         jPanel1.setFocusable(true);
@@ -63,42 +65,46 @@ public class Home extends javax.swing.JFrame {
         this.setIconImage(img.getImage());
         if (this.member.getRole().equals("Student")) {
             if (this.member.getFine() == 0) {
-                jButton1.setVisible(true);
-                jButton2.setVisible(true);
-                jButton16.setVisible(true);
-                jButton3.setVisible(false);
-                jButton4.setVisible(false);
-                jButton18.setVisible(false);
-                jButton15.setVisible(false);
+                this.jButton1.setVisible(true);
+                this.jButton2.setVisible(true);
+                this.jButton16.setVisible(true);
+                this.jButton3.setVisible(false);
+                this.jButton4.setVisible(false);
+                this.jButton18.setVisible(false);
+                this.jButton15.setVisible(false);
             } else {
-                jButton1.setVisible(true);
-                jButton2.setVisible(false);
-                jButton11.setVisible(false);
-                jButton16.setVisible(true);
-                jButton3.setVisible(false);
-                jButton4.setVisible(false);
-                jButton18.setVisible(false);
-                jButton15.setVisible(true);
+                this.jButton1.setVisible(true);
+                this.jButton2.setVisible(false);
+                this.jButton11.setVisible(false);
+                this.jButton16.setVisible(true);
+                this.jButton3.setVisible(false);
+                this.jButton4.setVisible(false);
+                this.jButton18.setVisible(false);
+                this.jButton15.setVisible(true);
             }
 
         } else {
-            jButton1.setVisible(true);
-            jButton2.setVisible(false);
-            jButton16.setVisible(true);
-            jButton18.setVisible(true);
-            jButton3.setVisible(true);
-            jButton4.setVisible(true);
-            jLabel24.setVisible(false);
-            jButton14.setVisible(false);
-            jLabel32.setVisible(false);
+            if (this.member.getFine() == 0) {
+                this.jButton11.setVisible(true);
+            }
+            else this.jButton11.setVisible(false);
+            this.jButton1.setVisible(true);
+            this.jButton2.setVisible(false);
+            this.jButton16.setVisible(true);
+            this.jButton18.setVisible(true);
+            this.jButton3.setVisible(true);
+            this.jButton4.setVisible(true);
+            this.jLabel24.setVisible(false);
+            this.jButton14.setVisible(false);
+            this.jLabel32.setVisible(false);
 
         }
-        jLabel9.setVisible(false);
-        jLabel14.setVisible(false);
-        jLabel8.setVisible(false);
-        jLabel11.setVisible(false);
-        jLabel10.setVisible(false);
-        jLabel29.setVisible(false);
+        this.jLabel9.setVisible(false);
+        this.jLabel14.setVisible(false);
+        this.jLabel8.setVisible(false);
+        this.jLabel11.setVisible(false);
+        this.jLabel10.setVisible(false);
+        this.jLabel29.setVisible(false);
     }
 
     /**
@@ -1512,11 +1518,9 @@ public class Home extends javax.swing.JFrame {
                 .addGap(0, 478, Short.MAX_VALUE))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel31)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -1595,7 +1599,7 @@ public class Home extends javax.swing.JFrame {
         jsonData4.addColumn("Fine");
         jsonData4.addColumn("Books Issued");
         i = 0;
-        MemberManager bm4 = new MemberManager("dtb-member.json");
+        MemberManager bm4 = this.memmanager;
         //        Vector<Member> memberArr = this.member.getMemberArray();
         while(i<this.memmanager.getTotalMembers()){
             //        Book TBook1= bm.getBook(i);
@@ -1723,11 +1727,9 @@ public class Home extends javax.swing.JFrame {
             .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel35)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel36)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel36))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
@@ -2035,6 +2037,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+        this.memmanager.writeJSON();
+        if(this.memmanager.getMember(this.index).getRole().equalsIgnoreCase("Librarian")) this.bookObj.writeJSON();
         this.dispose();
         WelcomeScreen wscreen = new WelcomeScreen();
         wscreen.setVisible(true);
@@ -2110,7 +2114,7 @@ public class Home extends javax.swing.JFrame {
             int row = jTable3.getSelectedRow();
             String bookName = (String) jTable3.getValueAt(row, 1);
             this.memmanager.addMemBook(this.index, bookName);
-            this.memmanager.writeJSON();
+//            this.memmanager.writeJSON();
             jTable1.setBackground(new java.awt.Color(31, 36, 42));
             jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
             jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -2163,9 +2167,9 @@ public class Home extends javax.swing.JFrame {
             col = jTable2.getSelectedColumn();
         }
         String check = (String) jTable2.getValueAt(row, col);
-        if ((Pattern.matches("[A-Za-z\\s]+", check)) && (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", check)) && (Pattern.matches("[0-9]", check))) {
+        if ((Pattern.matches("[A-Za-z\\s]+", check)) || (Pattern.matches("[0-9]+([,.][0-9]{1,2})?", check)) || (Pattern.matches("[0-9]", check))) {
             this.bookObj.updateBook(row, jTable2.getColumnName(col), check);
-            this.bookObj.writeJSON();
+//            this.bookObj.writeJSON();
             JOptionPane.showMessageDialog(this, "Updated in database");
 
         } else {
@@ -2227,7 +2231,7 @@ public class Home extends javax.swing.JFrame {
         } else if (jTable1.getSelectedRow() >= 0) {
             int row = jTable1.getSelectedRow();
             this.memmanager.delMemBook(this.index, row);
-            this.memmanager.writeJSON();
+//            this.memmanager.writeJSON();
             jTable1.setBackground(new java.awt.Color(31, 36, 42));
             jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
             jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -2277,7 +2281,7 @@ public class Home extends javax.swing.JFrame {
         if (jTable2.getSelectedRow() >= 0) {
             int row = jTable2.getSelectedRow();
             this.bookObj.deleteBook(row);
-            this.bookObj.writeJSON();
+//            this.bookObj.writeJSON();
             JOptionPane.showMessageDialog(this, "Book deleted successfully form database");
             jTable2.setBackground(new java.awt.Color(31, 36, 42));
             jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
@@ -2344,7 +2348,7 @@ public class Home extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Fill details correctly");
             } else {
                 this.bookObj.addBook(this.arr);
-                this.bookObj.writeJSON();
+//                this.bookObj.writeJSON();
                 JOptionPane.showMessageDialog(this, "Operation successfully done");
             }
         } else {
@@ -2352,27 +2356,54 @@ public class Home extends javax.swing.JFrame {
         }
 
         jTable2.setBackground(new java.awt.Color(31, 36, 42));
+
         jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+
         jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+
         jTable2.setForeground(new java.awt.Color(169, 224, 49));
-        DefaultTableModel jsonData3 = new DefaultTableModel();
+        DefaultTableModel jsonData3 = new DefaultTableModel() {
+
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, true, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
         jsonData3.addColumn("Book Code");
+        jsonData3.addColumn("Subject");
         jsonData3.addColumn("Name");
         jsonData3.addColumn("Author Name");
+        jsonData3.addColumn("Publisher");
+        jsonData3.addColumn("ISBN");
+        jsonData3.addColumn("Price");
         jsonData3.addColumn("Quantity");
         int i = 0;
         while (i < this.bookObj.getTotalBooks()) {
             Book TBook3 = this.bookObj.getBook(i);
             Vector<String> v3 = new Vector<String>();
             v3.add(TBook3.getCode());
+            v3.add(TBook3.getSubject());
             v3.add(TBook3.getName());
             v3.add(TBook3.getAuthor());
+            v3.add(TBook3.getPublisher());
+            v3.add(TBook3.getISBN());
+            v3.add(Long.toString(TBook3.getPrice()));
             v3.add(Long.toString(TBook3.getQuantity()));
             jsonData3.addRow(v3);
             i++;
         }
         jTable2.setModel(jsonData3);
+
+        jTable2.setEditingColumn(3);
+        jTable2.setEditingColumn(5);
+        jTable2.setEditingColumn(6);
+
+        jTable2.setRowHeight(40);
         jScrollPane2.setViewportView(jTable2);
+
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setMinWidth(80);
             jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
@@ -2455,7 +2486,7 @@ public class Home extends javax.swing.JFrame {
             col = jTable6.getSelectedColumn();
         }
         this.memmanager.updateMember(row, jTable6.getColumnName(col), (String) jTable6.getValueAt(row, col));
-        this.memmanager.writeJSON();
+//        this.memmanager.writeJSON();
 
         DefaultTableModel jsonData4 = new DefaultTableModel() {
 
@@ -2475,7 +2506,7 @@ public class Home extends javax.swing.JFrame {
         jsonData4.addColumn("Fine");
         jsonData4.addColumn("Books Issued");
         int i = 0;
-        MemberManager bm4 = new MemberManager("dtb-member.json");
+        MemberManager bm4 = this.memmanager;
         while (i < this.memmanager.getTotalMembers()) {
             Vector<String> v4 = new Vector<String>();
             v4.add(bm4.getMember(i).getEnrollNo());
@@ -2496,11 +2527,6 @@ public class Home extends javax.swing.JFrame {
         jTable6.setEditingColumn(5);
         jTable6.setRowHeight(40);
         jTable6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable6MouseClicked(evt);
-            }
-        });
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
@@ -2528,7 +2554,7 @@ public class Home extends javax.swing.JFrame {
         boolean flag = true;
         if (flag) {
             this.memmanager.getMember(this.index).setDate();
-            this.memmanager.writeJSON();
+//            this.memmanager.writeJSON();
         } else {
             JOptionPane.showMessageDialog(this, "Membership renewal failed");
         }
@@ -2547,7 +2573,7 @@ public class Home extends javax.swing.JFrame {
         boolean flag = true;
         if (flag) {
             this.memmanager.getMember(this.index).setFine(0);
-            this.memmanager.writeJSON();
+//            this.memmanager.writeJSON();
             this.jButton15.setVisible(false);
             this.jButton2.setVisible(true);
             this.jButton11.setVisible(true);
@@ -2555,7 +2581,7 @@ public class Home extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Payment Failed");
         }
         jLabel34.setText("Total Fine/ Loan : ₹" + this.memmanager.getMember(this.index).getFine());
-        jLabel25.setText(" FINE/ LOAN : ₹"+this.memmanager.getMember(this.index).getFine());
+        jLabel25.setText(" FINE/ LOAN : ₹" + this.memmanager.getMember(this.index).getFine());
         JOptionPane.showMessageDialog(this, "Loan/ Fine paid successfully");
     }//GEN-LAST:event_jButton15MouseClicked
 
@@ -2579,47 +2605,47 @@ public class Home extends javax.swing.JFrame {
         }
     }
 
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        MemberManager memmanager = new MemberManager("dtb-member.json");
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                Home hpage = new Home(memmanager.getMember(0), 0);
-//                hpage.show();
-////                //new Home().setVisible(true);
-////                Home display = new Home();
-////                display.setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        MemberManager memmanager = new MemberManager("dtb-member.json");
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Home hpage = new Home(memmanager, memmanager.getMember(0), 0);
+                hpage.show();
+//                //new Home().setVisible(true);
+//                Home display = new Home();
+//                display.setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> down;

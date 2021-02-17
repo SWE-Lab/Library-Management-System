@@ -121,6 +121,9 @@ public class Book {
         this.quantity = input;
     }
 
+    public void setCode(){
+        this.code = this.isbn.substring(12, 15) + this.author.substring(0, 1).toUpperCase() + this.name.substring(0, 1).toUpperCase();
+    }
     // For Creating and accessing book array
     private void createBookArray() {
         try {

@@ -771,7 +771,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         if (member.getName().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No instance found");
         } else if (member.getPassword().equals(this.emailPass[1])) {
-            Home hpage = new Home(member, index);
+            Home hpage = new Home(this.memMan,member,index);
             hpage.show();
             dispose();
         } else {
@@ -899,7 +899,10 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Fill Details Correctly");
             } else {
                 memMan.registerMember(this.arr);
-                memMan.writeJSON();
+//                memMan.writeJSON();
+                System.out.println(this.memMan.getTotalMembers());
+                System.out.println(this.memMan.getMember(this.memMan.getTotalMembers() - 1).getName());
+                System.out.println(this.memMan.getMember(this.memMan.getTotalMembers() - 1).getPassword());
                 JOptionPane.showMessageDialog(null, "Registration Completed");
             }
         } else

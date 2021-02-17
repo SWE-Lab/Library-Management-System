@@ -22,7 +22,8 @@ public class MemberManagerTest {
 //
 ////        // Add new Member
         int oldNo = obj.getTotalMembers();
-        obj.registerMember("Alpa,alpa@gm.com,6547892310,12345678,15963247854125,/home/angshuman/Pictures/Screenshot_20210104_110819.png,500");
+        String arr[] = {"Alpa","alpa@gm.com","6547892310","12345678","15963247854125","/home/angshuman/Pictures/Screenshot_20210104_110819.png","500"};
+        obj.registerMember(arr);
         // To add new book to the newly added member's book array
 //        obj.getMember(oldNo).addMemBook("angshuman");
         assert obj.getTotalMembers() == oldNo + 1 : "Member not Added";

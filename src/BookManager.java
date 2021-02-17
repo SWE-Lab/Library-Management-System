@@ -46,6 +46,7 @@ public class BookManager {
         book.setPrice(new Long(arr[5]));
         book.setPicPath(arr[6]);
         book.setQuantity(new Long(arr[7]));
+        book.setCode();
         this.bookArr.add(book);
     }
 
