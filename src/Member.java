@@ -2,6 +2,8 @@
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
@@ -34,6 +36,7 @@ public class Member {
     private LocalDate date;
     private String role;
     private JSONArray MemBookArr;
+    AES aes = new AES();
 
     public Member() {
         this.name = "";
@@ -180,6 +183,8 @@ public class Member {
 
     private void createMemberArray() {
         try {
+            aes.decrypt(Files.readString(Paths.get(this.jsonPath)));
+//            System.out.println(Files.readString(Paths.get(this.jsonPath)));
             Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
             this.jsonArray = (JSONArray) jo;
             int i = 0;
@@ -221,7 +226,8 @@ public class Member {
             }
             File file = new File(this.jsonPath);
             FileWriter fw = new FileWriter(file);
-            fw.write(jaNew.toJSONString());
+            String encryptedString = aes.encrypt(jaNew.toJSONString());
+            fw.write(encryptedString);
             fw.flush();
             fw.close();
         } catch (Exception e) {

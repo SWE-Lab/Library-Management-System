@@ -2,8 +2,6 @@ package ExperimentJSON;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -15,7 +13,7 @@ public class ReadingArrayJSON {
         JSONParser jsonParser = new JSONParser();
         try {
             //Parsing the contents of the JSON file
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("employees.json"));
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader("dtb-array.json"));
             System.out.println(jsonObject);
               //Forming URL
 //            System.out.println("Contents of the JSON are: ");

@@ -32,16 +32,16 @@ public class MemberTest {
         int i = 0;
         while (i < memberArr.size()) {
             Member member = memberArr.get(i);
-            System.out.println("Name : " + member.getName());
-            System.out.println("Email : " + member.getEmail());
-            System.out.println("PhNo : " + member.getPhNo());
-            System.out.println("Password : " + member.getPassword());
-            System.out.println("EnrollNo : " + member.getEnrollNo());
-            System.out.println("ProfilePicPath : " + member.getPicPath());
-            System.out.println("Fine : " + member.getFine());
-            System.out.println("EnrollDate : " + member.getDate());
-            System.out.println("Role : " + member.getRole());
-            System.out.println("Get individual book issue date: " + member.getBookIssueDate(0));
+//            System.out.println("Name : " + member.getName());
+//            System.out.println("Email : " + member.getEmail());
+//            System.out.println("PhNo : " + member.getPhNo());
+//            System.out.println("Password : " + member.getPassword());
+//            System.out.println("EnrollNo : " + member.getEnrollNo());
+//            System.out.println("ProfilePicPath : " + member.getPicPath());
+//            System.out.println("Fine : " + member.getFine());
+//            System.out.println("EnrollDate : " + member.getDate());
+//            System.out.println("Role : " + member.getRole());
+//            System.out.println("Get individual book issue date: " + member.getBookIssueDate(0));
 //            member.getBookIssueDate(0);
 //            if(i==2)
 //            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
@@ -49,11 +49,11 @@ public class MemberTest {
             member.addMemBook("d");
 //            member.remMemBook(1);
             JSONArray ja = member.getMemBookArr();
-            System.out.println(ja);
+//            System.out.println(ja);
             int j = 0;
             while (j < ja.size()) {
-                JSONArray j1 = (JSONArray) ja.get(j);
-                System.out.println("MemBookArr : [" + j + "] " + j1.get(0) + "," + j1.get(1));
+//                JSONArray j1 = (JSONArray) ja.get(j);
+//                System.out.println("MemBookArr : [" + j + "] " + j1.get(0) + "," + j1.get(1));
                 j++;
             }
 //            System.out.println(member.getMemBookArr().size());
