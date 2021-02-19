@@ -36,7 +36,7 @@ public class Member {
     private LocalDate date;
     private String role;
     private JSONArray MemBookArr;
-    AES aes = new AES();
+//    AES aes = new AES();
 
     public Member() {
         this.name = "";
@@ -183,7 +183,7 @@ public class Member {
 
     private void createMemberArray() {
         try {
-            aes.decrypt(Files.readString(Paths.get(this.jsonPath)));
+//            aes.decrypt(Files.readString(Paths.get(this.jsonPath)));
 //            System.out.println(Files.readString(Paths.get(this.jsonPath)));
             Object jo = new JSONParser().parse(new FileReader(this.jsonPath));
             this.jsonArray = (JSONArray) jo;
@@ -226,8 +226,8 @@ public class Member {
             }
             File file = new File(this.jsonPath);
             FileWriter fw = new FileWriter(file);
-            String encryptedString = aes.encrypt(jaNew.toJSONString());
-            fw.write(encryptedString);
+//            String encryptedString = aes.encrypt(jaNew.toJSONString());
+            fw.write(jaNew.toJSONString());
             fw.flush();
             fw.close();
         } catch (Exception e) {

@@ -43,34 +43,40 @@ public class Book {
         this.code = "";
     }
 
-    public Book(String jsonPath){
+    public Book(String jsonPath) {
         this.jsonPath = jsonPath;
         this.createBookArray();
     }
+
     public Book(JSONArray jsonArray, int index) {
-            JSONObject joi = (JSONObject) jsonArray.get(index);
-            this.publisher = (String) joi.get("Publisher");
-            this.name = (String) joi.get("Name");
-            this.author = (String) joi.get("Author");
-            this.subject = (String) joi.get("Subject");
-            this.isbn = (String) joi.get("ISBN");
-            this.price = (long) joi.get("Price");
-            this.picPath = (String) joi.get("PicPath");
-            this.quantity = (long) joi.get("Quantity");
-            this.code = this.isbn.substring(12, 15) + this.author.substring(0, 1).toUpperCase() + this.name.substring(0, 1).toUpperCase();
+        JSONObject joi = (JSONObject) jsonArray.get(index);
+        this.publisher = (String) joi.get("Publisher");
+        this.name = (String) joi.get("Name");
+        this.author = (String) joi.get("Author");
+        this.subject = (String) joi.get("Subject");
+        this.isbn = (String) joi.get("ISBN");
+        this.price = (long) joi.get("Price");
+        this.picPath = (String) joi.get("PicPath");
+        this.quantity = (long) joi.get("Quantity");
+        this.code = this.isbn.substring(12, 15) + this.author.substring(0, 1).toUpperCase() + this.name.substring(0, 1).toUpperCase();
     }
+
     public String getPublisher() {
         return this.publisher;
     }
+
     public String getName() {
         return this.name;
     }
+
     public String getAuthor() {
         return this.author;
     }
+
     public String getSubject() {
         return this.subject;
     }
+
     public String getISBN() {
         return this.isbn;
     }
@@ -78,9 +84,11 @@ public class Book {
     public long getPrice() {
         return this.price;
     }
+
     public String getPicPath() {
         return this.picPath;
     }
+
     public long getQuantity() {
         return this.quantity;
     }
@@ -88,6 +96,7 @@ public class Book {
     public String getCode() {
         return this.code;
     }
+
 
     public void setPublisher(String input) {
         this.publisher = input;

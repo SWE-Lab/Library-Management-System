@@ -1,5 +1,6 @@
 
 import java.util.Vector;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,6 +12,7 @@ import java.util.Vector;
  * @author angshuman
  */
 public class BookManager {
+
     private Vector<Book> bookArr;
     private Book obj;
 
@@ -29,6 +31,37 @@ public class BookManager {
 
     public Vector<Book> getBookArr() {
         return this.bookArr;
+    }
+
+    public int getIndex(String bookName) {
+        int i = 0;
+        while (i < this.bookArr.size()) {
+            Book book = this.bookArr.get(i);
+            if (book.getName().equalsIgnoreCase(bookName)) {
+                break;
+            }
+            i++;
+        }
+        if (i >= this.bookArr.size()) {
+            return -1;
+        } else {
+            return i;
+        }
+    }
+
+    public void incBook(int index) {
+        long no = this.bookArr.get(index).getQuantity() + 1;
+        this.bookArr.get(index).setQuantity(no);
+    }
+
+    public int decBook(int index) {
+        if (this.bookArr.get(index).getQuantity() != 0) {
+            long no = this.bookArr.get(index).getQuantity() - 1;
+            this.bookArr.get(index).setQuantity(no);
+        } else {
+            return -1;
+        }
+        return 1;
     }
 
     public Book getBook(int index) {
