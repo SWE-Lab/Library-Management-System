@@ -87,11 +87,13 @@ public class Home extends javax.swing.JFrame {
         } else {
             if (this.member.getFine() == 0) {
                 this.jButton11.setVisible(true);
+                this.jButton2.setVisible(true);
             } else {
                 this.jButton11.setVisible(false);
+                this.jButton2.setVisible(false);
             }
             this.jButton1.setVisible(true);
-            this.jButton2.setVisible(false);
+//            this.jButton2.setVisible(false);
             this.jButton16.setVisible(true);
             this.jButton18.setVisible(true);
             this.jButton3.setVisible(true);
@@ -2348,101 +2350,105 @@ public class Home extends javax.swing.JFrame {
         } else if (jTable3.getSelectedRow() >= 0) {
             int row = jTable3.getSelectedRow();
             String bookName = (String) jTable3.getValueAt(row, 1);
-            this.memmanager.addMemBook(this.index, bookName);
             Book bk = this.bookObj.searchBook(bookName);
             if (this.bookObj.decBook(this.bookObj.getIndex(bookName)) == -1) {
                 JOptionPane.showMessageDialog(this, "Out of Stock");
             } else {
+                int result = this.memmanager.addMemBook(this.index, bookName);
+                if (result == -1) {
+                    JOptionPane.showMessageDialog(this, "Borrowing limit reached\nReturn books first");
+                } else {
 //            this.bookObj.decBook(this.bookObj.getIndex(bookName));
 //                this.bookObj.writeJSON();
 //                this.memmanager.writeJSON();
-                jTable1.setBackground(new java.awt.Color(31, 36, 42));
-                jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
-                jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-                jTable1.setForeground(new java.awt.Color(169, 224, 49));
-                DefaultTableModel jsonData = new DefaultTableModel() {
-                    boolean[] canEdit = new boolean[]{
-                        false, false, false
+                    jTable1.setBackground(new java.awt.Color(31, 36, 42));
+                    jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+                    jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+                    jTable1.setForeground(new java.awt.Color(169, 224, 49));
+                    DefaultTableModel jsonData = new DefaultTableModel() {
+                        boolean[] canEdit = new boolean[]{
+                            false, false, false
+                        };
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
                     };
-
-                    public boolean isCellEditable(int rowIndex, int columnIndex) {
-                        return canEdit[columnIndex];
+                    jsonData.addColumn("Book Code");
+                    jsonData.addColumn("Name");
+                    jsonData.addColumn("Author Name");
+                    jsonData.addColumn("DOI");
+                    int i = 0;
+                    while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
+                        BookManager bm = new BookManager("dtb-array.json");
+                        JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
+                        Book TBook = bm.searchBook((String) ja.get(0));
+                        Vector<String> v = new Vector<String>();
+                        v.add(TBook.getCode());
+                        v.add(TBook.getName());
+                        v.add(TBook.getAuthor());
+                        v.add((String) ja.get(1));
+                        jsonData.addRow(v);
+                        i++;
                     }
-                };
-                jsonData.addColumn("Book Code");
-                jsonData.addColumn("Name");
-                jsonData.addColumn("Author Name");
-                jsonData.addColumn("DOI");
-                int i = 0;
-                while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
-                    BookManager bm = new BookManager("dtb-array.json");
-                    JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
-                    Book TBook = bm.searchBook((String) ja.get(0));
-                    Vector<String> v = new Vector<String>();
-                    v.add(TBook.getCode());
-                    v.add(TBook.getName());
-                    v.add(TBook.getAuthor());
-                    v.add((String) ja.get(1));
-                    jsonData.addRow(v);
-                    i++;
-                }
-                jTable1.setModel(jsonData);
-                jScrollPane1.setViewportView(jTable1);
-                if (jTable1.getColumnModel().getColumnCount() > 0) {
-                    jTable1.getColumnModel().getColumn(0).setMinWidth(80);
-                    jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
-                }
-                JOptionPane.showMessageDialog(this, "Book successfully borrowed");
+                    jTable1.setModel(jsonData);
+                    jScrollPane1.setViewportView(jTable1);
+                    if (jTable1.getColumnModel().getColumnCount() > 0) {
+                        jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+                        jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+                    }
+                    JOptionPane.showMessageDialog(this, "Book successfully borrowed");
 
-                jTable2.setBackground(new java.awt.Color(31, 36, 42));
+                    jTable2.setBackground(new java.awt.Color(31, 36, 42));
 
-                jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+                    jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
 
-                jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+                    jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
 
-                jTable2.setForeground(new java.awt.Color(169, 224, 49));
-                DefaultTableModel jsonData3 = new DefaultTableModel() {
+                    jTable2.setForeground(new java.awt.Color(169, 224, 49));
+                    DefaultTableModel jsonData3 = new DefaultTableModel() {
 
-                    boolean[] canEdit = new boolean[]{
-                        false, false, false, false, true, false, true, true
+                        boolean[] canEdit = new boolean[]{
+                            false, false, false, false, true, false, true, true
+                        };
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit[columnIndex];
+                        }
                     };
-
-                    public boolean isCellEditable(int rowIndex, int columnIndex) {
-                        return canEdit[columnIndex];
+                    jsonData3.addColumn("Book Code");
+                    jsonData3.addColumn("Subject");
+                    jsonData3.addColumn("Name");
+                    jsonData3.addColumn("Author Name");
+                    jsonData3.addColumn("Publisher");
+                    jsonData3.addColumn("ISBN");
+                    jsonData3.addColumn("Price");
+                    jsonData3.addColumn("Quantity");
+                    i = 0;
+                    while (i < this.bookObj.getTotalBooks()) {
+                        Book TBook3 = this.bookObj.getBook(i);
+                        Vector<String> v3 = new Vector<String>();
+                        v3.add(TBook3.getCode());
+                        v3.add(TBook3.getSubject());
+                        v3.add(TBook3.getName());
+                        v3.add(TBook3.getAuthor());
+                        v3.add(TBook3.getPublisher());
+                        v3.add(TBook3.getISBN());
+                        v3.add(Long.toString(TBook3.getPrice()));
+                        v3.add(Long.toString(TBook3.getQuantity()));
+                        jsonData3.addRow(v3);
+                        i++;
                     }
-                };
-                jsonData3.addColumn("Book Code");
-                jsonData3.addColumn("Subject");
-                jsonData3.addColumn("Name");
-                jsonData3.addColumn("Author Name");
-                jsonData3.addColumn("Publisher");
-                jsonData3.addColumn("ISBN");
-                jsonData3.addColumn("Price");
-                jsonData3.addColumn("Quantity");
-                i = 0;
-                while (i < this.bookObj.getTotalBooks()) {
-                    Book TBook3 = this.bookObj.getBook(i);
-                    Vector<String> v3 = new Vector<String>();
-                    v3.add(TBook3.getCode());
-                    v3.add(TBook3.getSubject());
-                    v3.add(TBook3.getName());
-                    v3.add(TBook3.getAuthor());
-                    v3.add(TBook3.getPublisher());
-                    v3.add(TBook3.getISBN());
-                    v3.add(Long.toString(TBook3.getPrice()));
-                    v3.add(Long.toString(TBook3.getQuantity()));
-                    jsonData3.addRow(v3);
-                    i++;
-                }
-                jTable2.setModel(jsonData3);
-                jTable2.setEditingColumn(3);
-                jTable2.setEditingColumn(5);
-                jTable2.setEditingColumn(6);
-                jTable2.setRowHeight(40);
-                jScrollPane2.setViewportView(jTable2);
-                if (jTable2.getColumnModel().getColumnCount() > 0) {
-                    jTable2.getColumnModel().getColumn(0).setMinWidth(80);
-                    jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+                    jTable2.setModel(jsonData3);
+                    jTable2.setEditingColumn(3);
+                    jTable2.setEditingColumn(5);
+                    jTable2.setEditingColumn(6);
+                    jTable2.setRowHeight(40);
+                    jScrollPane2.setViewportView(jTable2);
+                    if (jTable2.getColumnModel().getColumnCount() > 0) {
+                        jTable2.getColumnModel().getColumn(0).setMinWidth(80);
+                        jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+                    }
                 }
             }
         } else {

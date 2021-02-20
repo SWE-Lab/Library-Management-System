@@ -125,13 +125,17 @@ public class Member {
         return LocalDate.parse((String) bp.get(1));
     }
     
-    public void addMemBook(String bookName) {
+    public int addMemBook(String bookName) {
+        if(this.getTotalMemBook() > 6 ){
+            return -1;
+        }
         JSONArray pair = new JSONArray();
         pair.add(bookName);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
         String formattedString = LocalDate.now().format(formatter);
         pair.add(formattedString);
         this.MemBookArr.add(pair);
+        return 1;
     }
 
     public void remMemBook(int index) {

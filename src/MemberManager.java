@@ -39,8 +39,8 @@ public class MemberManager {
         return this.memberArr.get(index);
     }
 
-    public void addMemBook(int index, String bookName) {
-        this.memberArr.get(index).addMemBook(bookName);
+    public int addMemBook(int index, String bookName) {
+        return this.memberArr.get(index).addMemBook(bookName);
     }
 
     public void delMemBook(int index, int deleteindex) {
@@ -58,7 +58,11 @@ public class MemberManager {
         member.setProfilePicPath(arr[5]);
         member.setFine(0);
         member.setDate(LocalDate.now());
-        member.setRole("Student");
+        if (arr[4].substring(0, 3).equals("199")) {
+            member.setRole("Librarian");
+        } else {
+            member.setRole("Student");
+        }
 //        member.setMemBookArr();
         this.memberArr.add(member);
     }
