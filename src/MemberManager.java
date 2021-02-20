@@ -58,11 +58,7 @@ public class MemberManager {
         member.setProfilePicPath(arr[5]);
         member.setFine(0);
         member.setDate(LocalDate.now());
-        if (arr[4].substring(0, 3).equals("199")) {
-            member.setRole("Librarian");
-        } else {
-            member.setRole("Student");
-        }
+        member.setRole(arr[4]);
 //        member.setMemBookArr();
         this.memberArr.add(member);
     }

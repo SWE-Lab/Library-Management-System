@@ -1086,10 +1086,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3FocusLost
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //        String Name=name.getText();
-        //        String Email=email.getText();
-        //        String Phone=password.getText();
-        //        String Enroll=enrollment.getText();
         if ((jLabel19.isVisible() && !name.getText().trim().toLowerCase().equals("enter your name") && !email.getText().trim().toLowerCase().equals("enter your email") && !phoneno.getText().trim().toLowerCase().equals("enter your phone no.") && !password.getText().trim().toLowerCase().equals("new password") && !enrollment.getText().trim().toLowerCase().equals("enrollment no"))) {
             //JOptionPane.showMessageDialog(this, "Operation successfully done");
             if (jLabel15.isVisible() || jLabel16.isVisible() || jLabel22.isVisible() || jLabel17.isVisible() || jLabel18.isVisible()) {

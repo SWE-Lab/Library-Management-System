@@ -116,17 +116,17 @@ public class Member {
         return this.MemBookArr;
     }
 
-    public int getTotalMemBook(){
+    public int getTotalMemBook() {
         return this.MemBookArr.size();
     }
-    
-    public LocalDate getBookIssueDate(int bookIndex){
+
+    public LocalDate getBookIssueDate(int bookIndex) {
         JSONArray bp = (JSONArray) this.MemBookArr.get(bookIndex);
         return LocalDate.parse((String) bp.get(1));
     }
-    
+
     public int addMemBook(String bookName) {
-        if(this.getTotalMemBook() > 6 ){
+        if (this.getTotalMemBook() >= 6) {
             return -1;
         }
         JSONArray pair = new JSONArray();
@@ -171,18 +171,36 @@ public class Member {
     }
 
     public void setDate() {
-        this.date = this.date.plusYears(1);
+        this.date = this.date;
     }
+
     public void setDate(LocalDate input) {
         this.date = input;
     }
 
     public void setRole(String input) {
-        this.role = input;
+        if (input.substring(0, 3).equals("199")) {
+            this.role = "Librarian";
+        } else {
+            this.role = "Student";
+        }
     }
 
     public void setMemBookArr() {
         this.MemBookArr = new JSONArray();
+    }
+
+    public int searchBookArray(String bookname) {
+        int i = 0;
+        while (i < this.MemBookArr.size()) {
+            JSONArray ja = (JSONArray) this.MemBookArr.get(i);
+            String bookName = (String) ja.get(0);
+            if (bookName.equalsIgnoreCase(bookname)) {
+                return -1;
+            }
+            i++;
+        }
+        return 1;
     }
 
     private void createMemberArray() {

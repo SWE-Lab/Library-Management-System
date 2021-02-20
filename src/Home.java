@@ -4,7 +4,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.Vector;
 import java.util.regex.*;
 import javax.swing.ImageIcon;
@@ -68,6 +71,7 @@ public class Home extends javax.swing.JFrame {
             if (this.member.getFine() == 0) {
                 this.jButton1.setVisible(true);
                 this.jButton2.setVisible(true);
+                this.jLabel41.setVisible(false);
                 this.jButton16.setVisible(true);
                 this.jButton3.setVisible(false);
                 this.jButton4.setVisible(false);
@@ -76,6 +80,7 @@ public class Home extends javax.swing.JFrame {
             } else {
                 this.jButton1.setVisible(true);
                 this.jButton2.setVisible(false);
+                this.jLabel41.setVisible(true);
                 this.jButton11.setVisible(false);
                 this.jButton16.setVisible(true);
                 this.jButton3.setVisible(false);
@@ -88,9 +93,11 @@ public class Home extends javax.swing.JFrame {
             if (this.member.getFine() == 0) {
                 this.jButton11.setVisible(true);
                 this.jButton2.setVisible(true);
+                this.jLabel41.setVisible(false);
             } else {
                 this.jButton11.setVisible(false);
                 this.jButton2.setVisible(false);
+                this.jLabel41.setVisible(true);
             }
             this.jButton1.setVisible(true);
 //            this.jButton2.setVisible(false);
@@ -139,6 +146,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -148,6 +156,7 @@ public class Home extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -258,7 +267,7 @@ public class Home extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 51, 153));
         jButton2.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Book Availabilty");
+        jButton2.setText("Borrow Book");
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -403,6 +412,10 @@ public class Home extends javax.swing.JFrame {
             }
         }.getIcon());
 
+        jLabel40.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(169, 224, 49));
+        jLabel40.setText("Total Issued books - " +this.member.getTotalMemBook());
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -413,8 +426,9 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 888, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 960, Short.MAX_VALUE)
                 .addComponent(jLabel23)
                 .addGap(0, 0, 0))
         );
@@ -429,6 +443,8 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel40)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -544,12 +560,34 @@ public class Home extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 0));
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        int diffDays = 0;
+        String formattedString1 = "",formattedString2 = "";
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-LL-dd");
+            formattedString1 = LocalDate.now().format(formatter);
+            formattedString2 = this.member.getDate().format(formatter);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-LL-dd");
+            Date obj1 = sdf.parse(formattedString1);
+            Date obj2 = sdf.parse(formattedString2);
+            long diff = obj2.getTime() - obj1.getTime();
+            diffDays = (int) (diff / (24 * 60 * 60 * 1000));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        if(diffDays<=60){
+            jLabel24.setForeground(new java.awt.Color(255, 0, 0));
+            jLabel24.setText("MEMBERSHIP EXPIRES IN " + diffDays + " DAYS");
+        }
+        else
         jLabel24.setText("MEMBERSHIP EXPIRES ON : " + this.member.getDate());
 
         jLabel25.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 0));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel25.setText(" FINE/ LOAN : ₹"+this.member.getFine());
+
+        jLabel41.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel41.setText("                      *Clear FIne to Borrow new Book");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -559,24 +597,31 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGap(7, 667, Short.MAX_VALUE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
-                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1101, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -641,12 +686,12 @@ public class Home extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(125, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -654,9 +699,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(889, Short.MAX_VALUE))
+                .addContainerGap(869, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel11, "card2");
@@ -829,7 +874,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(118, 118, 118))
         );
@@ -1419,7 +1464,7 @@ public class Home extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(278, Short.MAX_VALUE)
+                .addContainerGap(279, Short.MAX_VALUE)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(410, Short.MAX_VALUE))
         );
@@ -1534,7 +1579,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1078, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1747,9 +1792,9 @@ public class Home extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(484, Short.MAX_VALUE)
+                .addContainerGap(469, Short.MAX_VALUE)
                 .addComponent(jLabel30)
-                .addGap(0, 478, Short.MAX_VALUE))
+                .addGap(0, 462, Short.MAX_VALUE))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1764,9 +1809,9 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel31)
                 .addGap(44, 44, 44)
                 .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 536, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 535, Short.MAX_VALUE)
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(557, Short.MAX_VALUE))
+                .addContainerGap(556, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(jPanel18, "card6");
@@ -1975,7 +2020,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel35)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(460, Short.MAX_VALUE))
+                .addContainerGap(905, Short.MAX_VALUE))
         );
 
         jPanel19.add(jPanel21, "card2");
@@ -2350,104 +2395,106 @@ public class Home extends javax.swing.JFrame {
         } else if (jTable3.getSelectedRow() >= 0) {
             int row = jTable3.getSelectedRow();
             String bookName = (String) jTable3.getValueAt(row, 1);
-            Book bk = this.bookObj.searchBook(bookName);
-            if (this.bookObj.decBook(this.bookObj.getIndex(bookName)) == -1) {
-                JOptionPane.showMessageDialog(this, "Out of Stock");
+            if (this.memmanager.getMember(this.index).searchBookArray(bookName) == -1) {
+                JOptionPane.showMessageDialog(this, "Book Already Issued");
             } else {
-                int result = this.memmanager.addMemBook(this.index, bookName);
-                if (result == -1) {
-                    JOptionPane.showMessageDialog(this, "Borrowing limit reached\nReturn books first");
+                Book bk = this.bookObj.searchBook(bookName);
+                if (this.bookObj.decBook(this.bookObj.getIndex(bookName)) == -1) {
+                    JOptionPane.showMessageDialog(this, "Out of Stock");
                 } else {
-//            this.bookObj.decBook(this.bookObj.getIndex(bookName));
-//                this.bookObj.writeJSON();
-//                this.memmanager.writeJSON();
-                    jTable1.setBackground(new java.awt.Color(31, 36, 42));
-                    jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
-                    jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-                    jTable1.setForeground(new java.awt.Color(169, 224, 49));
-                    DefaultTableModel jsonData = new DefaultTableModel() {
-                        boolean[] canEdit = new boolean[]{
-                            false, false, false
+                    int result = this.memmanager.addMemBook(this.index, bookName);
+                    if (result == -1) {
+                        JOptionPane.showMessageDialog(this, "6 Books Borrowed\nBorrowing limit reached\nReturn Borrowed Books");
+                    } else {
+                        jTable1.setBackground(new java.awt.Color(31, 36, 42));
+                        jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+                        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+                        jTable1.setForeground(new java.awt.Color(169, 224, 49));
+                        DefaultTableModel jsonData = new DefaultTableModel() {
+                            boolean[] canEdit = new boolean[]{
+                                false, false, false
+                            };
+
+                            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                                return canEdit[columnIndex];
+                            }
                         };
-
-                        public boolean isCellEditable(int rowIndex, int columnIndex) {
-                            return canEdit[columnIndex];
+                        jsonData.addColumn("Book Code");
+                        jsonData.addColumn("Name");
+                        jsonData.addColumn("Author Name");
+                        jsonData.addColumn("DOI");
+                        int i = 0;
+                        while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
+                            BookManager bm = new BookManager("dtb-array.json");
+                            JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
+                            Book TBook = bm.searchBook((String) ja.get(0));
+                            Vector<String> v = new Vector<String>();
+                            v.add(TBook.getCode());
+                            v.add(TBook.getName());
+                            v.add(TBook.getAuthor());
+                            v.add((String) ja.get(1));
+                            jsonData.addRow(v);
+                            i++;
                         }
-                    };
-                    jsonData.addColumn("Book Code");
-                    jsonData.addColumn("Name");
-                    jsonData.addColumn("Author Name");
-                    jsonData.addColumn("DOI");
-                    int i = 0;
-                    while (i < this.memmanager.getMember(this.index).getMemBookArr().size()) {
-                        BookManager bm = new BookManager("dtb-array.json");
-                        JSONArray ja = (JSONArray) this.memmanager.getMember(this.index).getMemBookArr().get(i);
-                        Book TBook = bm.searchBook((String) ja.get(0));
-                        Vector<String> v = new Vector<String>();
-                        v.add(TBook.getCode());
-                        v.add(TBook.getName());
-                        v.add(TBook.getAuthor());
-                        v.add((String) ja.get(1));
-                        jsonData.addRow(v);
-                        i++;
-                    }
-                    jTable1.setModel(jsonData);
-                    jScrollPane1.setViewportView(jTable1);
-                    if (jTable1.getColumnModel().getColumnCount() > 0) {
-                        jTable1.getColumnModel().getColumn(0).setMinWidth(80);
-                        jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
-                    }
-                    JOptionPane.showMessageDialog(this, "Book successfully borrowed");
+                        jTable1.setModel(jsonData);
+                        jScrollPane1.setViewportView(jTable1);
+                        if (jTable1.getColumnModel().getColumnCount() > 0) {
+                            jTable1.getColumnModel().getColumn(0).setMinWidth(80);
+                            jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+                        }
+                        jLabel40.setText("Total Issued books - " + this.member.getTotalMemBook());
+                        JOptionPane.showMessageDialog(this, "Book successfully borrowed");
 
-                    jTable2.setBackground(new java.awt.Color(31, 36, 42));
+                        jTable2.setBackground(new java.awt.Color(31, 36, 42));
 
-                    jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
+                        jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
 
-                    jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+                        jTable2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
 
-                    jTable2.setForeground(new java.awt.Color(169, 224, 49));
-                    DefaultTableModel jsonData3 = new DefaultTableModel() {
+                        jTable2.setForeground(new java.awt.Color(169, 224, 49));
+                        DefaultTableModel jsonData3 = new DefaultTableModel() {
 
-                        boolean[] canEdit = new boolean[]{
-                            false, false, false, false, true, false, true, true
+                            boolean[] canEdit = new boolean[]{
+                                false, false, false, false, true, false, true, true
+                            };
+
+                            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                                return canEdit[columnIndex];
+                            }
                         };
-
-                        public boolean isCellEditable(int rowIndex, int columnIndex) {
-                            return canEdit[columnIndex];
+                        jsonData3.addColumn("Book Code");
+                        jsonData3.addColumn("Subject");
+                        jsonData3.addColumn("Name");
+                        jsonData3.addColumn("Author Name");
+                        jsonData3.addColumn("Publisher");
+                        jsonData3.addColumn("ISBN");
+                        jsonData3.addColumn("Price");
+                        jsonData3.addColumn("Quantity");
+                        i = 0;
+                        while (i < this.bookObj.getTotalBooks()) {
+                            Book TBook3 = this.bookObj.getBook(i);
+                            Vector<String> v3 = new Vector<String>();
+                            v3.add(TBook3.getCode());
+                            v3.add(TBook3.getSubject());
+                            v3.add(TBook3.getName());
+                            v3.add(TBook3.getAuthor());
+                            v3.add(TBook3.getPublisher());
+                            v3.add(TBook3.getISBN());
+                            v3.add(Long.toString(TBook3.getPrice()));
+                            v3.add(Long.toString(TBook3.getQuantity()));
+                            jsonData3.addRow(v3);
+                            i++;
                         }
-                    };
-                    jsonData3.addColumn("Book Code");
-                    jsonData3.addColumn("Subject");
-                    jsonData3.addColumn("Name");
-                    jsonData3.addColumn("Author Name");
-                    jsonData3.addColumn("Publisher");
-                    jsonData3.addColumn("ISBN");
-                    jsonData3.addColumn("Price");
-                    jsonData3.addColumn("Quantity");
-                    i = 0;
-                    while (i < this.bookObj.getTotalBooks()) {
-                        Book TBook3 = this.bookObj.getBook(i);
-                        Vector<String> v3 = new Vector<String>();
-                        v3.add(TBook3.getCode());
-                        v3.add(TBook3.getSubject());
-                        v3.add(TBook3.getName());
-                        v3.add(TBook3.getAuthor());
-                        v3.add(TBook3.getPublisher());
-                        v3.add(TBook3.getISBN());
-                        v3.add(Long.toString(TBook3.getPrice()));
-                        v3.add(Long.toString(TBook3.getQuantity()));
-                        jsonData3.addRow(v3);
-                        i++;
-                    }
-                    jTable2.setModel(jsonData3);
-                    jTable2.setEditingColumn(3);
-                    jTable2.setEditingColumn(5);
-                    jTable2.setEditingColumn(6);
-                    jTable2.setRowHeight(40);
-                    jScrollPane2.setViewportView(jTable2);
-                    if (jTable2.getColumnModel().getColumnCount() > 0) {
-                        jTable2.getColumnModel().getColumn(0).setMinWidth(80);
-                        jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+                        jTable2.setModel(jsonData3);
+                        jTable2.setEditingColumn(3);
+                        jTable2.setEditingColumn(5);
+                        jTable2.setEditingColumn(6);
+                        jTable2.setRowHeight(40);
+                        jScrollPane2.setViewportView(jTable2);
+                        if (jTable2.getColumnModel().getColumnCount() > 0) {
+                            jTable2.getColumnModel().getColumn(0).setMinWidth(80);
+                            jTable2.getColumnModel().getColumn(0).setMaxWidth(70);
+                        }
                     }
                 }
             }
@@ -2536,16 +2583,6 @@ public class Home extends javax.swing.JFrame {
             this.memmanager.delMemBook(this.index, row);
             this.bookObj.incBook(this.bookObj.getIndex(bookName));
             System.out.println(this.bookObj.getBook(this.bookObj.getIndex(bookName)).getQuantity());
-//            this.bookObj.writeJSON();
-//            this.memmanager.writeJSON();
-//            DefaultTableModel jTable = (DefaultTableModel) jTable1.getModel();
-//            jTable.removeRow(row);
-//            jTable.fireTableDataChanged();
-//            jTable1.updateUI();//.setModel(jTable);
-//            DefaultTableModel jTabl = (DefaultTableModel) jTable2.getModel();
-////            jTabl.removeRow(this.bookObj.getIndex(bookName));
-//            jTabl.fireTableDataChanged();
-//            jTable2.setModel(jTabl);
             jTable1.setBackground(new java.awt.Color(31, 36, 42));
             jTable1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
             jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -2582,10 +2619,8 @@ public class Home extends javax.swing.JFrame {
                 jTable1.getColumnModel().getColumn(0).setMinWidth(80);
                 jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
             }
-
+            jLabel40.setText("Total Issued books - " + this.member.getTotalMemBook());
             JOptionPane.showMessageDialog(this, "Book successfully removed");
-//            jButton9MouseClicked(evt);
-//
 
             jTable2.setBackground(new java.awt.Color(31, 36, 42));
             jTable2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(169, 224, 49), 2, true));
@@ -2916,12 +2951,12 @@ public class Home extends javax.swing.JFrame {
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         boolean flag = true;
         if (flag) {
-            this.memmanager.getMember(this.index).setDate();
-//            this.memmanager.writeJSON();
+            this.memmanager.getMember(this.index).setDate(this.memmanager.getMember(this.index).getDate());
         } else {
             JOptionPane.showMessageDialog(this, "Membership renewal failed");
         }
         jLabel32.setText("Membership Ends in : " + this.memmanager.getMember(this.index).getDate());
+        jLabel24.setForeground(new java.awt.Color(255, 255, 0));
         jLabel24.setText("MEMBERSHIP EXPIRES ON : " + this.memmanager.getMember(this.index).getDate());
         JOptionPane.showMessageDialog(this, "Membership successfully renewed");
     }//GEN-LAST:event_jButton14MouseClicked
@@ -2939,6 +2974,7 @@ public class Home extends javax.swing.JFrame {
 //            this.memmanager.writeJSON();
             this.jButton15.setVisible(false);
             this.jButton2.setVisible(true);
+            this.jLabel41.setVisible(false);
             this.jButton11.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Payment Failed");
@@ -3091,6 +3127,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
