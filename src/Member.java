@@ -1,7 +1,9 @@
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
@@ -254,6 +256,34 @@ public class Member {
             fw.close();
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    
+    public void saveInfoCSV(){
+        String tempFile = "Member_Details.csv";
+        Vector<Member> vb = this.memberArray;
+        File f = new File(tempFile);
+        if (f.exists()) {
+            f.delete();
+        }
+        File newFile = new File(tempFile);
+        try {
+            FileWriter fw = new FileWriter(tempFile, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            int i = 0;
+            pw.println("EnrollNo" + "," + "Name" + "," + "Email" + "," + "PhNo" + "," + "Total Books Issued" + "," + "Fine" + "," + "ProfilePicPath" + "," + "EnrollDate" + "," + "Role");
+            while (this.memberArray.size() > i) {
+                Member member = vb.get(i);
+                pw.println(member.getEnrollNo()+ "," + member.getName() + "," + member.getEmail() + "," + member.getPhNo()+ "," + member.getTotalMemBook()+ "," + member.getFine()+ "," + member.getPicPath() + "," + member.getDate().plusYears(-2)+ "," + member.getRole());
+                i++;
+            }
+            pw.flush();
+            pw.close();
+            File dump = new File(tempFile);
+            newFile.renameTo(dump);
+        } catch (Exception e) {
+            System.out.println("Error " + e);
         }
     }
 }

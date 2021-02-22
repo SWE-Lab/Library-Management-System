@@ -24,6 +24,10 @@ public class BookManager {
     public void writeJSON() {
         obj.saveInfo();
     }
+    
+    public void writeCSV(){
+        obj.saveInfoCSV();
+    }
 
     public int getTotalBooks() {
         return this.bookArr.size();

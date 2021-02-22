@@ -265,11 +265,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 nameFocusLost(evt);
             }
         });
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -332,11 +327,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 emailFocusLost(evt);
             }
         });
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -383,11 +373,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 enrollmentFocusLost(evt);
-            }
-        });
-        enrollment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enrollmentActionPerformed(evt);
             }
         });
 
@@ -445,11 +430,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 phonenoFocusLost(evt);
-            }
-        });
-        phoneno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phonenoActionPerformed(evt);
             }
         });
 
@@ -517,11 +497,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
                 passwordFocusLost(evt);
             }
         });
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
-            }
-        });
 
         jLabel17.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
         jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -565,11 +540,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton3.setText("Upload");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton3.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jButton3FocusLost(evt);
-            }
-        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -618,9 +588,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jButton4.setMaximumSize(new java.awt.Dimension(116, 37));
         jButton4.setMinimumSize(new java.awt.Dimension(116, 37));
         jButton4.setPreferredSize(new java.awt.Dimension(116, 37));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
             }
         });
 
@@ -628,6 +598,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(48, 179, 70));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Submit");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -885,11 +860,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -897,11 +872,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel4)
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -922,9 +897,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
         Login_FormLayout.setVerticalGroup(
             Login_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Login_FormLayout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Login_Form, "card3");
@@ -1028,10 +1003,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_jPasswordField1FocusLost
 
-    private void phonenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phonenoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phonenoActionPerformed
-
     private void phonenoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phonenoFocusLost
         // TODO add your handling code here:
         String s = phoneno.getText().trim();
@@ -1064,14 +1035,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16FocusLost
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        jLayeredPane1.removeAll();
-        jLayeredPane1.add(kGradientPanel1);
-        jLayeredPane1.repaint();;
-        jLayeredPane1.revalidate();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         JFileChooser j = new JFileChooser(new File("C:\\Users\\pc\\Documents\\"));
@@ -1083,37 +1046,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jLabel19.setText(fn);
         jLabel19.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton3FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3FocusLost
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if ((jLabel19.isVisible() && !name.getText().trim().toLowerCase().equals("enter your name") && !email.getText().trim().toLowerCase().equals("enter your email") && !phoneno.getText().trim().toLowerCase().equals("enter your phone no.") && !password.getText().trim().toLowerCase().equals("new password") && !enrollment.getText().trim().toLowerCase().equals("enrollment no"))) {
-            //JOptionPane.showMessageDialog(this, "Operation successfully done");
-            if (jLabel15.isVisible() || jLabel16.isVisible() || jLabel22.isVisible() || jLabel17.isVisible() || jLabel18.isVisible()) {
-                JOptionPane.showMessageDialog(null, "Fill Details Correctly");
-            } else {
-                int n = JOptionPane.showConfirmDialog(this, "Are you sure to submit", "Confirmation", JOptionPane.YES_NO_OPTION);//.showMessageDialog(this, "");
-                if (n == 0) {
-                    memMan.registerMember(this.arr);
-                    memMan.writeJSON();
-//                    System.out.println(this.memMan.getTotalMembers());
-//                    System.out.println(this.memMan.getMember(this.memMan.getTotalMembers() - 1).getName());
-//                    System.out.println(this.memMan.getMember(this.memMan.getTotalMembers() - 1).getPassword());
-
-//                    System.out.println(n);
-                    JOptionPane.showMessageDialog(null, "Registration Completed");
-                }
-
-            }
-        } else
-            JOptionPane.showMessageDialog(null, "Fill All Details");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void enrollmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enrollmentActionPerformed
 
     private void enrollmentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_enrollmentFocusLost
         // TODO add your handling code here:
@@ -1138,10 +1070,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
             enrollment.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_enrollmentFocusGained
-
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
 
     private void passwordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordFocusLost
         // TODO add your handling code here:
@@ -1168,10 +1096,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordFocusGained
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
     private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
         // TODO add your handling code here:
         String s = email.getText().trim();
@@ -1196,10 +1120,6 @@ public class WelcomeScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_emailFocusGained
 
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-
-    }//GEN-LAST:event_nameActionPerformed
-
     private void nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusLost
         // TODO add your handling code here:
         String s = name.getText().trim();
@@ -1222,6 +1142,35 @@ public class WelcomeScreen extends javax.swing.JFrame {
             name.setForeground(new Color(0, 0, 0));
         }
     }//GEN-LAST:event_nameFocusGained
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        if ((jLabel19.isVisible() && !name.getText().trim().toLowerCase().equals("enter your name") && !email.getText().trim().toLowerCase().equals("enter your email") && !phoneno.getText().trim().toLowerCase().equals("enter your phone no.") && !password.getText().trim().toLowerCase().equals("new password") && !enrollment.getText().trim().toLowerCase().equals("enrollment no"))) {
+            if (jLabel15.isVisible() || jLabel16.isVisible() || jLabel22.isVisible() || jLabel17.isVisible() || jLabel18.isVisible()) {
+                JOptionPane.showMessageDialog(null, "Fill Details Correctly");
+            } else {
+                int n = JOptionPane.showConfirmDialog(this, "Are you sure to submit", "Confirmation", JOptionPane.YES_NO_OPTION);//.showMessageDialog(this, "");
+                if (n == 0) {
+                    memMan.registerMember(this.arr);
+                    memMan.writeJSON();
+                    JOptionPane.showMessageDialog(null, "Registration Completed");
+                }
+            }
+        } else
+            JOptionPane.showMessageDialog(null, "Fill All Details");
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        jLayeredPane1.removeAll();
+        jLayeredPane1.add(kGradientPanel1);
+        jLayeredPane1.repaint();;
+        jLayeredPane1.revalidate();
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

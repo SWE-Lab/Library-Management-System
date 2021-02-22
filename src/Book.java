@@ -1,7 +1,9 @@
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Vector;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -178,6 +180,34 @@ public class Book {
             fw.close();
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+    
+    public void saveInfoCSV(){
+        String tempFile = "data.csv";
+        Vector<Book> vb = this.bookArray;
+        File f = new File(tempFile);
+        if (f.exists()) {
+            f.delete();
+        }
+        File newFile = new File(tempFile);
+        try {
+            FileWriter fw = new FileWriter(tempFile, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            int i = 0;
+            pw.println("BookCode" + "," + "Publisher" + "," + "Name" + "," + "Author" + "," + "Subject" + "," + "ISBN" + "," + "Price" + "," + "PicPath" + "," + "Quantity");
+            while (this.bookArray.size() > i) {
+                Book book = vb.get(i);
+                pw.println(book.getCode() + "," + book.getPublisher() + "," + book.getName() + "," + book.getAuthor() + "," + book.getSubject() + "," + book.getISBN() + "," + book.getPrice() + "," + book.getPicPath() + "," + book.getQuantity());
+                i++;
+            }
+            pw.flush();
+            pw.close();
+            File dump = new File(tempFile);
+            newFile.renameTo(dump);
+        } catch (Exception e) {
+            System.out.println("Error " + e);
         }
     }
 }

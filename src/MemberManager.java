@@ -26,6 +26,10 @@ public class MemberManager {
     public void writeJSON() {
         obj.saveInfo();
     }
+    
+    public void writeCSV(){
+        obj.saveInfoCSV();
+    }
 
     public int getTotalMembers() {
         return this.memberArr.size();
