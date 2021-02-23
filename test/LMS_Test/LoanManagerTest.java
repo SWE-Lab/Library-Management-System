@@ -1,3 +1,9 @@
+package LMS_Test;
+
+
+import LMS.MemberManager;
+import LMS.LoanManager;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

@@ -70,4 +70,18 @@
     nbproject/build-impl.xml file. 
 
     -->
+    
+    <target name="-post-jar">
+        <jar jarfile="dist/LMS.jar">
+            <zipfileset src="${dist.jar}" excludes="META-INF/*" />
+            <zipfileset src="src/Resources/KControls.jar" excludes="META-INF/*" />
+            <zipfileset src="src/Resources/json-simple-1.1.jar" excludes="META-INF/*" />
+            <zipfileset src="src/Resources/GradientAnim.jar" excludes="META-INF/*" />
+            <zipfileset src="src/Resources/AbsoluteLayout.jar" excludes="META-INF/*" />
+            <manifest>
+                <attribute name="Main-Class" value="LMS.Starting" />
+            </manifest>
+        </jar>
+    </target>      
+
 </project>

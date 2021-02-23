@@ -1,4 +1,8 @@
+package LMS_Test;
 
+
+import LMS.Loan;
+import LMS.Member;
 import java.util.Vector;
 
 /*
