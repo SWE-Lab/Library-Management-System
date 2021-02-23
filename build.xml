@@ -77,6 +77,7 @@
             <zipfileset src="src/Resources/KControls.jar" excludes="META-INF/*" />
             <zipfileset src="src/Resources/json-simple-1.1.jar" excludes="META-INF/*" />
             <zipfileset src="src/Resources/AbsoluteLayout.jar" excludes="META-INF/*" />
+            <zipfileset src="src/Resources/GradientAnimation.jar" excludes="META-INF/*" />
             <manifest>
                 <attribute name="Main-Class" value="LMS.Starting" />
             </manifest>

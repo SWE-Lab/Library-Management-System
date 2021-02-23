@@ -56,14 +56,14 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        kGradientPanel1 = new GradientPanel();
+        kGradientPanel1 = new gpanel.GradientAnimation();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         kButton1 = new keeptoo.KButton();
         kButton2 = new keeptoo.KButton();
         jLabel1 = new javax.swing.JLabel();
-        Registration_Form = new GradientPanel();
+        Registration_Form = new gpanel.GradientAnimation();
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -94,7 +94,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        Login_Form = new GradientPanel();
+        Login_Form = new gpanel.GradientAnimation();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -697,9 +697,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
         Registration_FormLayout.setVerticalGroup(
             Registration_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Registration_FormLayout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jLayeredPane1.add(Registration_Form, "card2");
@@ -865,11 +865,11 @@ public class WelcomeScreen extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1210,8 +1210,8 @@ public class WelcomeScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private GradientPanel Login_Form;
-    private GradientPanel Registration_Form;
+    private gpanel.GradientAnimation Login_Form;
+    private gpanel.GradientAnimation Registration_Form;
     private javax.swing.JTextField email;
     private javax.swing.JTextField enrollment;
     private javax.swing.JButton jButton1;
@@ -1258,7 +1258,7 @@ public class WelcomeScreen extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private keeptoo.KButton kButton1;
     private keeptoo.KButton kButton2;
-    private GradientPanel kGradientPanel1;
+    private gpanel.GradientAnimation kGradientPanel1;
     private javax.swing.JTextField name;
     private javax.swing.JTextField password;
     private javax.swing.JTextField phoneno;
