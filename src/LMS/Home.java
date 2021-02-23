@@ -642,13 +642,13 @@ public class Home extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(874, Short.MAX_VALUE))
+                .addContainerGap(854, Short.MAX_VALUE))
         );
 
         jPanel14.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
@@ -681,19 +681,19 @@ public class Home extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -709,14 +709,12 @@ public class Home extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(31, 36, 42));
 
         jPanel16.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
-        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setBackground(new java.awt.Color(169, 224, 49));
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(169, 224, 49));
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("BOOK AVAILABILITY");
-        jPanel16.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 140, -1, -1));
 
         jLabel19.setBackground(new java.awt.Color(255, 255, 153));
         jLabel19.setIcon(new javax.swing.JLabel() {
@@ -730,6 +728,7 @@ public class Home extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -750,6 +749,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addContainerGap())
         );
+
         jPanel15.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
 
         jTable3.setBackground(new java.awt.Color(31, 36, 42));
@@ -845,7 +845,7 @@ public class Home extends javax.swing.JFrame {
                             .addGap(39, 39, 39)
                             .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1622,7 +1622,6 @@ public class Home extends javax.swing.JFrame {
         jPanel21.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jPanel32.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
-        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel36.setBackground(new java.awt.Color(255, 255, 153));
         jLabel36.setIcon(new javax.swing.JLabel() {
@@ -1636,13 +1635,13 @@ public class Home extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        jPanel32.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(88, 6, -1, 138));
 
         jLabel35.setBackground(new java.awt.Color(169, 224, 49));
         jLabel35.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(169, 224, 49));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("MEMBER DETAILS");
+
         javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
@@ -1663,6 +1662,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel35)
                 .addGap(0, 0, 0))
         );
+
         jPanel22.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
 
         jLabel37.setIcon(new javax.swing.JLabel() {
@@ -1915,12 +1915,10 @@ public class Home extends javax.swing.JFrame {
         );
 
         jPanel30.setBackground(new Color(0.0f, 0.0f, 0.0f, 0.0f));
-        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel30.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(169, 224, 49));
         jLabel30.setText("PAYMENTS DETAILS");
-        jPanel30.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 148, -1, -1));
 
         jLabel31.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -1933,6 +1931,7 @@ public class Home extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
+
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
@@ -2863,7 +2862,6 @@ public class Home extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-<<<<<<< HEAD:src/Home.java
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
