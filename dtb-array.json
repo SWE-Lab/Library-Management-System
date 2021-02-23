@@ -1,1 +1,222 @@
-[{"ISBN":"978-1-56619-909-4","Price":243,"PicPath":"https:\/\/softwareengteam.page.link\/book1","Author":"Das Pal","Quantity":1,"Publisher":"Westland Publications","Subject":" MATHS","Name":"Engineering Mathematics"},{"ISBN":"978-1-56619-909-4","Price":3242323,"PicPath":"https:\/\/softwareengteam.page.link\/book2","Author":"VK Mehta","Quantity":1,"Publisher":"Arihant","Subject":"PHYSICS","Name":"Principles Of Physics"},{"ISBN":"978-1-56619-909-4","Price":2334,"PicPath":"https:\/\/softwareengteam.page.link\/book3","Author":"angani","Quantity":1,"Publisher":"Arihant","Subject":"CHEMISTRY","Name":"Engineering ThermoDynamics"},{"ISBN":"978-1-56619-909-4","Price":656,"PicPath":"https:\/\/softwareengteam.page.link\/book4","Author":"Alfred V.Aho","Quantity":1,"Publisher":"Arihant","Subject":"COMPUTER","Name":"Compiler Design"},{"ISBN":"978-1-56619-909-4","Price":4363,"PicPath":"https:\/\/softwareengteam.page.link\/book5","Author":"Peter B Galvin","Quantity":1,"Publisher":"Jaico Publishing House","Subject":"OS","Name":"OS Concepts"},{"ISBN":"978-1-56619-909-4","Price":541,"PicPath":"https:\/\/softwareengteam.page.link\/book6","Author":"Barack Obama","Quantity":140,"Publisher":"Rupa Publications","Subject":"ENGLISH","Name":"A Promised Land"},{"ISBN":"978-1-56619-909-4","Price":5654654,"PicPath":"https:\/\/softwareengteam.page.link\/book7","Author":"Andrew S. Tanenbaum","Quantity":200,"Publisher":"Rupa Publications","Subject":"COMPUTER","Name":"Computer Networks"},{"ISBN":"978-1-56619-909-4","Price":2314,"PicPath":"https:\/\/softwareengteam.page.link\/book8","Author":"Peter Linz","Quantity":175,"Publisher":"Roli Books","Subject":"Automata","Name":"Automata & Formal Language"},{"ISBN":"978-1-56619-909-4","Price":55,"PicPath":"\\\/home\\\/hackme\\\/simplescreenrecorder-2020-12-01_12.43.22.mp4","Author":"Rajeev Motwani","Quantity":1,"Publisher":"Arihant","Subject":"AUTOMATA","Name":"Automata Theory"},{"ISBN":"978-1-4028-9462-6","Price":87,"PicPath":"\\\/home\\\/hackme\\\/Deleted_MetadataIMG_20201026_200915.jpg","Author":"D.S. Guru","Quantity":1,"Publisher":"Arihant","Subject":"COMPUTER","Name":"OOP with Java"},{"ISBN":"978-1-56619-909-4","Price":450,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txt","Author":"Vaishali Anand","Quantity":1,"Publisher":"Cengage","Subject":"EVS","Name":"Environment and Ecology"},{"ISBN":"978-1-56619-909-4","Price":449,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txtsss","Author":"Dr.Tyagi","Quantity":1,"Publisher":"Cengage","Subject":"BIOLOGY","Name":"Campbell Biology"},{"ISBN":"978-1-56619-909-4","Price":449,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txtsss","Author":"Dr.Tyagi","Quantity":1,"Publisher":"aaa","Subject":"BIOLOGY","Name":"Objective Biology"},{"ISBN":"978-1-56619-909-4","Price":440,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txtsss","Author":"BK Pandey","Quantity":1,"Publisher":"Cengage","Subject":"PHYSICS","Name":"Physics"},{"ISBN":"978-1-56619-909-4","Price":44,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txtsss","Author":"Bk Pandey","Quantity":1,"Publisher":"Roli Books","Subject":"PHYSICS","Name":"Concepts Of Physics"},{"ISBN":"978-1-56619-909-4","Price":44,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txtsss","Author":"Joseph Gallian","Quantity":1,"Publisher":"Rupa Publications","Subject":"MATHS","Name":"Algebra"},{"ISBN":"978-1-56619-909-4","Price":44,"PicPath":"\\\/home\\\/hackme\\\/Without_Removing_Metadata.txt","Author":"Bharati Krishna","Quantity":100,"Publisher":"Rupa Publications","Subject":"MATHS","Name":"Vedic Maths"},{"ISBN":"978-1-56619-909-4","Price":213414,"PicPath":"\\\/home\\\/angshuman\\\/Pictures\\\/Screenshot_20210104_110819.png","Author":"author","Quantity":1,"Publisher":"Roli Books","Subject":"Computer Science","Name":"Fundamentals Of DBMS"},{"ISBN":"978-1-56619-909-4","Price":213414,"PicPath":"\\\/home\\\/angshuman\\\/Pictures\\\/Screenshot_20210104_110819.png","Author":"Emily Bronte","Quantity":1,"Publisher":"Publisher","Subject":"ENGLISH","Name":"The World Within"},{"ISBN":"978-1-56619-909-4","Price":2134,"PicPath":"\\\/home\\\/angshuman\\\/Pictures\\\/Screenshot_20210104_110819.png","Author":"Dr N.D.V Prasad Rao ","Quantity":563,"Publisher":"Wren & Martin","Subject":"ENGLISH","Name":"English Grammar"},{"ISBN":"978-1-56619-909-4","Price":1234,"PicPath":"\\\/home\\\/angshuman\\\/Pictures\\\/Screenshot_20210104_110819.png","Author":"Charlotte Bronte","Quantity":563,"Publisher":"Arihant","Subject":"ENGLISH","Name":"The Professor"},{"ISBN":"978-1-56619-909-4","Price":1234,"PicPath":"\\\/home\\\/angshuman\\\/Pictures\\\/Screenshot_20210104_110819.png","Author":"Emily Bronte","Quantity":563,"Publisher":"Arihant","Subject":"ENGLISH","Name":"Wuthering Heights"}]
+[
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 243,
+    "PicPath": "https://softwareengteam.page.link/book1",
+    "Author": "Das Pal",
+    "Quantity": 1,
+    "Publisher": "Westland Publications",
+    "Subject": " MATHS",
+    "Name": "Engineering Mathematics"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 3242323,
+    "PicPath": "https://softwareengteam.page.link/book2",
+    "Author": "VK Mehta",
+    "Quantity": 1,
+    "Publisher": "Arihant",
+    "Subject": "PHYSICS",
+    "Name": "Principles Of Physics"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 2334,
+    "PicPath": "https://softwareengteam.page.link/book3",
+    "Author": "angani",
+    "Quantity": 1,
+    "Publisher": "Arihant",
+    "Subject": "CHEMISTRY",
+    "Name": "Engineering ThermoDynamics"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 656,
+    "PicPath": "https://softwareengteam.page.link/book4",
+    "Author": "Alfred V.Aho",
+    "Quantity": 1,
+    "Publisher": "Arihant",
+    "Subject": "COMPUTER",
+    "Name": "Compiler Design"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 4363,
+    "PicPath": "https://softwareengteam.page.link/book5",
+    "Author": "Peter B Galvin",
+    "Quantity": 1,
+    "Publisher": "Jaico Publishing House",
+    "Subject": "OS",
+    "Name": "OS Concepts"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 541,
+    "PicPath": "https://softwareengteam.page.link/book6",
+    "Author": "Barack Obama",
+    "Quantity": 140,
+    "Publisher": "Rupa Publications",
+    "Subject": "ENGLISH",
+    "Name": "A Promised Land"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 5654654,
+    "PicPath": "https://softwareengteam.page.link/book7",
+    "Author": "Andrew S. Tanenbaum",
+    "Quantity": 200,
+    "Publisher": "Rupa Publications",
+    "Subject": "COMPUTER",
+    "Name": "Computer Networks"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 2314,
+    "PicPath": "https://softwareengteam.page.link/book8",
+    "Author": "Peter Linz",
+    "Quantity": 175,
+    "Publisher": "Roli Books",
+    "Subject": "Automata",
+    "Name": "Automata & Formal Language"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 55,
+    "PicPath": "/home/hackme/simplescreenrecorder-2020-12-01_12.43.22.mp4",
+    "Author": "Rajeev Motwani",
+    "Quantity": 1,
+    "Publisher": "Arihant",
+    "Subject": "AUTOMATA",
+    "Name": "Automata Theory"
+  },
+  {
+    "ISBN": "978-1-4028-9462-6",
+    "Price": 87,
+    "PicPath": "/home/hackme/Deleted_MetadataIMG_20201026_200915.jpg",
+    "Author": "D.S. Guru",
+    "Quantity": 1,
+    "Publisher": "Arihant",
+    "Subject": "COMPUTER",
+    "Name": "OOP with Java"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 450,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txt",
+    "Author": "Vaishali Anand",
+    "Quantity": 1,
+    "Publisher": "Cengage",
+    "Subject": "EVS",
+    "Name": "Environment and Ecology"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 449,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "Author": "Dr.Tyagi",
+    "Quantity": 1,
+    "Publisher": "Cengage",
+    "Subject": "BIOLOGY",
+    "Name": "Campbell Biology"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 449,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "Author": "Dr.Tyagi",
+    "Quantity": 1,
+    "Publisher": "aaa",
+    "Subject": "BIOLOGY",
+    "Name": "Objective Biology"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 440,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "Author": "BK Pandey",
+    "Quantity": 1,
+    "Publisher": "Cengage",
+    "Subject": "PHYSICS",
+    "Name": "Physics"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 44,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "Author": "Bk Pandey",
+    "Quantity": 1,
+    "Publisher": "Roli Books",
+    "Subject": "PHYSICS",
+    "Name": "Concepts Of Physics"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 44,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "Author": "Joseph Gallian",
+    "Quantity": 1,
+    "Publisher": "Rupa Publications",
+    "Subject": "MATHS",
+    "Name": "Algebra"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 44,
+    "PicPath": "/home/hackme/Without_Removing_Metadata.txt",
+    "Author": "Bharati Krishna",
+    "Quantity": 100,
+    "Publisher": "Rupa Publications",
+    "Subject": "MATHS",
+    "Name": "Vedic Maths"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 213414,
+    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "Author": "author",
+    "Quantity": 1,
+    "Publisher": "Roli Books",
+    "Subject": "Computer Science",
+    "Name": "Fundamentals Of DBMS"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 213414,
+    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "Author": "Emily Bronte",
+    "Quantity": 1,
+    "Publisher": "Publisher",
+    "Subject": "ENGLISH",
+    "Name": "The World Within"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 2134,
+    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "Author": "Dr N.D.V Prasad Rao ",
+    "Quantity": 563,
+    "Publisher": "Wren & Martin",
+    "Subject": "ENGLISH",
+    "Name": "English Grammar"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 1234,
+    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "Author": "Charlotte Bronte",
+    "Quantity": 563,
+    "Publisher": "Arihant",
+    "Subject": "ENGLISH",
+    "Name": "The Professor"
+  },
+  {
+    "ISBN": "978-1-56619-909-4",
+    "Price": 1234,
+    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "Author": "Emily Bronte",
+    "Quantity": 563,
+    "Publisher": "Arihant",
+    "Subject": "ENGLISH",
+    "Name": "Wuthering Heights"
+  }
+]
