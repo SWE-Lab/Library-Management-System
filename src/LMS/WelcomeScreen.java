@@ -2,13 +2,13 @@ package LMS;
 
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.io.File;
 import java.util.List;
 import java.util.regex.*;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-//import GradientPanel;
 
 
 /*
@@ -34,8 +34,9 @@ public class WelcomeScreen extends javax.swing.JFrame {
 
         initComponents();
         this.memMan = new MemberManager("dtb-member.json");
-        ImageIcon img = new ImageIcon("src/Resources/Logo.png");
-        this.setIconImage(img.getImage());
+//        ImageIcon img = new ImageIcon("src/Resources/Logo.png");
+//        this.setIconImage(img.getImage());
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("Logo.png")));
         jLabel15.setVisible(false);
         jLabel17.setVisible(false);
         jLabel16.setVisible(false);

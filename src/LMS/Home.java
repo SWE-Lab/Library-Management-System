@@ -1,7 +1,7 @@
 package LMS;
 
-
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -44,8 +44,8 @@ public class Home extends javax.swing.JFrame {
         AddBook.setFocusable(true);
         jPanel1.setFocusable(true);
         jPanel15.setFocusable(true);
-        ImageIcon img = new ImageIcon(getClass().getResource("src/Resources/Logo.png"));//"logo.png");
-        this.setIconImage(img.getImage());
+//        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("Logo.png"));//"logo.png");
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getClassLoader().getResource("Logo.png")));
         jLabel9.setVisible(false);
         jLabel14.setVisible(false);
         jLabel8.setVisible(false);
@@ -67,8 +67,10 @@ public class Home extends javax.swing.JFrame {
 //        File file = new File(getClass().getResource("/Resources/").getFile());
 //        String[] imageList =file.list();
 //        System.out.println(imageList);
-        ImageIcon img = new ImageIcon("src/Resources/Logo.png");
-        this.setIconImage(img.getImage());
+//        ImageIcon img = new ImageIcon(getClass().getClassLoader().getResource("Logo.png"));//"logo.png");
+//        this.setIconImage(Toolkit.ge);
+//        ImageIcon img = new ImageIcon("src/Resources/Logo.png");
+//        this.setIconImage(img.getImage());
         if (this.member.getRole().equals("Student")) {
             if (this.member.getFine() == 0) {
                 this.jButton1.setVisible(true);
@@ -2862,47 +2864,47 @@ public class Home extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(Home.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        MemberManager memmanager = new MemberManager("dtb-member.json");
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                Home hpage = new Home(memmanager, memmanager.getMember(0), 0);
-//                hpage.show();
-////                //new Home().setVisible(true);
-////                Home display = new Home();
-////                display.setVisible(true);
-//            }
-//        });
-//    }
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Home.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        MemberManager memmanager = new MemberManager("dtb-member.json");
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Home hpage = new Home(memmanager, memmanager.getMember(0), 0);
+                hpage.show();
+//                //new Home().setVisible(true);
+//                Home display = new Home();
+//                display.setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddBook;
