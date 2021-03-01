@@ -11,7 +11,7 @@ import LMS.MemberManager;
 
 /**
  *
- * @author hackme
+ * @author angshuman, aniket
  */
 public class MemberManagerTest {
 

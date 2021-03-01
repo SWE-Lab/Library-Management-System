@@ -14,7 +14,7 @@ import org.json.simple.JSONArray;
  */
 /**
  *
- * @author angshuman
+ * @author debanjan
  */
 public class Loan {
 

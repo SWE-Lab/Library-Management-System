@@ -10,7 +10,7 @@ import java.util.Vector;
  *
  * 
  *
- * @author angshuman
+ * @author aniket, angshuman
  */
 public class BookManager {
 

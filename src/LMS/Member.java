@@ -21,7 +21,7 @@ import org.json.simple.parser.JSONParser;
  */
 /**
  *
- * @author angshuman
+ * @author budhaditya
  */
 public class Member {
 

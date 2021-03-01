@@ -13,7 +13,7 @@ import java.util.Vector;
  */
 /**
  *
- * @author hackme
+ * @author angshuman, budhaditya
  */
 public class MemberManager {
 

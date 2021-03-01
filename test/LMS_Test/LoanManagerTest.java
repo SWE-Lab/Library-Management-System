@@ -12,7 +12,7 @@ import LMS.LoanManager;
 
 /**
  *
- * @author angshuman
+ * @author angshuman, aniket
  */
 public class LoanManagerTest {
     public static void main(String args[]){

@@ -14,7 +14,7 @@ import org.json.simple.JSONArray;
  */
 /**
  *
- * @author hackme
+ * @author angshuman, aniket
  */
 public class MemberTest {
 

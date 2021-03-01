@@ -12,7 +12,7 @@ import LMS.BookManager;
 //
 ///**
 // *
-// * @author angshuman
+// * @author angshuman, aniket
 // */
 public class BookManagerTest {
 

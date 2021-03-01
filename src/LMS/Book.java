@@ -18,7 +18,7 @@ import org.json.simple.parser.JSONParser;
  */
 /**
  *
- * @author angshuman
+ * @author aniket
  */
 public class Book {
 
