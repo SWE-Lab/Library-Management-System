@@ -14,7 +14,7 @@
 //import javax.swing.JPanel;
 ///**
 // *
-// * @author hackme
+// * @author aniket
 // */
 //public class GradientPanel extends JPanel
 //{

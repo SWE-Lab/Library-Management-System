@@ -10,7 +10,7 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author HackME
+ * @author aniket
  */
 public class SplashScreen extends javax.swing.JFrame {
 

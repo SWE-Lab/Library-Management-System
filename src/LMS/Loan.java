@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import org.json.simple.JSONArray;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
