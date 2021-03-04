@@ -82,7 +82,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 55,
-    "PicPath": "/home/hackme/simplescreenrecorder-2020-12-01_12.43.22.mp4",
+    "PicPath": "https://softwareengteam.page.link/book9",
     "Author": "Rajeev Motwani",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -92,7 +92,7 @@
   {
     "ISBN": "978-1-4028-9462-6",
     "Price": 87,
-    "PicPath": "/home/hackme/Deleted_MetadataIMG_20201026_200915.jpg",
+    "PicPath": "https://softwareengteam.page.link/book10",
     "Author": "D.S. Guru",
     "Quantity": 1,
     "Publisher": "Arihant",
@@ -102,7 +102,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 450,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txt",
+    "PicPath": "https://softwareengteam.page.link/book1",
     "Author": "Vaishali Anand",
     "Quantity": 1,
     "Publisher": "Cengage",
@@ -112,7 +112,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 449,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "PicPath": "https://softwareengteam.page.link/book2",
     "Author": "Dr.Tyagi",
     "Quantity": 1,
     "Publisher": "Cengage",
@@ -122,7 +122,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 449,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "PicPath": "https://softwareengteam.page.link/book3",
     "Author": "Dr.Tyagi",
     "Quantity": 1,
     "Publisher": "aaa",
@@ -132,7 +132,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 440,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "PicPath": "https://softwareengteam.page.link/book4",
     "Author": "BK Pandey",
     "Quantity": 1,
     "Publisher": "Cengage",
@@ -142,7 +142,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 44,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "PicPath": "https://softwareengteam.page.link/book5",
     "Author": "Bk Pandey",
     "Quantity": 1,
     "Publisher": "Roli Books",
@@ -152,7 +152,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 44,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txtsss",
+    "PicPath": "https://softwareengteam.page.link/book6",
     "Author": "Joseph Gallian",
     "Quantity": 1,
     "Publisher": "Rupa Publications",
@@ -162,7 +162,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 44,
-    "PicPath": "/home/hackme/Without_Removing_Metadata.txt",
+    "PicPath": "https://softwareengteam.page.link/book7",
     "Author": "Bharati Krishna",
     "Quantity": 100,
     "Publisher": "Rupa Publications",
@@ -172,7 +172,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 213414,
-    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book8",
     "Author": "author",
     "Quantity": 1,
     "Publisher": "Roli Books",
@@ -182,7 +182,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 213414,
-    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book9",
     "Author": "Emily Bronte",
     "Quantity": 1,
     "Publisher": "Publisher",
@@ -192,7 +192,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 2134,
-    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book10",
     "Author": "Dr N.D.V Prasad Rao ",
     "Quantity": 563,
     "Publisher": "Wren & Martin",
@@ -202,7 +202,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 1234,
-    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book1",
     "Author": "Charlotte Bronte",
     "Quantity": 563,
     "Publisher": "Arihant",
@@ -212,7 +212,7 @@
   {
     "ISBN": "978-1-56619-909-4",
     "Price": 1234,
-    "PicPath": "/home/angshuman/Pictures/Screenshot_20210104_110819.png",
+    "PicPath": "https://softwareengteam.page.link/book2",
     "Author": "Emily Bronte",
     "Quantity": 563,
     "Publisher": "Arihant",
