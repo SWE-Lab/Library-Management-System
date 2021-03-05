@@ -17,40 +17,40 @@ Steps to use the software:
 
 <H3> <u>Glimpses of the UI</u></H3>
 <H4><u>Welcome GUI</u> :</H4><br>
-**Loading Page**<br>
+<b>Loading Page<b><br>
 <img src="screenshot/Loading.png" width="512" height="288"><br>
-**Welcome Screen**<br>
+<b>Welcome Screen</b><br>
 <img src="screenshot/Register-Login.png" width="512" height="288"><br>
-**Register Page**<br>
+<b>Register Page</b><br>
 <img src="screenshot/Create_New_Account.png" width="512" height="288"><br>
-**Login Page**<br>
+<b>Login Page<b><br>
 <img src="screenshot/Login.png" width="512" height="288"><br>
 <br>
 <H4><u>Librarian GUI</u> :</H4><br>
-**Profile Page**<br>
+<b>Profile Page</b><br>
 <img src="screenshot/Librarian/Profile.png" width="512" height="288"><br>
-**Borrow Book Page**<br>
+<b>Borrow Book Page</b><br>
 <img src="screenshot/Librarian/Borrow_Book.png" width="512" height="288"><br>
-**Add Book Page**<br>
+<b>Add Book Page</b><br>
 <img src="screenshot/Librarian/Add_New_Book.png" width="512" height="288"><br>
-**Book Details Page**<br><br>
+<b>Book Details Page</b><br><br>
 <img src="screenshot/Librarian/Book_Details.png" width="640" height="360"><br>
-**Member Details Page**<br><br>
+<b>Member Details Page</b><br><br>
 <img src="screenshot/Librarian/Member_Details.png" width="640" height="360"><br>
-**Payment Details Page**<br><br>
+<b>Payment Details Page</b><br><br>
 <img src="screenshot/Librarian/Payment_Details.png" width="640" height="360"><br>
 
 <H4><u>Member GUI</u> :</H4><br>
-**Profile Page**<br>
+<b>Profile Page</b><br>
 <img src="screenshot/Member/Profile.png" width="512" height="288"><br>
-**Borrow Book Page**<br>
+<b>Borrow Book Page</b><br>
 <img src="screenshot/Member/Borrow_Book.png" width="512" height="288"><br>
-**Payment Details Page**<br><br>
+<b>Payment Details Page</b><br><br>
 <img src="screenshot/Member/Payment_Details.png" width="640" height="360"><br>
 
 
 <br><br>
-**Contributions are welcome**<br>
+<b>Contributions are welcome</b><br>
 To contribute :
 - Fork the project
 - Clone repository with  `git clone <REPO_LINK>`
